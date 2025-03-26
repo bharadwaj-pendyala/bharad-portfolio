@@ -1,27 +1,33 @@
-'use client'
+'use client';
 
 import Link from 'next/link';
 import ThemeToggle from './ThemeToggle';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-screen flex flex-col bg-[rgb(var(--background-rgb))]">
-      <header className="sticky top-0 z-50 bg-[rgb(var(--background-rgb))]/95 backdrop-blur-sm border-b border-border-color">
+    <div className="flex min-h-screen flex-col bg-[rgb(var(--background-rgb))]">
+      <header className="border-border-color sticky top-0 z-50 border-b bg-[rgb(var(--background-rgb))]/95 backdrop-blur-sm">
         <div className="container mx-auto max-w-4xl px-6">
-          <div className="flex items-center justify-center h-14">
+          <div className="flex h-14 items-center justify-center">
             <nav className="flex items-center space-x-8">
               <Link href="/" className="text-lg font-semibold hover:opacity-80">
                 Bharad
               </Link>
-              <Link href="/about" className="hover:opacity-80">
-                About
-              </Link>
-              <Link href="/projects" className="hover:opacity-80">
-                Projects
-              </Link>
-              <Link href="/blog" className="hover:opacity-80">
-                Blog
-              </Link>
+              {process.env.NEXT_PUBLIC_SHOW_ABOUT === '1' && (
+                <Link href="/about" className="hover:opacity-80">
+                  About
+                </Link>
+              )}
+              {process.env.NEXT_PUBLIC_SHOW_PROJECTS === '1' && (
+                <Link href="/projects" className="hover:opacity-80">
+                  Projects
+                </Link>
+              )}
+              {process.env.NEXT_PUBLIC_SHOW_BLOG === '1' && (
+                <Link href="/blog" className="hover:opacity-80">
+                  Blog
+                </Link>
+              )}
             </nav>
             <div className="fixed right-6">
               <ThemeToggle />
@@ -30,11 +36,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         </div>
       </header>
 
-      <main className="flex-grow py-6">
-        {children}
-      </main>
+      <main className="flex-grow py-6">{children}</main>
 
-      <footer className="border-t border-border-color mt-16">
+      <footer className="border-border-color mt-16 border-t">
         <div className="container mx-auto max-w-4xl px-6 py-8">
           <div className="flex flex-col items-center space-y-4">
             <div className="flex items-center space-x-8">
@@ -61,7 +65,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 Email
               </a>
             </div>
-            <p className="text-sm text-muted-color">
+            <p className="text-muted-color text-sm">
               © {new Date().getFullYear()} Bharad. All rights reserved.
             </p>
           </div>
