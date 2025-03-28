@@ -15,7 +15,22 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
+        sans: ['var(--font-spectral)', 'serif'],
+        serif: ['var(--font-spectral)', 'serif'],
+        spectral: ['var(--font-spectral)', 'serif'],
+        'spectral-italic': ['var(--font-spectral)', 'serif'],
+      },
+      fontWeight: {
+        extralight: '200',
+        light: '300',
+        normal: '400',
+        medium: '500',
+        semibold: '600',
+        bold: '700',
+        extrabold: '800',
+      },
+      fontStyle: {
+        italic: 'italic',
       },
       colors: {
         primary: 'var(--primary-color)',

@@ -41,6 +41,7 @@ body {
   background: rgb(var(--background-rgb));
   min-height: 100vh;
   line-height: 1.5;
+  font-family: var(--font-spectral), serif;
   font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -221,4 +222,90 @@ a:hover {
   .dark .card:hover {
     box-shadow: 0 6px 8px -1px rgba(0, 0, 0, 0.3);
   }
+}
+
+/* Font Utilities */
+/* Spectral Font */
+.spectral-extralight {
+  font-family: var(--font-spectral), serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.spectral-light {
+  font-family: var(--font-spectral), serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.spectral-regular {
+  font-family: var(--font-spectral), serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.spectral-medium {
+  font-family: var(--font-spectral), serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.spectral-semibold {
+  font-family: var(--font-spectral), serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.spectral-bold {
+  font-family: var(--font-spectral), serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.spectral-extrabold {
+  font-family: var(--font-spectral), serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.spectral-extralight-italic {
+  font-family: var(--font-spectral), serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.spectral-light-italic {
+  font-family: var(--font-spectral), serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.spectral-regular-italic {
+  font-family: var(--font-spectral), serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.spectral-medium-italic {
+  font-family: var(--font-spectral), serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.spectral-semibold-italic {
+  font-family: var(--font-spectral), serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.spectral-bold-italic {
+  font-family: var(--font-spectral), serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.spectral-extrabold-italic {
+  font-family: var(--font-spectral), serif;
+  font-weight: 800;
+  font-style: italic;
 }
