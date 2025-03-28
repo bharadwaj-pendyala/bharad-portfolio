@@ -1,8 +1,6 @@
-import Layout from '@/components/Layout';
-
 export default function About() {
   return (
-    <Layout>
+    <div className="container mx-auto max-w-4xl px-6 py-8">
       <div className="space-y-12">
         {/* Skills Section */}
         <section>
@@ -98,6 +96,6 @@ export default function About() {
           </div>
         </section>
       </div>
-    </Layout>
+    </div>
   );
 }

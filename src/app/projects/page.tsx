@@ -2,7 +2,7 @@ import Layout from '@/components/Layout';
 
 export default function Projects() {
   return (
-    <Layout>
+    <div className="container mx-auto max-w-4xl px-6 py-8">
       <div className="space-y-16">
         {/* Header */}
         <section className="space-y-4">
@@ -171,6 +171,6 @@ export default function Projects() {
           </div>
         </section>
       </div>
-    </Layout>
+    </div>
   );
 }

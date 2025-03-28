@@ -1,9 +1,8 @@
-import Layout from '@/components/Layout';
 import Link from 'next/link';
 
 export default function Blog() {
   return (
-    <Layout>
+    <div className="container mx-auto max-w-4xl px-6 py-8">
       <div className="space-y-16">
         {/* Header */}
         <section className="space-y-4">
@@ -115,6 +114,6 @@ export default function Blog() {
           </article>
         </section>
       </div>
-    </Layout>
+    </div>
   );
 }

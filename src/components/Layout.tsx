@@ -8,35 +8,35 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <div className="flex min-h-screen flex-col bg-[rgb(var(--background-rgb))]">
       <header className="border-border-color sticky top-0 z-50 border-b bg-[rgb(var(--background-rgb))]/95 backdrop-blur-sm">
         <div className="container mx-auto max-w-4xl px-6">
-          <div className="flex h-14 items-center justify-center">
+          <div className="flex h-16 items-center justify-between">
             <nav className="flex items-center space-x-8">
               <Link href="/" className="text-lg font-semibold hover:opacity-80">
                 Bharad
               </Link>
-              {process.env.NEXT_PUBLIC_SHOW_ABOUT === '1' && (
+              {process.env['NEXT_PUBLIC_SHOW_ABOUT'] === '1' && (
                 <Link href="/about" className="hover:opacity-80">
                   About
                 </Link>
               )}
-              {process.env.NEXT_PUBLIC_SHOW_PROJECTS === '1' && (
+              {process.env['NEXT_PUBLIC_SHOW_PROJECTS'] === '1' && (
                 <Link href="/projects" className="hover:opacity-80">
                   Projects
                 </Link>
               )}
-              {process.env.NEXT_PUBLIC_SHOW_BLOG === '1' && (
+              {process.env['NEXT_PUBLIC_SHOW_BLOG'] === '1' && (
                 <Link href="/blog" className="hover:opacity-80">
                   Blog
                 </Link>
               )}
             </nav>
-            <div className="fixed right-6">
+            <div className="flex items-center">
               <ThemeToggle />
             </div>
           </div>
         </div>
       </header>
 
-      <main className="flex-grow py-6">{children}</main>
+      <main className="flex-grow">{children}</main>
 
       <footer className="border-border-color mt-16 border-t">
         <div className="container mx-auto max-w-4xl px-6 py-8">
