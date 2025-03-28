@@ -38,7 +38,7 @@ export default function About() {
               <p className="text-gray-600 dark:text-gray-400">2020 - Present</p>
               <p className="mt-2">
                 Led the development of key features and improvements for the
-                company's main product. Worked with a team of engineers to
+                company&apos;s main product. Worked with a team of engineers to
                 deliver high-quality software solutions.
               </p>
             </div>

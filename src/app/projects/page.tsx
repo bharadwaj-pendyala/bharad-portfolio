@@ -1,5 +1,3 @@
-import Layout from '@/components/Layout';
-
 export default function Projects() {
   return (
     <div className="container mx-auto max-w-4xl px-6 py-8">
@@ -10,7 +8,7 @@ export default function Projects() {
             Projects
           </h1>
           <p className="max-w-2xl text-xl text-gray-600 dark:text-gray-300">
-            A collection of projects I've worked on, ranging from personal
+            A collection of projects I&apos;ve worked on, ranging from personal
             experiments to production applications.
           </p>
         </section>

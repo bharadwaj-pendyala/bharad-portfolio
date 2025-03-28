@@ -42,15 +42,15 @@ export default function BlogPost({ }: BlogPostProps) {
 
       <div className="space-y-6">
         <p>
-          In this comprehensive guide, we'll explore how to create a modern,
-          performant portfolio website using Next.js and Tailwind CSS. We'll
+          In this comprehensive guide, we&apos;ll explore how to create a modern,
+          performant portfolio website using Next.js and Tailwind CSS. We&apos;ll
           cover everything from initial setup to deployment, including best
           practices and tips for creating a great user experience.
         </p>
 
         <h2>Getting Started</h2>
         <p>
-          First, let's set up our development environment. We'll need Node.js
+          First, let&apos;s set up our development environment. We&apos;ll need Node.js
           installed on our machine and a code editor of our choice. Once we
           have those, we can create a new Next.js project using the following
           command:
@@ -66,8 +66,8 @@ export default function BlogPost({ }: BlogPostProps) {
         <h2>Project Structure</h2>
         <p>
           Next.js 13+ uses the App Router by default, which provides a more
-          intuitive and powerful way to structure our application. Here's how
-          we'll organize our project:
+          intuitive and powerful way to structure our application. Here&apos;s how
+          we&apos;ll organize our project:
         </p>
 
         <ul>
@@ -89,20 +89,20 @@ export default function BlogPost({ }: BlogPostProps) {
         <p>
           The layout component will be the foundation of our portfolio. It
           includes the navigation bar, footer, and any other elements that
-          should appear on every page. We'll use Tailwind CSS for styling and
-          make sure it's responsive and accessible.
+          should appear on every page. We&apos;ll use Tailwind CSS for styling and
+          make sure it&apos;s responsive and accessible.
         </p>
 
         <h2>Building the Home Page</h2>
         <p>
           The home page is the first impression visitors will have of our
-          portfolio. We'll create a hero section with a brief introduction,
+          portfolio. We&apos;ll create a hero section with a brief introduction,
           followed by sections for featured projects and recent blog posts.
         </p>
 
         <h2>Adding Projects and Blog Sections</h2>
         <p>
-          We'll create dedicated pages for projects and blog posts, using
+          We&apos;ll create dedicated pages for projects and blog posts, using
           dynamic routing to handle individual items. Each project will have
           its own page with detailed information, and blog posts will be
           written in Markdown for easy content management.
