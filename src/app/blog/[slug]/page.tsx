@@ -6,7 +6,7 @@ interface BlogPostProps {
   };
 }
 
-export default function BlogPost({ params }: BlogPostProps) {
+export default function BlogPost({ }: BlogPostProps) {
   return (
     <article className="prose mx-auto max-w-none dark:prose-invert">
       <div className="mb-8">
