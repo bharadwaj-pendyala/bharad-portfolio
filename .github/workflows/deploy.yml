@@ -12,6 +12,10 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      NEXT_PUBLIC_SHOW_PROJECTS: 1
+      NEXT_PUBLIC_SHOW_BLOG: 1
+      NEXT_PUBLIC_SHOW_ABOUT: 1
     steps:
       - uses: actions/checkout@v4
 

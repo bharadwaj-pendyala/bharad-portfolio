@@ -12,7 +12,7 @@ export default function Home() {
           to complex problems.
         </p>
         <div className="flex justify-center space-x-8">
-          {process.env.NEXT_PUBLIC_SHOW_PROJECTS === '1' && (
+          {process.env['NEXT_PUBLIC_SHOW_PROJECTS'] === '1' && (
             <Link
               href="/projects"
               className="text-primary-color hover:opacity-80"
