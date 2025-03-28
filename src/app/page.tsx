@@ -20,7 +20,7 @@ export default function Home() {
               View Projects
             </Link>
           )}
-          {process.env.NEXT_PUBLIC_SHOW_ABOUT === '1' && (
+          {process.env['NEXT_PUBLIC_SHOW_ABOUT'] === '1' && (
             <Link href="/about" className="text-primary-color hover:opacity-80">
               About Me
             </Link>
@@ -29,7 +29,7 @@ export default function Home() {
       </section>
 
       {/* Latest Projects Section */}
-      {process.env.NEXT_PUBLIC_SHOW_PROJECTS === '1' && (
+      {process.env['NEXT_PUBLIC_SHOW_PROJECTS'] === '1' && (
         <section className="mb-20">
           <h2 className="mb-6 text-center text-2xl font-bold">
             Latest Projects
@@ -89,7 +89,7 @@ export default function Home() {
       )}
 
       {/* Latest Blog Posts Section */}
-      {process.env.NEXT_PUBLIC_SHOW_BLOG === '1' && (
+      {process.env['NEXT_PUBLIC_SHOW_BLOG'] === '1' && (
         <section>
           <h2 className="mb-6 text-center text-2xl font-bold">
             Latest Blog Posts
