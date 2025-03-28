@@ -2,6 +2,8 @@ const TerserPlugin = require('terser-webpack-plugin');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
+  basePath: '/bharad-portfolio',
   reactStrictMode: true,
   swcMinify: true,
   images: {
