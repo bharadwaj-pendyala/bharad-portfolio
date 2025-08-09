@@ -3,6 +3,7 @@ import './globals.css';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import Layout from '@/components/Layout';
 import { spectral } from './fonts';
+import { siteConfig, absoluteUrl } from '@/config/site';
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -15,26 +16,25 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'Bharadwaj P',
-  description: 'Personal portfolio website of Bharadwaj P',
-  metadataBase: new URL('https://bharadwaj-portfolio.vercel.app'),
+  title: siteConfig.name,
+  description: siteConfig.description,
+  metadataBase: new URL(siteConfig.url),
   openGraph: {
-    title: 'Bharadwaj P',
-    description: 'Personal portfolio website of Bharadwaj P',
-    url: 'https://bharadwaj-portfolio.vercel.app',
-    siteName: 'Bharadwaj P',
+    title: siteConfig.name,
+    description: siteConfig.description,
+    url: absoluteUrl('/'),
+    siteName: siteConfig.name,
     locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Bharadwaj P',
-    description: 'Personal portfolio website of Bharadwaj P',
+    title: siteConfig.name,
+    description: siteConfig.description,
   },
-  icons: {
-    icon: '/favicon.ico',
-  },
-  manifest: '/manifest.json',
+  // Remove manifest/icon until assets exist in public/ or app/ directory
+  // icons: siteConfig.basePath ? { icon: `${siteConfig.basePath}/favicon.ico` } : { icon: '/favicon.ico' },
+  // manifest: siteConfig.basePath ? `${siteConfig.basePath}/manifest.json` : '/manifest.json',
 };
 
 export default function RootLayout({

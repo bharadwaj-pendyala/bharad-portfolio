@@ -40,9 +40,7 @@
     "verbatimModuleSyntax": true,
     "downlevelIteration": true,
     "useDefineForClassFields": true,
-    "sourceMap": true,
-    "declaration": true,
-    "declarationMap": true,
+    "sourceMap": false,
     "types": ["node", "@types/eslint-scope"]
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
