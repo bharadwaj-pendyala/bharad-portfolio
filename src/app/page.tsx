@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { siteConfig } from '@/config/site';
 
 export default function Home() {
   return (
@@ -12,12 +13,12 @@ export default function Home() {
           to complex problems.
         </p>
         <div className="flex justify-center space-x-8">
-          {process.env['NEXT_PUBLIC_SHOW_PROJECTS'] === '1' && (
+          {siteConfig.features.showProjects && (
             <Link href="/projects" className="text-primary hover:opacity-80">
               View Projects
             </Link>
           )}
-          {process.env['NEXT_PUBLIC_SHOW_ABOUT'] === '1' && (
+          {siteConfig.features.showAbout && (
             <Link href="/about" className="text-primary hover:opacity-80">
               About Me
             </Link>
@@ -26,7 +27,7 @@ export default function Home() {
       </section>
 
       {/* Latest Projects Section */}
-      {process.env['NEXT_PUBLIC_SHOW_PROJECTS'] === '1' && (
+      {siteConfig.features.showProjects && (
         <section className="mb-20">
           <h2 className="mb-6 text-center text-2xl font-bold">
             Latest Projects
@@ -80,7 +81,7 @@ export default function Home() {
       )}
 
       {/* Latest Blog Posts Section */}
-      {process.env['NEXT_PUBLIC_SHOW_BLOG'] === '1' && (
+      {siteConfig.features.showBlog && (
         <section>
           <h2 className="mb-6 text-center text-2xl font-bold">
             Latest Blog Posts

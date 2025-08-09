@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import ThemeToggle from './ThemeToggle';
+import { siteConfig } from '@/config/site';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -11,23 +12,15 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <div className="flex h-16 items-center justify-between">
             <nav className="flex items-center space-x-8">
               <Link href="/" className="text-lg font-semibold hover:opacity-80">
-                Bharad
+                {siteConfig.name}
               </Link>
-              {process.env['NEXT_PUBLIC_SHOW_ABOUT'] === '1' && (
-                <Link href="/about" className="hover:opacity-80">
-                  About
-                </Link>
-              )}
-              {process.env['NEXT_PUBLIC_SHOW_PROJECTS'] === '1' && (
-                <Link href="/projects" className="hover:opacity-80">
-                  Projects
-                </Link>
-              )}
-              {process.env['NEXT_PUBLIC_SHOW_BLOG'] === '1' && (
-                <Link href="/blog" className="hover:opacity-80">
-                  Blog
-                </Link>
-              )}
+              {siteConfig.nav
+                .filter((item) => item.enabled !== false)
+                .map((item) => (
+                  <Link key={item.href} href={item.href} className="hover:opacity-80">
+                    {item.label}
+                  </Link>
+                ))}
             </nav>
             <div className="flex items-center">
               <ThemeToggle />
@@ -43,7 +36,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <div className="flex flex-col items-center space-y-4">
             <div className="flex items-center space-x-8">
               <a
-                href="https://github.com/yourusername"
+                href={siteConfig.social.github ?? '#'}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted hover:text-secondary transition-colors"
@@ -51,7 +44,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 GitHub
               </a>
               <a
-                href="https://linkedin.com/in/yourusername"
+                href={siteConfig.social.linkedin ?? '#'}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted hover:text-secondary transition-colors"
@@ -59,7 +52,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 LinkedIn
               </a>
               <a
-                href="mailto:your.email@example.com"
+                href={siteConfig.social.email ?? '#'}
                 className="text-muted hover:text-secondary transition-colors"
               >
                 Email

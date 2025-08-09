@@ -2,21 +2,10 @@ import Link from 'next/link';
 
 // Define the static paths for blog posts
 export async function generateStaticParams() {
-  // This is a placeholder - replace with your actual blog post slugs
-  return [
-    { slug: 'post-1' },
-    { slug: 'post-2' },
-    { slug: 'post-3' },
-  ];
+  return [{ slug: 'post-1' }, { slug: 'post-2' }, { slug: 'post-3' }];
 }
 
-interface BlogPostProps {
-  params: {
-    slug: string;
-  };
-}
-
-export default function BlogPost({ }: BlogPostProps) {
+export default function BlogPost({ params }: { params: { slug: string } }) {
   return (
     <article className="prose mx-auto max-w-none dark:prose-invert">
       <div className="mb-8">
