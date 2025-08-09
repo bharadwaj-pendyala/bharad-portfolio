@@ -1,175 +1,181 @@
+import TerminalCommand from '@/components/TerminalCommand';
+import TerminalOutput from '@/components/TerminalOutput';
+
+type Project = {
+  name: string;
+  description: string;
+  tech: string[];
+  github?: string;
+  demo?: string;
+  status: 'active' | 'archived' | 'private';
+};
+
 export default function Projects() {
+  const projects: Project[] = [
+    {
+      name: 'terminal-portfolio',
+      description:
+        'Terminal-inspired developer portfolio with animated typing effects and modern tech stack',
+      tech: ['Next.js 14', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+      github: 'https://github.com/bharadwaj-pendyala/bharad-portfolio',
+      demo: 'https://bharadwaj-pendyala.github.io/bharad-portfolio',
+      status: 'active',
+    },
+    {
+      name: 'task-manager-pro',
+      description:
+        'Full-stack task management application with real-time collaboration and advanced filtering',
+      tech: ['React', 'Node.js', 'MongoDB', 'Socket.io'],
+      github: 'https://github.com/bharadwaj-pendyala',
+      status: 'active',
+    },
+    {
+      name: 'analytics-dashboard',
+      description:
+        'Comprehensive data visualization platform with interactive charts and automated reporting',
+      tech: ['Python', 'FastAPI', 'PostgreSQL', 'Redis'],
+      status: 'private',
+    },
+  ];
+
   return (
     <div className="container mx-auto max-w-4xl px-6 py-8">
-      <div className="space-y-16">
-        {/* Header */}
-        <section className="space-y-4">
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white">
-            Projects
-          </h1>
-          <p className="max-w-2xl text-xl text-gray-600 dark:text-gray-300">
-            A collection of projects I&apos;ve worked on, ranging from personal
-            experiments to production applications.
-          </p>
-        </section>
+      {/* Header Terminal */}
+      <div className="card bg-card-bg border-card-border mb-8">
+        <div className="border-card-border mb-4 border-b pb-3">
+          <div className="flex items-center space-x-2">
+            <div className="h-3 w-3 rounded-full bg-red-500"></div>
+            <div className="h-3 w-3 rounded-full bg-yellow-500"></div>
+            <div className="h-3 w-3 rounded-full bg-green-500"></div>
+            <span className="ml-4 font-mono text-xs text-muted">
+              bharad@portfolio:~/projects
+            </span>
+          </div>
+        </div>
 
-        {/* Projects Grid */}
-        <section className="grid gap-8 sm:grid-cols-2">
-          {/* Portfolio Website */}
-          <div className="group">
-            <div className="relative overflow-hidden rounded-lg border border-gray-200 dark:border-gray-800">
-              <div className="aspect-video bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-gray-900">
-                <div className="flex h-full w-full items-center justify-center">
-                  <div className="text-center">
-                    <div className="mx-auto mb-2 h-16 w-16 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600"></div>
-                    <p className="text-sm font-medium text-gray-600 dark:text-gray-300">
-                      Portfolio Website
-                    </p>
+        <div className="space-y-4">
+          <TerminalCommand command="ls -la ~/projects/" />
+          <TerminalOutput>
+            <div className="space-y-2">
+              <div className="mb-4 text-sm text-secondary">
+                A collection of projects showcasing full-stack development,
+                modern architectures, and problem-solving approaches.
+              </div>
+              <div className="font-mono text-sm">
+                <div className="mb-2 grid grid-cols-4 gap-4 border-b border-muted pb-2 text-muted">
+                  <div>permissions</div>
+                  <div>size</div>
+                  <div>modified</div>
+                  <div>name</div>
+                </div>
+                {projects.map((project, index) => (
+                  <div
+                    key={index}
+                    className="hover:bg-muted/10 grid grid-cols-4 gap-4 py-1 text-secondary transition-colors"
+                  >
+                    <div className="text-green-500">
+                      {project.status === 'active'
+                        ? 'drwxr-xr-x'
+                        : project.status === 'private'
+                          ? 'drw-------'
+                          : 'drwxr--r--'}
+                    </div>
+                    <div>{Math.floor(Math.random() * 900 + 100)}KB</div>
+                    <div>Dec {Math.floor(Math.random() * 30 + 1)}</div>
+                    <div className="text-accent transition-colors hover:text-foreground">
+                      {project.name}/
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </TerminalOutput>
+        </div>
+      </div>
+
+      {/* Project Details */}
+      {projects.map((project, index) => (
+        <div key={index} className="card bg-card-bg border-card-border mb-6">
+          <div className="space-y-4">
+            <TerminalCommand
+              command={`cat ~/projects/${project.name}/README.md`}
+            />
+            <TerminalOutput>
+              <div className="space-y-4">
+                <div>
+                  <h3 className="mb-2 text-xl font-bold text-foreground">
+                    {project.name}
+                  </h3>
+                  <p className="leading-relaxed text-secondary">
+                    {project.description}
+                  </p>
+                </div>
+
+                <div>
+                  <h4 className="mb-2 font-semibold text-accent">
+                    Tech Stack:
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tech.map((tech, techIndex) => (
+                      <span
+                        key={techIndex}
+                        className="bg-muted/20 rounded-full px-3 py-1 font-mono text-sm text-foreground"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="pt-2">
+                  <div className="flex items-center space-x-4 text-sm">
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-mono text-accent transition-colors hover:text-foreground"
+                      >
+                        → GitHub Repository
+                      </a>
+                    )}
+                    {project.demo && (
+                      <a
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-mono text-accent transition-colors hover:text-foreground"
+                      >
+                        → Live Demo
+                      </a>
+                    )}
+                    {project.status === 'private' && (
+                      <span className="font-mono text-muted">
+                        → Private Repository
+                      </span>
+                    )}
                   </div>
                 </div>
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 group-hover:text-gray-600 dark:text-white dark:group-hover:text-gray-300">
-                  Personal Portfolio
-                </h3>
-                <p className="mt-2 text-gray-600 dark:text-gray-300">
-                  A modern, responsive portfolio website built with Next.js 14
-                  and Tailwind CSS. Features dark/light mode, SEO optimization,
-                  and a clean design showcasing projects and blog posts.
-                </p>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  <span className="rounded bg-gray-100 px-2 py-1 text-sm text-gray-700 dark:bg-gray-800 dark:text-gray-300">
-                    Next.js 14
-                  </span>
-                  <span className="rounded bg-gray-100 px-2 py-1 text-sm text-gray-700 dark:bg-gray-800 dark:text-gray-300">
-                    TypeScript
-                  </span>
-                  <span className="rounded bg-gray-100 px-2 py-1 text-sm text-gray-700 dark:bg-gray-800 dark:text-gray-300">
-                    Tailwind CSS
-                  </span>
-                </div>
-                <div className="mt-6 flex space-x-4">
-                  <a
-                    href="https://github.com/bharadwaj-pendyala/bharad-portfolio"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
-                  >
-                    GitHub
-                  </a>
-                  <a
-                    href="https://bharadwaj-pendyala.github.io/bharad-portfolio"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
-                  >
-                    Live Site
-                  </a>
-                </div>
-              </div>
-            </div>
+            </TerminalOutput>
           </div>
+        </div>
+      ))}
 
-          {/* Task Management App */}
-          <div className="group">
-            <div className="relative overflow-hidden rounded-lg border border-gray-200 dark:border-gray-800">
-              <div className="aspect-video bg-gradient-to-br from-green-50 to-emerald-100 dark:from-gray-800 dark:to-gray-900">
-                <div className="flex h-full w-full items-center justify-center">
-                  <div className="text-center">
-                    <div className="mx-auto mb-2 h-16 w-16 rounded-lg bg-gradient-to-br from-green-500 to-emerald-600"></div>
-                    <p className="text-sm font-medium text-gray-600 dark:text-gray-300">
-                      Task Manager
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 group-hover:text-gray-600 dark:text-white dark:group-hover:text-gray-300">
-                  Task Management App
-                </h3>
-                <p className="mt-2 text-gray-600 dark:text-gray-300">
-                  A full-stack task management application with real-time
-                  updates, user authentication, and collaborative features.
-                  Built with modern web technologies and deployed on Vercel.
-                </p>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  <span className="rounded bg-gray-100 px-2 py-1 text-sm text-gray-700 dark:bg-gray-800 dark:text-gray-300">
-                    React
-                  </span>
-                  <span className="rounded bg-gray-100 px-2 py-1 text-sm text-gray-700 dark:bg-gray-800 dark:text-gray-300">
-                    Node.js
-                  </span>
-                  <span className="rounded bg-gray-100 px-2 py-1 text-sm text-gray-700 dark:bg-gray-800 dark:text-gray-300">
-                    MongoDB
-                  </span>
-                </div>
-                <div className="mt-6 flex space-x-4">
-                  <a
-                    href="https://github.com/bharadwaj-pendyala"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
-                  >
-                    GitHub
-                  </a>
-                  <span className="text-gray-400 dark:text-gray-600">
-                    Demo Coming Soon
-                  </span>
-                </div>
+      {/* Additional Commands */}
+      <div className="card bg-card-bg border-card-border">
+        <div className="space-y-4">
+          <TerminalCommand command="find ~/projects -name '*.md' -type f | wc -l" />
+          <TerminalOutput>
+            <div className="space-y-2 font-mono text-sm">
+              <div>3 project documentation files found</div>
+              <div className="text-secondary">
+                Each project includes comprehensive documentation, setup
+                instructions, and usage examples.
               </div>
             </div>
-          </div>
-
-          {/* Data Analytics Dashboard */}
-          <div className="group">
-            <div className="relative overflow-hidden rounded-lg border border-gray-200 dark:border-gray-800">
-              <div className="aspect-video bg-gradient-to-br from-purple-50 to-violet-100 dark:from-gray-800 dark:to-gray-900">
-                <div className="flex h-full w-full items-center justify-center">
-                  <div className="text-center">
-                    <div className="mx-auto mb-2 h-16 w-16 rounded-lg bg-gradient-to-br from-purple-500 to-violet-600"></div>
-                    <p className="text-sm font-medium text-gray-600 dark:text-gray-300">
-                      Analytics Platform
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 group-hover:text-gray-600 dark:text-white dark:group-hover:text-gray-300">
-                  Data Analytics Dashboard
-                </h3>
-                <p className="mt-2 text-gray-600 dark:text-gray-300">
-                  A comprehensive data visualization platform for business
-                  analytics. Features interactive charts, real-time data
-                  processing, and automated reporting capabilities.
-                </p>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  <span className="rounded bg-gray-100 px-2 py-1 text-sm text-gray-700 dark:bg-gray-800 dark:text-gray-300">
-                    Python
-                  </span>
-                  <span className="rounded bg-gray-100 px-2 py-1 text-sm text-gray-700 dark:bg-gray-800 dark:text-gray-300">
-                    FastAPI
-                  </span>
-                  <span className="rounded bg-gray-100 px-2 py-1 text-sm text-gray-700 dark:bg-gray-800 dark:text-gray-300">
-                    PostgreSQL
-                  </span>
-                </div>
-                <div className="mt-6 flex space-x-4">
-                  <a
-                    href="https://github.com/bharadwaj-pendyala"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
-                  >
-                    GitHub
-                  </a>
-                  <span className="text-gray-400 dark:text-gray-600">
-                    Private Repository
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+          </TerminalOutput>
+        </div>
       </div>
     </div>
   );
