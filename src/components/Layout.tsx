@@ -1,5 +1,6 @@
 import TerminalHeader from './TerminalHeader';
 import MinimalFooter from './MinimalFooter';
+import TerminalEasterEgg from './TerminalEasterEgg';
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -11,6 +12,7 @@ export default function Layout({ children }: LayoutProps): JSX.Element {
       <TerminalHeader />
       <main className="flex-grow">{children}</main>
       <MinimalFooter />
+      <TerminalEasterEgg />
     </div>
   );
 }
