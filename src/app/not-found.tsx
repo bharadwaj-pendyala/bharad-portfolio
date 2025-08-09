@@ -7,10 +7,7 @@ export default function NotFound() {
       <p className="mb-8 text-center text-lg text-gray-600 dark:text-gray-300">
         Sorry, the page you are looking for does not exist or has been moved.
       </p>
-      <Link
-        href="/"
-        className="text-primary-color font-semibold hover:opacity-80"
-      >
+      <Link href="/" className="text-primary font-semibold hover:opacity-80">
         Return Home
       </Link>
     </div>
