@@ -11,7 +11,7 @@ Standards for documentation, README files, and content authoring in Markdown.
 
 ## Formatting and syntax
 
-- Use **bold** for emphasis, *italic* for slight emphasis.
+- Use **bold** for emphasis, _italic_ for slight emphasis.
 - Use `inline code` for technical terms, file names, and short code snippets.
 - Use ``` code blocks with language specification for syntax highlighting.
 - Use > blockquotes for important notes or citations.
@@ -32,7 +32,7 @@ Standards for documentation, README files, and content authoring in Markdown.
 
 ## Code examples
 
-- Include language identifier for syntax highlighting (```typescript, ```bash).
+- Include language identifier for syntax highlighting (`typescript, `bash).
 - Keep code examples short and focused.
 - Test code examples to ensure they work.
 - Use comments to explain complex code snippets.

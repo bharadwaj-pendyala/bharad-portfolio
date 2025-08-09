@@ -11,19 +11,20 @@ Core guidelines for this portfolio project. These rules take precedence over all
 
 ## Tech Stack
 
-| Category | Technology | Requirements |
-|----------|------------|--------------|
-| **Framework** | Next.js 14 App Router | Server Components first, `src/app` structure |
-| **Language** | TypeScript (strict) | Path alias `@/*`, no `any` types |
-| **Styling** | Tailwind CSS | Theme tokens only, minimal custom CSS |
-| **Theming** | `next-themes` | Class strategy, proper SSR handling |
-| **Fonts** | `next/font` (Spectral) | CSS variables, display swap |
-| **Images** | `next/image` | Required for all non-icons |
-| **Config** | Minimal setup | No custom webpack, SWC only |
+| Category      | Technology             | Requirements                                 |
+| ------------- | ---------------------- | -------------------------------------------- |
+| **Framework** | Next.js 14 App Router  | Server Components first, `src/app` structure |
+| **Language**  | TypeScript (strict)    | Path alias `@/*`, no `any` types             |
+| **Styling**   | Tailwind CSS           | Theme tokens only, minimal custom CSS        |
+| **Theming**   | `next-themes`          | Class strategy, proper SSR handling          |
+| **Fonts**     | `next/font` (Spectral) | CSS variables, display swap                  |
+| **Images**    | `next/image`           | Required for all non-icons                   |
+| **Config**    | Minimal setup          | No custom webpack, SWC only                  |
 
 ## Non-Negotiable Patterns
 
 ### ✅ Required Patterns
+
 ```typescript
 // ✅ Server Components (default)
 export default function Page() {
@@ -44,6 +45,7 @@ import { utils } from '@/lib/utils'
 ```
 
 ### ❌ Forbidden Patterns
+
 ```typescript
 // ❌ Client components without necessity
 'use client'
@@ -75,6 +77,7 @@ src/
 ## Quick Reference
 
 **When making any change:**
+
 1. **Check dependencies** - Use existing tech stack, avoid new deps
 2. **Maintain type safety** - No `any`, explicit types for exports
 3. **Server Components first** - Only use `'use client'` when required
@@ -85,6 +88,7 @@ src/
 ## AI Assistant Checklist
 
 Before completing any edit:
+
 - [ ] **Build passes** - `npm run build` succeeds
 - [ ] **Types check** - `tsc --noEmit` passes
 - [ ] **Linting passes** - `npm run lint` succeeds
@@ -98,9 +102,10 @@ Before completing any edit:
 ## Override Rules
 
 This project-specific rule file takes precedence over:
+
 - Generic coding standards
 - Language-specific rules
 - Technology-specific rules
 - Cross-cutting standards
 
-*See `.cursor/rules/meta-rule-index.md` for complete rule hierarchy.*
+_See `.cursor/rules/meta-rule-index.md` for complete rule hierarchy._
