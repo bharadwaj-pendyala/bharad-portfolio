@@ -1,3 +1,5 @@
+'use client';
+
 import TerminalCommand from './TerminalCommand';
 import TerminalCursor from './TerminalCursor';
 
@@ -44,10 +46,32 @@ drwxr-xr-x  8 bharad  bharad  256B Aug  9 18:30 Posts/
         />
       </div>
 
-      <div className="mt-4 flex items-center">
+      <div
+        className="group mt-4 flex cursor-pointer items-center transition-opacity hover:opacity-80"
+        onClick={() => {
+          // Scroll to and focus the interactive terminal
+          const interactiveTerminal = document.querySelector(
+            '[data-interactive-terminal]'
+          );
+          if (interactiveTerminal) {
+            interactiveTerminal.scrollIntoView({
+              behavior: 'smooth',
+              block: 'center',
+            });
+            const input = interactiveTerminal.querySelector('input');
+            if (input) {
+              setTimeout(() => input.focus(), 500);
+            }
+          }
+        }}
+        title="Click to use the interactive terminal above"
+      >
         <span className="mr-2 text-accent">$</span>
         <span className="text-foreground">explore_portfolio</span>
         <TerminalCursor />
+        <span className="ml-2 text-xs text-muted opacity-0 transition-opacity group-hover:opacity-100">
+          ↑ Click to explore
+        </span>
       </div>
     </div>
   );

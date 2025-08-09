@@ -50,7 +50,7 @@ export default function InteractiveTerminal({
       case 'help':
         return `Available commands:
   help          - Show this help message
-  ls            - List files and directories  
+  ls            - List files and directories
   pwd           - Show current directory
   whoami        - Display user information
   cat about     - Display about information
@@ -83,8 +83,8 @@ drwxr-xr-x  8 bharad  bharad  256B Aug  9 18:30 Posts/
         return 'Bharadwaj Pendyala - Software Engineer | Full Stack Developer | Problem Solver';
 
       case 'cat about':
-        return `Passionate about creating elegant solutions to complex problems. 
-I build scalable web applications, enjoy exploring new technologies, 
+        return `Passionate about creating elegant solutions to complex problems.
+I build scalable web applications, enjoy exploring new technologies,
 and love contributing to open source projects.
 
 Experience: 5+ years in full-stack development
@@ -103,7 +103,7 @@ Interests: DevOps, AI/ML, System Architecture, Open Source`;
         return `Recent Projects:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 • terminal-portfolio    - This very website! Terminal-inspired portfolio
-• task-manager-pro      - Full-stack task management with real-time collaboration  
+• task-manager-pro      - Full-stack task management with real-time collaboration
 • analytics-dashboard   - Data visualization platform with interactive charts
 • api-gateway-service   - Microservices gateway with rate limiting and auth
 • ml-recommendation     - Machine learning recommendation engine`;
@@ -112,7 +112,7 @@ Interests: DevOps, AI/ML, System Architecture, Open Source`;
         return `Contact Information:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 📧 Email:    bharadwajpendyala@gmail.com
-💼 LinkedIn: https://linkedin.com/in/bharadwaj-pendyala  
+💼 LinkedIn: https://linkedin.com/in/bharadwaj-pendyala
 🐙 GitHub:   https://github.com/bharadwaj-pendyala
 🌐 Website:  https://bharadwaj-pendyala.github.io
 📍 Location: Available for remote opportunities worldwide`;
@@ -238,6 +238,7 @@ Just kidding! This is just a portfolio website 😄`;
 
   return (
     <div
+      data-interactive-terminal
       className={`terminal-text rounded-md border border-card-border bg-card-bg ${className}`}
     >
       {/* Terminal header */}

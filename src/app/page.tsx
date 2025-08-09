@@ -43,11 +43,11 @@ export default function Home(): JSX.Element {
       <section className="mb-16">
         <div className="mb-6">
           <h2 className="mb-2 text-lg font-medium text-foreground">
-            Interactive Terminal
+            🖥️ Interactive Terminal
           </h2>
           <p className="text-sm text-secondary">
             Try executing commands! Type &quot;help&quot; to see available
-            commands.
+            commands. Click the blinking cursor above to start exploring.
           </p>
         </div>
         <InteractiveTerminal className="w-full" />
