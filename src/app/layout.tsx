@@ -32,8 +32,9 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
   },
-  icons: siteConfig.basePath ? { icon: `${siteConfig.basePath}/favicon.ico` } : { icon: '/favicon.ico' },
-  manifest: siteConfig.basePath ? `${siteConfig.basePath}/manifest.json` : '/manifest.json',
+  // Remove manifest/icon until assets exist in public/ or app/ directory
+  // icons: siteConfig.basePath ? { icon: `${siteConfig.basePath}/favicon.ico` } : { icon: '/favicon.ico' },
+  // manifest: siteConfig.basePath ? `${siteConfig.basePath}/manifest.json` : '/manifest.json',
 };
 
 export default function RootLayout({
