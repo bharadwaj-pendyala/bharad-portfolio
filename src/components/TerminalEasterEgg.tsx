@@ -69,8 +69,8 @@ export default function TerminalEasterEgg(): JSX.Element | null {
 
   return (
     <div className="fixed bottom-4 right-4 z-50 max-w-sm">
-      <div className="card bg-card-bg border-card-border shadow-lg">
-        <div className="border-card-border mb-2 border-b pb-2">
+      <div className="card border-card-border bg-card-bg shadow-lg">
+        <div className="mb-2 border-b border-card-border pb-2">
           <div className="flex items-center space-x-2">
             <div className="h-2 w-2 rounded-full bg-red-500"></div>
             <div className="h-2 w-2 rounded-full bg-yellow-500"></div>

@@ -11,8 +11,8 @@ export default function CV(): JSX.Element {
   return (
     <div className="container mx-auto max-w-4xl px-6 py-8">
       {/* Terminal Header */}
-      <div className="card bg-card-bg border-card-border mb-8">
-        <div className="border-card-border mb-4 border-b pb-3">
+      <div className="card mb-8 border-card-border bg-card-bg">
+        <div className="mb-4 border-b border-card-border pb-3">
           <div className="flex items-center space-x-2">
             <div className="h-3 w-3 rounded-full bg-red-500"></div>
             <div className="h-3 w-3 rounded-full bg-yellow-500"></div>
@@ -43,7 +43,7 @@ export default function CV(): JSX.Element {
       </div>
 
       {/* Professional Summary */}
-      <div className="card bg-card-bg border-card-border mb-6">
+      <div className="card mb-6 border-card-border bg-card-bg">
         <div className="space-y-4">
           <TerminalCommand command="grep -A 5 'Professional Summary' CV.pdf" />
           <TerminalOutput>
@@ -58,7 +58,7 @@ export default function CV(): JSX.Element {
       </div>
 
       {/* Experience */}
-      <div className="card bg-card-bg border-card-border mb-6">
+      <div className="card mb-6 border-card-border bg-card-bg">
         <div className="space-y-4">
           <TerminalCommand command="awk '/Experience/,/Education/ {print}' CV.pdf" />
           <TerminalOutput>
@@ -118,7 +118,7 @@ export default function CV(): JSX.Element {
       </div>
 
       {/* Technical Skills */}
-      <div className="card bg-card-bg border-card-border mb-6">
+      <div className="card mb-6 border-card-border bg-card-bg">
         <div className="space-y-4">
           <TerminalCommand command="cat ~/.config/skills.json | jq '.'" />
           <TerminalOutput>
@@ -168,7 +168,7 @@ export default function CV(): JSX.Element {
       </div>
 
       {/* Education */}
-      <div className="card bg-card-bg border-card-border mb-6">
+      <div className="card mb-6 border-card-border bg-card-bg">
         <div className="space-y-4">
           <TerminalCommand command="sed -n '/Education/,/Skills/p' CV.pdf" />
           <TerminalOutput>
@@ -190,7 +190,7 @@ export default function CV(): JSX.Element {
       </div>
 
       {/* Certifications */}
-      <div className="card bg-card-bg border-card-border mb-6">
+      <div className="card mb-6 border-card-border bg-card-bg">
         <div className="space-y-4">
           <TerminalCommand command="ls -la ~/certifications/" />
           <TerminalOutput>
@@ -213,7 +213,7 @@ export default function CV(): JSX.Element {
       </div>
 
       {/* Download Action */}
-      <div className="card bg-card-bg border-card-border">
+      <div className="card border-card-border bg-card-bg">
         <div className="space-y-4">
           <TerminalCommand command="curl -O https://bharad.dev/cv/download" />
           <TerminalOutput>

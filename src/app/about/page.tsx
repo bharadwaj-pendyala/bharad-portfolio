@@ -5,8 +5,8 @@ export default function About() {
   return (
     <div className="container mx-auto max-w-4xl px-6 py-8">
       {/* Terminal-style page header */}
-      <div className="card bg-card-bg border-card-border mb-8">
-        <div className="border-card-border mb-4 border-b pb-3">
+      <div className="card mb-8 border-card-border bg-card-bg">
+        <div className="mb-4 border-b border-card-border pb-3">
           <div className="flex items-center space-x-2">
             <div className="h-3 w-3 rounded-full bg-red-500"></div>
             <div className="h-3 w-3 rounded-full bg-yellow-500"></div>
@@ -48,7 +48,7 @@ export default function About() {
       </div>
 
       {/* Skills Terminal */}
-      <div className="card bg-card-bg border-card-border mb-8">
+      <div className="card mb-8 border-card-border bg-card-bg">
         <div className="space-y-4">
           <TerminalCommand command="ls -la ~/skills/" />
           <TerminalOutput>
@@ -108,7 +108,7 @@ export default function About() {
       </div>
 
       {/* Tools & DevOps */}
-      <div className="card bg-card-bg border-card-border mb-8">
+      <div className="card mb-8 border-card-border bg-card-bg">
         <div className="space-y-4">
           <TerminalCommand command="which git docker aws" />
           <TerminalOutput>
@@ -144,7 +144,7 @@ export default function About() {
       </div>
 
       {/* Experience */}
-      <div className="card bg-card-bg border-card-border mb-8">
+      <div className="card mb-8 border-card-border bg-card-bg">
         <div className="space-y-4">
           <TerminalCommand command="cat ~/experience.log | tail -10" />
           <TerminalOutput>
@@ -195,7 +195,7 @@ export default function About() {
       </div>
 
       {/* Contact */}
-      <div className="card bg-card-bg border-card-border">
+      <div className="card border-card-border bg-card-bg">
         <div className="space-y-4">
           <TerminalCommand command="grep -r 'contact' ~/social/" />
           <TerminalOutput>
