@@ -16,7 +16,13 @@ interface BlogPostProps {
   };
 }
 
-export default function BlogPost({ }: BlogPostProps) {
+export default function BlogPost({ params }: BlogPostProps) {
+  // TODO: Replace with MDX content loading based on params.slug
+  // Consider using next-mdx-remote or contentlayer for blog posts
+  const { slug } = params;
+  
+  // Placeholder: In a real implementation, use slug to load specific blog content
+  console.log(`Rendering blog post: ${slug}`);
   return (
     <article className="prose mx-auto max-w-none dark:prose-invert">
       <div className="mb-8">
