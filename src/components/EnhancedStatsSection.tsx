@@ -33,10 +33,10 @@ const stats: Stat[] = [
     icon: '🛠️',
   },
   {
-    command: 'awk "{print $1}" satisfaction.txt',
-    value: '100%',
-    label: 'Client Satisfaction',
-    description: 'Quality-focused delivery',
+    command: 'jq ".avg_rating" user_metrics.json',
+    value: '4.8/5',
+    label: 'User Satisfaction',
+    description: 'Positive user experience',
     icon: '⭐',
   },
 ];
