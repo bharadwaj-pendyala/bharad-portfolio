@@ -5,6 +5,7 @@ This is the master index of all cursor rules for the bharad-portfolio project. A
 ## Rule Categories and Hierarchy
 
 ### 🎯 Project-Specific Rules (Highest Priority)
+
 These rules define the specific conventions for this portfolio project:
 
 - **`portfolio.md`** - ⭐ **START HERE** - Core project philosophy, tech stack, and non-negotiable patterns
@@ -13,6 +14,7 @@ These rules define the specific conventions for this portfolio project:
 - **`commits-pr.md`** - Git workflow, commit messages, and PR conventions
 
 ### 🛠️ Technology-Specific Rules
+
 Framework and library-specific standards that align with the project stack:
 
 - **`nextjs.md`** - Next.js 14 App Router patterns, routing, and data fetching
@@ -21,6 +23,7 @@ Framework and library-specific standards that align with the project stack:
 - **`tailwind.md`** - Tailwind CSS usage, theme tokens, and responsive design
 
 ### 📝 Language-Specific Rules
+
 Standards for individual languages and file formats:
 
 - **`javascript.md`** - Modern JavaScript features, async patterns, and performance
@@ -30,6 +33,7 @@ Standards for individual languages and file formats:
 - **`markdown.md`** - Documentation standards and content authoring
 
 ### 🌐 Cross-Cutting Standards
+
 Universal principles that apply across all code:
 
 - **`coding-standards.md`** - The Big Four principles + naming, error handling, and security
@@ -39,6 +43,7 @@ Universal principles that apply across all code:
 ## Rule Application Priority
 
 When rules conflict, apply in this order:
+
 1. **Project-specific rules** override all others
 2. **Technology-specific rules** for the current stack
 3. **Language-specific rules** for the file being edited
@@ -47,6 +52,7 @@ When rules conflict, apply in this order:
 ## Quick Reference Summary
 
 ### Core Principles
+
 - **Server Components first** - Add `'use client'` only when necessary
 - **Type safety** - No `any`, unsafe casts, or `//@ts-ignore`
 - **Minimal diffs** - Change only what the task requires
@@ -54,6 +60,7 @@ When rules conflict, apply in this order:
 - **Performance** - Core Web Vitals and bundle size awareness
 
 ### Tech Stack
+
 - **Framework**: Next.js 14 App Router with TypeScript
 - **Styling**: Tailwind CSS with theme tokens
 - **Fonts**: `next/font` with Spectral font family
@@ -61,12 +68,14 @@ When rules conflict, apply in this order:
 - **Images**: `next/image` for optimization
 
 ### File Conventions
+
 - **Components**: Server Components by default, named functions
 - **Paths**: Use `@/*` alias for local imports
 - **Config**: Keep `next.config.js` minimal, strict TypeScript
 - **Styles**: Use Tailwind tokens, avoid custom CSS when possible
 
 ### Code Quality
+
 - **Linting**: ESLint + Prettier, must pass before commits
 - **Testing**: Type-check with `tsc --noEmit`
 - **Reviews**: Follow checklist in `code-review.md`
@@ -118,6 +127,7 @@ For quick navigation, here are all available rules:
 ## Integration with Development Workflow
 
 These rules integrate with:
+
 - **ESLint configuration** for automated code quality
 - **Prettier** for consistent formatting
 - **TypeScript compiler** for type safety
@@ -126,4 +136,4 @@ These rules integrate with:
 
 ---
 
-*This meta rule ensures all cursor rules work together cohesively to maintain high code quality, accessibility, and performance standards throughout the bharad-portfolio project.*
+_This meta rule ensures all cursor rules work together cohesively to maintain high code quality, accessibility, and performance standards throughout the bharad-portfolio project._

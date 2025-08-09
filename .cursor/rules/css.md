@@ -14,7 +14,7 @@ Standards for CSS and styling, complementing Tailwind CSS usage in this project.
 - Use low-specificity selectors; avoid deeply nested rules.
 - Prefer class selectors over tag or ID selectors for styling.
 - Use BEM methodology for component-specific styles when needed.
-- Avoid universal selectors (*) except for resets.
+- Avoid universal selectors (\*) except for resets.
 
 ## Layout and positioning
 

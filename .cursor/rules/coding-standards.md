@@ -25,23 +25,23 @@ function processOrder(data: any) {
 
 ## Naming Patterns
 
-| Type | Pattern | Examples |
-|------|---------|----------|
-| **Functions** | Verbs (camelCase) | `loadUser`, `validateEmail`, `formatDate` |
-| **Variables** | Nouns (camelCase) | `userName`, `isLoading`, `totalCount` |
-| **Constants** | SCREAMING_SNAKE_CASE | `API_BASE_URL`, `MAX_RETRY_COUNT` |
-| **Files** | kebab-case | `user-profile.tsx`, `date-utils.ts` |
+| Type          | Pattern              | Examples                                  |
+| ------------- | -------------------- | ----------------------------------------- |
+| **Functions** | Verbs (camelCase)    | `loadUser`, `validateEmail`, `formatDate` |
+| **Variables** | Nouns (camelCase)    | `userName`, `isLoading`, `totalCount`     |
+| **Constants** | SCREAMING_SNAKE_CASE | `API_BASE_URL`, `MAX_RETRY_COUNT`         |
+| **Files**     | kebab-case           | `user-profile.tsx`, `date-utils.ts`       |
 
 ## Control Flow
 
 ```javascript
 // ✅ Guard clauses reduce nesting
 function processUser(user) {
-  if (!user) return null
-  if (!user.isActive) return null
-  if (!user.permissions.includes('read')) return null
+  if (!user) return null;
+  if (!user.isActive) return null;
+  if (!user.permissions.includes('read')) return null;
 
-  return user.data
+  return user.data;
 }
 
 // ❌ Deep nesting is hard to follow
@@ -49,17 +49,18 @@ function processUser(user) {
   if (user) {
     if (user.isActive) {
       if (user.permissions.includes('read')) {
-        return user.data
+        return user.data;
       }
     }
   }
-  return null
+  return null;
 }
 ```
 
 ## Error Handling
 
 **Three-tier approach:**
+
 1. **Validate early** - Check inputs at function boundaries
 2. **Handle gracefully** - Provide fallbacks and user-friendly messages
 3. **Fail meaningfully** - Include context in error messages
@@ -81,14 +82,17 @@ async function fetchUserProfile(userId: string) {
 ## Documentation
 
 **Comments should explain "why", not "what":**
+
 ```javascript
 // ✅ Good: Explains reasoning
 // Use debouncing to prevent excessive API calls during typing
-const debouncedSearch = debounce(searchUsers, 300)
+const debouncedSearch = debounce(searchUsers, 300);
 
 // ❌ Bad: Explains obvious code
 // This function adds two numbers together
-function add(a, b) { return a + b }
+function add(a, b) {
+  return a + b;
+}
 ```
 
 ## Security Essentials
@@ -108,6 +112,7 @@ function add(a, b) { return a + b }
 ## Dependencies
 
 **Before adding any dependency:**
+
 - Is it actively maintained?
 - Does it solve a significant problem we can't solve easily?
 - What's the bundle size impact?
