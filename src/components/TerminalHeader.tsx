@@ -11,16 +11,10 @@ export default function TerminalHeader(): JSX.Element {
           {/* Terminal-style branding */}
           <div className="flex items-center space-x-6">
             <Link href="/" className="hover:opacity-80">
-              <TerminalPrompt
-                prompt="~$ cd /home/"
-                className="hidden sm:block"
-              >
+              <TerminalPrompt prompt="~$ cd /home/" className="hidden sm:block">
                 {siteConfig.name.toLowerCase().replace(' ', '_')}
               </TerminalPrompt>
-              <TerminalPrompt
-                prompt="~$ "
-                className="sm:hidden"
-              >
+              <TerminalPrompt prompt="~$ " className="sm:hidden">
                 {siteConfig.name.split(' ')[0].toLowerCase()}
               </TerminalPrompt>
             </Link>
@@ -31,21 +25,21 @@ export default function TerminalHeader(): JSX.Element {
             {siteConfig.features.showAbout && (
               <Link
                 href="/about"
-                className="text-sm hover:text-primary transition-colors hidden sm:block"
+                className="hidden text-sm transition-colors hover:text-primary sm:block"
               >
                 About
               </Link>
             )}
             <Link
               href="/cv"
-              className="text-sm hover:text-primary transition-colors"
+              className="text-sm transition-colors hover:text-primary"
             >
               CV
             </Link>
             {siteConfig.features.showBlog && (
               <Link
                 href="/blog"
-                className="text-sm hover:text-primary transition-colors"
+                className="text-sm transition-colors hover:text-primary"
               >
                 Posts
               </Link>
@@ -53,7 +47,7 @@ export default function TerminalHeader(): JSX.Element {
             {siteConfig.features.showProjects && (
               <Link
                 href="/projects"
-                className="text-sm hover:text-primary transition-colors hidden sm:block"
+                className="hidden text-sm transition-colors hover:text-primary sm:block"
               >
                 Projects
               </Link>
