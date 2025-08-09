@@ -3,7 +3,7 @@ import './globals.css';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import Layout from '@/components/Layout';
 import { spectral } from './fonts';
-import { siteConfig } from '@/config/site';
+import { siteConfig, absoluteUrl } from '@/config/site';
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: siteConfig.name,
     description: siteConfig.description,
-    url: siteConfig.url + (siteConfig.basePath ?? ''),
+    url: absoluteUrl('/'),
     siteName: siteConfig.name,
     locale: 'en_US',
     type: 'website',
@@ -32,6 +32,8 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
   },
+  icons: siteConfig.basePath ? { icon: `${siteConfig.basePath}/favicon.ico` } : { icon: '/favicon.ico' },
+  manifest: siteConfig.basePath ? `${siteConfig.basePath}/manifest.json` : '/manifest.json',
 };
 
 export default function RootLayout({

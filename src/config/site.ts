@@ -1,21 +1,24 @@
 export type NavItem = {
   label: string;
   href: string;
-  enabled?: boolean;
+  enabled: boolean;
+};
+
+export type SocialLinks = {
+  github?: string;
+  linkedin?: string;
+  email?: string;
 };
 
 export type SiteConfig = {
   name: string;
   description: string;
-  url: string; // canonical base URL (no trailing slash)
-  basePath?: string; // e.g., "/bharad-portfolio" for GitHub Pages
+  /** Base site URL without trailing slash, e.g., https://bharadwaj-pendyala.github.io */
+  url: string;
+  /** Next.js basePath, e.g., /bharad-portfolio when using GitHub Pages */
+  basePath?: string;
   nav: NavItem[];
-  social: Partial<{
-    github: string;
-    linkedin: string;
-    email: string;
-    twitter: string;
-  }>;
+  social: SocialLinks;
   features: {
     showAbout: boolean;
     showProjects: boolean;
@@ -24,7 +27,7 @@ export type SiteConfig = {
 };
 
 export const siteConfig: SiteConfig = {
-  name: 'Bharad',
+  name: 'Bharadwaj P',
   description: 'Personal portfolio website of Bharadwaj P',
   url: 'https://bharadwaj-pendyala.github.io',
   basePath: '/bharad-portfolio',
@@ -36,7 +39,8 @@ export const siteConfig: SiteConfig = {
   social: {
     github: 'https://github.com/bharadwaj-pendyala',
     linkedin: 'https://www.linkedin.com/in/bharadwaj-pendyala',
-    email: 'mailto:contact@bharad.dev',
+    // Set email when available. When undefined, it will be hidden from the UI.
+    // email: 'you@example.com',
   },
   features: {
     showAbout: true,
@@ -44,5 +48,13 @@ export const siteConfig: SiteConfig = {
     showBlog: true,
   },
 };
+
+export function absoluteUrl(pathname: string): string {
+  const path = pathname.startsWith('/') ? pathname : `/${pathname}`;
+  const withBase = siteConfig.basePath
+    ? `${siteConfig.basePath}${path}`
+    : path;
+  return `${siteConfig.url}${withBase}`;
+}
 
 

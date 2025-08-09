@@ -1,8 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import ThemeToggle from './ThemeToggle';
 import { siteConfig } from '@/config/site';
+import ThemeToggle from './ThemeToggle';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -12,15 +12,23 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <div className="flex h-16 items-center justify-between">
             <nav className="flex items-center space-x-8">
               <Link href="/" className="text-lg font-semibold hover:opacity-80">
-                {siteConfig.name}
+                {siteConfig.name.split(' ')[0]}
               </Link>
-              {siteConfig.nav
-                .filter((item) => item.enabled !== false)
-                .map((item) => (
-                  <Link key={item.href} href={item.href} className="hover:opacity-80">
-                    {item.label}
-                  </Link>
-                ))}
+              {siteConfig.features.showAbout && (
+                <Link href="/about" className="hover:opacity-80">
+                  About
+                </Link>
+              )}
+              {siteConfig.features.showProjects && (
+                <Link href="/projects" className="hover:opacity-80">
+                  Projects
+                </Link>
+              )}
+              {siteConfig.features.showBlog && (
+                <Link href="/blog" className="hover:opacity-80">
+                  Blog
+                </Link>
+              )}
             </nav>
             <div className="flex items-center">
               <ThemeToggle />
@@ -35,28 +43,34 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <div className="container mx-auto max-w-4xl px-6 py-8">
           <div className="flex flex-col items-center space-y-4">
             <div className="flex items-center space-x-8">
-              <a
-                href={siteConfig.social.github ?? '#'}
+              {siteConfig.social.github && (
+                <a
+                href={siteConfig.social.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted hover:text-secondary transition-colors"
               >
                 GitHub
               </a>
+              )}
+              {siteConfig.social.linkedin && (
               <a
-                href={siteConfig.social.linkedin ?? '#'}
+                href={siteConfig.social.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted hover:text-secondary transition-colors"
               >
                 LinkedIn
               </a>
-              <a
-                href={siteConfig.social.email ?? '#'}
-                className="text-muted hover:text-secondary transition-colors"
-              >
-                Email
-              </a>
+              )}
+              {siteConfig.social.email && (
+                <a
+                  href={`mailto:${siteConfig.social.email}`}
+                  className="text-muted hover:text-secondary transition-colors"
+                >
+                  Email
+                </a>
+              )}
             </div>
             <p className="text-muted text-sm">
               © {new Date().getFullYear()} Bharad. All rights reserved.
