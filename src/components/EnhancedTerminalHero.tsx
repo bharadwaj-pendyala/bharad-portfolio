@@ -66,7 +66,7 @@ export default function EnhancedTerminalHero(): JSX.Element {
           </div>
 
           <div className="space-y-2 pl-4">
-            <div className="text-2xl font-bold text-foreground">
+            <div className="font-mono text-2xl font-bold text-foreground">
               Bharadwaj Pendyala
             </div>
             <div className="font-mono text-lg text-muted">
@@ -81,7 +81,7 @@ export default function EnhancedTerminalHero(): JSX.Element {
             <span className="ml-2 text-foreground">cat experience.txt</span>
           </div>
 
-          <div className="space-y-1 pl-4 text-sm text-muted">
+          <div className="space-y-1 pl-4 font-mono text-sm text-muted">
             <div>
               ⚡ <span className="text-accent">Experience:</span> 5+ years in
               software development
@@ -131,7 +131,7 @@ export default function EnhancedTerminalHero(): JSX.Element {
             </span>
           </div>
 
-          <div className="flex flex-wrap gap-4 pl-4 text-sm text-muted">
+          <div className="flex flex-wrap gap-4 pl-4 font-mono text-sm text-muted">
             {siteConfig.social.email && (
               <a
                 href={`mailto:${siteConfig.social.email}`}
