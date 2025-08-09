@@ -3,7 +3,7 @@
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 
-export default function ThemeToggle() {
+export default function ThemeToggle(): JSX.Element | null {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
 
@@ -19,7 +19,7 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-      className="rounded-lg p-2 transition-colors hover:bg-gray-100 dark:hover:bg-gray-800"
+      className="hover:bg-muted/20 rounded-lg p-2 transition-colors"
       aria-label="Toggle theme"
     >
       {theme === 'dark' ? (

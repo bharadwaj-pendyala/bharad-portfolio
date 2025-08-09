@@ -1,10 +1,12 @@
-'use client';
-
 import Link from 'next/link';
 import { siteConfig } from '@/config/site';
 import ThemeToggle from './ThemeToggle';
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+type LayoutProps = {
+  children: React.ReactNode;
+};
+
+export default function Layout({ children }: LayoutProps): JSX.Element {
   return (
     <div className="flex min-h-screen flex-col bg-background">
       <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-sm">
