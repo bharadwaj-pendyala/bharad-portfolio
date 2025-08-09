@@ -4,7 +4,11 @@ Standards for commits, branches, and PRs to keep history clean and reviews fast.
 
 ## Commits
 - Use Conventional Commits: `feat:`, `fix:`, `docs:`, `refactor:`, `chore:`, `style:`, `test:`. Optional scope: `feat(nav): ...`.
-- Write imperative, present tense subjects under ~72 chars. Example: `fix(theme): prevent flash on initial load`.
+- **Keep subjects concise and under 50 chars.** Examples:
+  - ✅ `fix(theme): prevent flash on load`
+  - ✅ `feat: add site config`
+  - ❌ `feat(cleanup): implement phases 1–2 (config/tokens, site config, sitemap/robots, Prettier)`
+- Write imperative, present tense. No periods at end.
 - One logical change per commit. Avoid bundling unrelated edits.
 - Provide a body when needed: what changed, why, trade-offs. Wrap at ~100 cols.
 - Reference issues in the body when relevant: `Closes #123`.
@@ -21,7 +25,11 @@ Standards for commits, branches, and PRs to keep history clean and reviews fast.
 ## Pull Requests
 - Open PRs for all code/config changes. Direct-commit to `main` only for trivial docs.
 - Keep PRs small and focused (preferably < 300 LOC net). Split if needed.
-- Title mirrors Conventional Commit style: `feat: add site config and sitemap`.
+- **Keep titles concise and under 60 chars.** Examples:
+  - ✅ `feat: add site config and sitemap`
+  - ✅ `fix: correct theme flash on load`
+  - ❌ `feat(cleanup): implement phases 1–2 (config/tokens, site config, sitemap/robots, Prettier)`
+- Use Conventional Commit style for titles: `type: brief description`.
 - Use the PR template checklist. Include:
   - What/why summary and scope
   - Screenshots for UI changes
