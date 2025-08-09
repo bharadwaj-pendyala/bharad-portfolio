@@ -14,10 +14,15 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-spectral)', 'serif'],
-        serif: ['var(--font-spectral)', 'serif'],
-        spectral: ['var(--font-spectral)', 'serif'],
-        'spectral-italic': ['var(--font-spectral)', 'serif'],
+        sans: ['var(--font-inter)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        serif: ['var(--font-spectral)', 'ui-serif', 'Georgia', 'serif'],
+        inter: [
+          'var(--font-inter)',
+          'ui-sans-serif',
+          'system-ui',
+          'sans-serif',
+        ],
+        spectral: ['var(--font-spectral)', 'ui-serif', 'Georgia', 'serif'],
         mono: [
           'ui-monospace',
           'SFMono-Regular',
