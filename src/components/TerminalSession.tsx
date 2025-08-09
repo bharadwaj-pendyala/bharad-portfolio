@@ -70,7 +70,7 @@ drwxr-xr-x  8 bharad  bharad  256B Aug  9 18:30 Posts/
         <span className="text-foreground">explore_portfolio</span>
         <TerminalCursor />
         <span className="ml-2 text-xs text-muted opacity-0 transition-opacity group-hover:opacity-100">
-          ↑ Click to explore
+          ↑ Try the terminal above
         </span>
       </div>
     </div>
