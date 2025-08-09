@@ -1,13 +1,13 @@
 import Link from 'next/link';
 import { siteConfig } from '@/config/site';
 
-export default function Home() {
+export default function Home(): JSX.Element {
   return (
     <div className="container mx-auto max-w-4xl px-6 py-8">
       {/* Hero Section */}
       <section className="mb-20 text-center">
         <h1 className="mb-6 text-4xl font-bold">Hi, I&apos;m Bharad</h1>
-        <p className="mx-auto mb-8 max-w-2xl text-lg text-gray-600 dark:text-gray-300">
+        <p className="mx-auto mb-8 max-w-2xl text-lg text-secondary">
           I&apos;m a software engineer passionate about building great products
           and solving complex problems. I specialize in full-stack development
           with modern technologies and love creating intuitive user experiences.
@@ -44,13 +44,13 @@ export default function Home() {
                 SEO optimization.
               </p>
               <div className="flex justify-center space-x-4">
-                <span className="rounded-full bg-gray-100 px-4 py-1 text-sm dark:bg-gray-800">
+                <span className="bg-muted/20 rounded-full px-4 py-1 text-sm text-secondary">
                   Next.js 14
                 </span>
-                <span className="rounded-full bg-gray-100 px-4 py-1 text-sm dark:bg-gray-800">
+                <span className="bg-muted/20 rounded-full px-4 py-1 text-sm text-secondary">
                   TypeScript
                 </span>
-                <span className="rounded-full bg-gray-100 px-4 py-1 text-sm dark:bg-gray-800">
+                <span className="bg-muted/20 rounded-full px-4 py-1 text-sm text-secondary">
                   Tailwind CSS
                 </span>
               </div>
@@ -67,13 +67,13 @@ export default function Home() {
                 collaborative features.
               </p>
               <div className="flex justify-center space-x-4">
-                <span className="rounded-full bg-gray-100 px-4 py-1 text-sm dark:bg-gray-800">
+                <span className="bg-muted/20 rounded-full px-4 py-1 text-sm text-secondary">
                   React
                 </span>
-                <span className="rounded-full bg-gray-100 px-4 py-1 text-sm dark:bg-gray-800">
+                <span className="bg-muted/20 rounded-full px-4 py-1 text-sm text-secondary">
                   Node.js
                 </span>
-                <span className="rounded-full bg-gray-100 px-4 py-1 text-sm dark:bg-gray-800">
+                <span className="bg-muted/20 rounded-full px-4 py-1 text-sm text-secondary">
                   MongoDB
                 </span>
               </div>

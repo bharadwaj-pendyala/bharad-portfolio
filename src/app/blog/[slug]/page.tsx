@@ -12,41 +12,43 @@ interface BlogPostProps {
   };
 }
 
-export default function BlogPost({ params }: BlogPostProps) {
+export default function BlogPost({
+  params: _params,
+}: BlogPostProps): JSX.Element {
   // Future: Implement MDX content loading based on params.slug
   // Consider using next-mdx-remote or contentlayer for blog posts
-  const { slug } = params;
+  // Currently params is not used but will be needed for dynamic content loading
 
   // Content loaded based on slug parameter
-  console.log(`Rendering blog post: ${slug}`);
+  // Future: Remove this once actual content loading is implemented
   return (
     <article className="prose mx-auto max-w-none dark:prose-invert">
       <div className="mb-8">
         <Link
           href="/blog"
-          className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+          className="text-secondary transition-colors hover:text-foreground"
         >
           ← Back to Blog
         </Link>
       </div>
 
       <header className="mb-8">
-        <div className="mb-4 flex items-center space-x-4 text-sm text-gray-500 dark:text-gray-400">
+        <div className="mb-4 flex items-center space-x-4 text-sm text-muted">
           <time dateTime="2024-03-19">March 19, 2024</time>
           <span>•</span>
           <span>5 min read</span>
         </div>
-        <h1 className="mb-4 text-4xl font-bold text-gray-900 dark:text-white">
+        <h1 className="mb-4 text-4xl font-bold text-foreground">
           Building a Modern Portfolio with Next.js and Tailwind CSS
         </h1>
         <div className="flex flex-wrap gap-2">
-          <span className="rounded bg-gray-100 px-2 py-1 text-sm text-gray-700 dark:bg-gray-800 dark:text-gray-300">
+          <span className="bg-muted/20 rounded px-2 py-1 text-sm text-secondary">
             Next.js
           </span>
-          <span className="rounded bg-gray-100 px-2 py-1 text-sm text-gray-700 dark:bg-gray-800 dark:text-gray-300">
+          <span className="bg-muted/20 rounded px-2 py-1 text-sm text-secondary">
             Tailwind CSS
           </span>
-          <span className="rounded bg-gray-100 px-2 py-1 text-sm text-gray-700 dark:bg-gray-800 dark:text-gray-300">
+          <span className="bg-muted/20 rounded px-2 py-1 text-sm text-secondary">
             Web Development
           </span>
         </div>
