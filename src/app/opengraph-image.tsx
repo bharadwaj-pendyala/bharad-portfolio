@@ -2,7 +2,8 @@ import { ImageResponse } from 'next/og';
 import { siteConfig } from '@/config/site';
 
 // Route segment config
-export const runtime = 'edge';
+// Temporarily disable edge runtime to fix build issues
+// export const runtime = 'edge';
 
 // Image metadata
 export const alt = siteConfig.description;

@@ -7,10 +7,10 @@ export default function Home(): JSX.Element {
     <div className="container mx-auto max-w-4xl px-6 py-8">
       {/* Terminal Hero Section */}
       <section className="mb-16">
-        <div className="card bg-card-bg border-card-border">
+        <div className="card border-card-border bg-card-bg">
           <div className="relative">
             {/* Terminal window decorations */}
-            <div className="border-card-border mb-4 flex items-center space-x-2 border-b pb-3">
+            <div className="mb-4 flex items-center space-x-2 border-b border-card-border pb-3">
               <div className="h-3 w-3 rounded-full bg-red-500"></div>
               <div className="h-3 w-3 rounded-full bg-yellow-500"></div>
               <div className="h-3 w-3 rounded-full bg-green-500"></div>
@@ -40,7 +40,7 @@ export default function Home(): JSX.Element {
 
       {/* Terminal Session Preview */}
       <section className="mb-16">
-        <div className="card bg-card-bg border-card-border">
+        <div className="card border-card-border bg-card-bg">
           <div className="mb-4">
             <h3 className="mb-1 text-base font-medium text-foreground">
               Interactive Session

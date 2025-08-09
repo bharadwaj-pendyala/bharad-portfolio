@@ -54,6 +54,8 @@ const config: Config = {
         border: 'var(--border-color)',
         background: 'rgb(var(--background-rgb))',
         foreground: 'rgb(var(--foreground-rgb))',
+        'card-bg': 'var(--card-bg)',
+        'card-border': 'var(--card-border)',
       },
       typography: {
         DEFAULT: {

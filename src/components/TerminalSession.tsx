@@ -9,7 +9,9 @@ export default function TerminalSession({
   className = '',
 }: TerminalSessionProps): JSX.Element {
   return (
-    <div className={`terminal-text ${className}`}>
+    <div
+      className={`terminal-text rounded-md border border-card-border bg-card-bg p-4 ${className}`}
+    >
       {/* Initial directory navigation */}
       <TerminalCommand command="cd /home/bharad/" />
 
