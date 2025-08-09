@@ -1,122 +1,75 @@
-import Link from 'next/link';
-import { siteConfig } from '@/config/site';
+import TerminalHero from '@/components/TerminalHero';
+import NavigationCards from '@/components/NavigationCards';
+import TerminalSession from '@/components/TerminalSession';
 
 export default function Home(): JSX.Element {
   return (
     <div className="container mx-auto max-w-4xl px-6 py-8">
-      {/* Hero Section */}
-      <section className="mb-20 text-center">
-        <h1 className="mb-6 text-4xl font-bold">Hi, I&apos;m Bharad</h1>
-        <p className="mx-auto mb-8 max-w-2xl text-lg text-secondary">
-          I&apos;m a software engineer passionate about building great products
-          and solving complex problems. I specialize in full-stack development
-          with modern technologies and love creating intuitive user experiences.
-        </p>
-        <div className="flex justify-center space-x-8">
-          {siteConfig.features.showProjects && (
-            <Link href="/projects" className="text-primary hover:opacity-80">
-              View Projects
-            </Link>
-          )}
-          {siteConfig.features.showAbout && (
-            <Link href="/about" className="text-primary hover:opacity-80">
-              About Me
-            </Link>
-          )}
+      {/* Terminal Hero Section */}
+      <section className="mb-16">
+        <div className="card bg-card-bg border-card-border">
+          <div className="relative">
+            {/* Terminal window decorations */}
+            <div className="border-card-border mb-4 flex items-center space-x-2 border-b pb-3">
+              <div className="h-3 w-3 rounded-full bg-red-500"></div>
+              <div className="h-3 w-3 rounded-full bg-yellow-500"></div>
+              <div className="h-3 w-3 rounded-full bg-green-500"></div>
+              <span className="ml-4 font-mono text-xs text-muted">
+                bharad@portfolio:~
+              </span>
+            </div>
+
+            {/* Animated terminal content */}
+            <TerminalHero className="min-h-[200px]" />
+          </div>
         </div>
       </section>
 
-      {/* Latest Projects Section */}
-      {siteConfig.features.showProjects && (
-        <section className="mb-20">
-          <h2 className="mb-6 text-center text-2xl font-bold">
-            Latest Projects
+      {/* Navigation Cards */}
+      <section className="mb-16">
+        <div className="mb-6">
+          <h2 className="mb-2 text-lg font-medium text-foreground">
+            Available Files & Directories
           </h2>
-          <div className="space-y-12">
-            <div className="text-center">
-              <h3 className="mb-3 text-xl font-semibold">
-                <Link href="/projects" className="hover:text-primary">
-                  Personal Portfolio
-                </Link>
-              </h3>
-              <p className="mb-4 text-secondary">
-                A modern, responsive portfolio website with dark/light mode and
-                SEO optimization.
-              </p>
-              <div className="flex justify-center space-x-4">
-                <span className="bg-muted/20 rounded-full px-4 py-1 text-sm text-secondary">
-                  Next.js 14
-                </span>
-                <span className="bg-muted/20 rounded-full px-4 py-1 text-sm text-secondary">
-                  TypeScript
-                </span>
-                <span className="bg-muted/20 rounded-full px-4 py-1 text-sm text-secondary">
-                  Tailwind CSS
-                </span>
-              </div>
-            </div>
+          <p className="text-sm text-secondary">
+            Click on any item to explore different sections of the portfolio
+          </p>
+        </div>
+        <NavigationCards />
+      </section>
 
-            <div className="text-center">
-              <h3 className="mb-3 text-xl font-semibold">
-                <Link href="/projects" className="hover:text-primary">
-                  Task Management App
-                </Link>
-              </h3>
-              <p className="mb-4 text-secondary">
-                A full-stack application with real-time updates and
-                collaborative features.
-              </p>
-              <div className="flex justify-center space-x-4">
-                <span className="bg-muted/20 rounded-full px-4 py-1 text-sm text-secondary">
-                  React
-                </span>
-                <span className="bg-muted/20 rounded-full px-4 py-1 text-sm text-secondary">
-                  Node.js
-                </span>
-                <span className="bg-muted/20 rounded-full px-4 py-1 text-sm text-secondary">
-                  MongoDB
-                </span>
-              </div>
-            </div>
+      {/* Terminal Session Preview */}
+      <section className="mb-16">
+        <div className="card bg-card-bg border-card-border">
+          <div className="mb-4">
+            <h3 className="mb-1 text-base font-medium text-foreground">
+              Interactive Session
+            </h3>
+            <p className="text-sm text-secondary">
+              Explore the portfolio through terminal commands
+            </p>
           </div>
-        </section>
-      )}
+          <TerminalSession />
+        </div>
+      </section>
 
-      {/* Latest Blog Posts Section */}
-      {siteConfig.features.showBlog && (
-        <section>
-          <h2 className="mb-6 text-center text-2xl font-bold">
-            Latest Blog Posts
-          </h2>
-          <div className="space-y-12">
-            <div className="text-center">
-              <h3 className="mb-3 text-xl font-semibold">
-                <Link href="/blog/post-1" className="hover:text-primary">
-                  Blog Post 1
-                </Link>
-              </h3>
-              <p className="mb-3 text-secondary">
-                A brief excerpt from your first blog post that captures the
-                reader&apos;s attention.
-              </p>
-              <time className="text-sm text-muted">March 19, 2024</time>
-            </div>
-
-            <div className="text-center">
-              <h3 className="mb-3 text-xl font-semibold">
-                <Link href="/blog/post-2" className="hover:text-primary">
-                  Blog Post 2
-                </Link>
-              </h3>
-              <p className="mb-3 text-secondary">
-                A brief excerpt from your second blog post that captures the
-                reader&apos;s attention.
-              </p>
-              <time className="text-sm text-muted">March 18, 2024</time>
-            </div>
+      {/* Quick Stats */}
+      <section>
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+          <div className="card text-center">
+            <div className="mb-1 text-2xl font-bold text-accent">5+</div>
+            <div className="text-sm text-secondary">Years Experience</div>
           </div>
-        </section>
-      )}
+          <div className="card text-center">
+            <div className="mb-1 text-2xl font-bold text-accent">20+</div>
+            <div className="text-sm text-secondary">Projects Completed</div>
+          </div>
+          <div className="card text-center">
+            <div className="mb-1 text-2xl font-bold text-accent">10+</div>
+            <div className="text-sm text-secondary">Technologies</div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
