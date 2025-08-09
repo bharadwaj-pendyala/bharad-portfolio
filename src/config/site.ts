@@ -10,12 +10,12 @@ export type SiteConfig = {
   url: string; // canonical base URL (no trailing slash)
   basePath?: string; // e.g., "/bharad-portfolio" for GitHub Pages
   nav: NavItem[];
-  social: {
-    github?: string;
-    linkedin?: string;
-    email?: string;
-    twitter?: string;
-  };
+  social: Partial<{
+    github: string;
+    linkedin: string;
+    email: string;
+    twitter: string;
+  }>;
   features: {
     showAbout: boolean;
     showProjects: boolean;
@@ -37,7 +37,6 @@ export const siteConfig: SiteConfig = {
     github: 'https://github.com/bharadwaj-pendyala',
     linkedin: 'https://www.linkedin.com/in/bharadwaj-pendyala',
     email: 'mailto:contact@bharad.dev',
-    twitter: undefined,
   },
   features: {
     showAbout: true,

@@ -6,6 +6,7 @@ export async function generateStaticParams() {
 }
 
 export default function BlogPost({ params }: { params: { slug: string } }) {
+  const { slug } = params;
   return (
     <article className="prose mx-auto max-w-none dark:prose-invert">
       <div className="mb-8">
@@ -24,7 +25,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
           <span>5 min read</span>
         </div>
         <h1 className="mb-4 text-4xl font-bold text-gray-900 dark:text-white">
-          Building a Modern Portfolio with Next.js and Tailwind CSS
+          {slug}
         </h1>
         <div className="flex flex-wrap gap-2">
           <span className="rounded bg-gray-100 px-2 py-1 text-sm text-gray-700 dark:bg-gray-800 dark:text-gray-300">
