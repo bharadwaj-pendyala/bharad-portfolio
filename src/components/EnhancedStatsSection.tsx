@@ -170,23 +170,6 @@ export default function EnhancedStatsSection(): JSX.Element {
             </div>
           ))}
         </div>
-
-        {/* Terminal Footer */}
-        <div className="mt-12 text-center">
-          <div className="card mx-auto max-w-md border-card-border bg-card-bg">
-            <div className="font-mono text-sm">
-              <div>
-                <span className="text-accent">$</span>
-                <span className="ml-2 text-foreground">
-                  echo &quot;Ready to collaborate!&quot;
-                </span>
-              </div>
-              <div className="mt-2 pl-4 text-muted">
-                Ready to collaborate! 🤝
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
