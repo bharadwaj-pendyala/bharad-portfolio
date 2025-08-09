@@ -84,11 +84,33 @@ Love exploring new tech and contributing to open source.`}
 
         {/* Final prompt with cursor */}
         {currentStep >= 2 && (
-          <div className="flex animate-fade-in items-center">
+          <div
+            className="flex animate-fade-in cursor-pointer items-center transition-opacity hover:opacity-80"
+            onClick={() => {
+              // Scroll to and focus the interactive terminal
+              const interactiveTerminal = document.querySelector(
+                '[data-interactive-terminal]'
+              );
+              if (interactiveTerminal) {
+                interactiveTerminal.scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'center',
+                });
+                const input = interactiveTerminal.querySelector('input');
+                if (input) {
+                  setTimeout(() => input.focus(), 500);
+                }
+              }
+            }}
+            title="Click to use the interactive terminal below"
+          >
             <span className="mr-2 text-accent">$</span>
             <span className="text-foreground">explore_portfolio</span>
             <span className="cursor-blink ml-1 bg-accent text-background">
               ▊
+            </span>
+            <span className="ml-2 text-xs text-muted opacity-0 transition-opacity group-hover:opacity-100">
+              ↓ Click to explore
             </span>
           </div>
         )}
