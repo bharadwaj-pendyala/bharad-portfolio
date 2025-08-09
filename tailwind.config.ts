@@ -18,6 +18,16 @@ const config: Config = {
         serif: ['var(--font-spectral)', 'serif'],
         spectral: ['var(--font-spectral)', 'serif'],
         'spectral-italic': ['var(--font-spectral)', 'serif'],
+        mono: [
+          'ui-monospace',
+          'SFMono-Regular',
+          'Menlo',
+          'Monaco',
+          'Consolas',
+          'Liberation Mono',
+          'Courier New',
+          'monospace',
+        ],
       },
       fontWeight: {
         extralight: '200',
