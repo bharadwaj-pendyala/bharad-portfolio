@@ -68,10 +68,10 @@ export default function Home(): JSX.Element {
               </div>
 
               <div className="space-y-3 pl-4">
-                <h3 className="text-lg font-semibold text-foreground">
+                <h3 className="font-mono text-lg font-semibold text-foreground">
                   🎯 Technical Excellence
                 </h3>
-                <ul className="space-y-2 text-sm text-muted">
+                <ul className="space-y-2 font-mono text-sm text-muted">
                   <li className="flex items-start space-x-2">
                     <span className="mt-1 text-accent">•</span>
                     <span>
@@ -113,10 +113,10 @@ export default function Home(): JSX.Element {
               </div>
 
               <div className="space-y-3 pl-4">
-                <h3 className="text-lg font-semibold text-foreground">
+                <h3 className="font-mono text-lg font-semibold text-foreground">
                   💼 Professional Impact
                 </h3>
-                <ul className="space-y-2 text-sm text-muted">
+                <ul className="space-y-2 font-mono text-sm text-muted">
                   <li className="flex items-start space-x-2">
                     <span className="mt-1 text-accent">•</span>
                     <span>
