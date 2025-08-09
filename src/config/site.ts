@@ -28,7 +28,8 @@ export type SiteConfig = {
 
 export const siteConfig: SiteConfig = {
   name: 'Bharadwaj P',
-  description: 'Personal portfolio website of Bharadwaj P',
+  description:
+    'Terminal-inspired developer portfolio showcasing full-stack engineering projects, technical expertise, and software development insights. Built with Next.js, TypeScript, and modern web technologies.',
   url: 'https://bharadwaj-pendyala.github.io',
   basePath: '/bharad-portfolio',
   nav: [
