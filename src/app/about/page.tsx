@@ -72,7 +72,7 @@ export default function About() {
         <section className="pt-4">
           <div className="flex space-x-4">
             <a
-              href="https://github.com/yourusername"
+              href="https://github.com/bharadwaj-pendyala"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-600 hover:underline dark:text-blue-400"
@@ -80,7 +80,7 @@ export default function About() {
               GitHub
             </a>
             <a
-              href="https://linkedin.com/in/yourusername"
+              href="https://www.linkedin.com/in/bharadwaj-pendyala"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-600 hover:underline dark:text-blue-400"
@@ -88,7 +88,7 @@ export default function About() {
               LinkedIn
             </a>
             <a
-              href="mailto:your.email@example.com"
+              href="mailto:bharadwajpendyala@gmail.com"
               className="text-blue-600 hover:underline dark:text-blue-400"
             >
               Email

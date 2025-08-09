@@ -8,9 +8,9 @@ export default function Home() {
       <section className="mb-20 text-center">
         <h1 className="mb-6 text-4xl font-bold">Hi, I&apos;m Bharad</h1>
         <p className="mx-auto mb-8 max-w-2xl text-lg text-gray-600 dark:text-gray-300">
-          I&apos;m a software engineer passionate about building great products.
-          I love working with modern technologies and creating elegant solutions
-          to complex problems.
+          I&apos;m a software engineer passionate about building great products
+          and solving complex problems. I specialize in full-stack development
+          with modern technologies and love creating intuitive user experiences.
         </p>
         <div className="flex justify-center space-x-8">
           {siteConfig.features.showProjects && (
@@ -35,38 +35,40 @@ export default function Home() {
           <div className="space-y-12">
             <div className="text-center">
               <h3 className="mb-3 text-xl font-semibold">
-                <Link href="/projects/project-1" className="hover:text-primary">
-                  Project 1
+                <Link href="/projects" className="hover:text-primary">
+                  Personal Portfolio
                 </Link>
               </h3>
               <p className="mb-4 text-secondary">
-                A brief description of your first project and its key features.
+                A modern, responsive portfolio website with dark/light mode and
+                SEO optimization.
               </p>
               <div className="flex justify-center space-x-4">
                 <span className="rounded-full bg-gray-100 px-4 py-1 text-sm dark:bg-gray-800">
-                  React
+                  Next.js 14
                 </span>
                 <span className="rounded-full bg-gray-100 px-4 py-1 text-sm dark:bg-gray-800">
                   TypeScript
                 </span>
                 <span className="rounded-full bg-gray-100 px-4 py-1 text-sm dark:bg-gray-800">
-                  Tailwind
+                  Tailwind CSS
                 </span>
               </div>
             </div>
 
             <div className="text-center">
               <h3 className="mb-3 text-xl font-semibold">
-                <Link href="/projects/project-2" className="hover:text-primary">
-                  Project 2
+                <Link href="/projects" className="hover:text-primary">
+                  Task Management App
                 </Link>
               </h3>
               <p className="mb-4 text-secondary">
-                A brief description of your second project and its key features.
+                A full-stack application with real-time updates and
+                collaborative features.
               </p>
               <div className="flex justify-center space-x-4">
                 <span className="rounded-full bg-gray-100 px-4 py-1 text-sm dark:bg-gray-800">
-                  Next.js
+                  React
                 </span>
                 <span className="rounded-full bg-gray-100 px-4 py-1 text-sm dark:bg-gray-800">
                   Node.js
