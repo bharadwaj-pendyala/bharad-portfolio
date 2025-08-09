@@ -3,29 +3,29 @@
 @tailwind utilities;
 
 :root {
-  /* Light theme colors */
-  --foreground-rgb: 17, 24, 39;
+  /* Light theme colors - Terminal inspired */
+  --foreground-rgb: 24, 24, 27;
   --background-rgb: 255, 255, 255;
-  --primary-color: #2563eb;
-  --secondary-color: #4b5563;
-  --accent-color: #3b82f6;
-  --muted-color: #9ca3af;
-  --border-color: #e5e7eb;
-  --card-bg: #ffffff;
-  --card-border: #e5e7eb;
+  --primary-color: #0f172a;
+  --secondary-color: #64748b;
+  --accent-color: #06b6d4;
+  --muted-color: #94a3b8;
+  --border-color: #e2e8f0;
+  --card-bg: #f8fafc;
+  --card-border: #e2e8f0;
 }
 
 .dark {
-  /* Dark theme colors */
-  --foreground-rgb: 255, 255, 255;
-  --background-rgb: 17, 24, 39;
-  --primary-color: #60a5fa;
-  --secondary-color: #d1d5db;
-  --accent-color: #3b82f6;
-  --muted-color: #6b7280;
-  --border-color: #374151;
-  --card-bg: #1f2937;
-  --card-border: #374151;
+  /* Dark theme colors - Terminal inspired */
+  --foreground-rgb: 248, 250, 252;
+  --background-rgb: 15, 23, 42;
+  --primary-color: #f1f5f9;
+  --secondary-color: #94a3b8;
+  --accent-color: #06b6d4;
+  --muted-color: #64748b;
+  --border-color: #334155;
+  --card-bg: #1e293b;
+  --card-border: #334155;
 }
 
 /* Base styles */
@@ -36,7 +36,7 @@ body {
   background: rgb(var(--background-rgb));
   min-height: 100vh;
   line-height: 1.5;
-  font-family: var(--font-spectral), serif;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -219,87 +219,83 @@ a:hover {
 }
 
 /* Font Utilities */
-/* Spectral Font */
-.spectral-extralight {
-  font-family: var(--font-spectral), serif;
+/* Inter Font */
+.inter-extralight {
+  font-family: var(--font-inter), sans-serif;
   font-weight: 200;
   font-style: normal;
 }
 
-.spectral-light {
-  font-family: var(--font-spectral), serif;
+.inter-light {
+  font-family: var(--font-inter), sans-serif;
   font-weight: 300;
   font-style: normal;
 }
 
-.spectral-regular {
-  font-family: var(--font-spectral), serif;
+.inter-regular {
+  font-family: var(--font-inter), sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 
-.spectral-medium {
-  font-family: var(--font-spectral), serif;
+.inter-medium {
+  font-family: var(--font-inter), sans-serif;
   font-weight: 500;
   font-style: normal;
 }
 
-.spectral-semibold {
-  font-family: var(--font-spectral), serif;
+.inter-semibold {
+  font-family: var(--font-inter), sans-serif;
   font-weight: 600;
   font-style: normal;
 }
 
-.spectral-bold {
-  font-family: var(--font-spectral), serif;
+.inter-bold {
+  font-family: var(--font-inter), sans-serif;
   font-weight: 700;
   font-style: normal;
 }
 
-.spectral-extrabold {
-  font-family: var(--font-spectral), serif;
+.inter-extrabold {
+  font-family: var(--font-inter), sans-serif;
   font-weight: 800;
   font-style: normal;
 }
 
-.spectral-extralight-italic {
-  font-family: var(--font-spectral), serif;
-  font-weight: 200;
-  font-style: italic;
+/* Terminal-specific styles */
+.terminal-text {
+  font-family: var(--font-mono);
+  line-height: 1.4;
+  letter-spacing: 0.025em;
 }
 
-.spectral-light-italic {
-  font-family: var(--font-spectral), serif;
+.terminal-prompt {
+  color: var(--accent-color);
+  font-weight: 500;
+}
+
+.terminal-command {
+  color: rgb(var(--foreground-rgb));
+  font-weight: 400;
+}
+
+.terminal-output {
+  color: var(--secondary-color);
   font-weight: 300;
-  font-style: italic;
 }
 
-.spectral-regular-italic {
-  font-family: var(--font-spectral), serif;
-  font-weight: 400;
-  font-style: italic;
+/* Enhanced cursor animation */
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
 }
 
-.spectral-medium-italic {
-  font-family: var(--font-spectral), serif;
-  font-weight: 500;
-  font-style: italic;
-}
-
-.spectral-semibold-italic {
-  font-family: var(--font-spectral), serif;
-  font-weight: 600;
-  font-style: italic;
-}
-
-.spectral-bold-italic {
-  font-family: var(--font-spectral), serif;
-  font-weight: 700;
-  font-style: italic;
-}
-
-.spectral-extrabold-italic {
-  font-family: var(--font-spectral), serif;
-  font-weight: 800;
-  font-style: italic;
+.cursor-blink {
+  animation: blink 1.2s infinite;
 }

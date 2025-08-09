@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import Layout from '@/components/Layout';
-import { spectral } from './fonts';
+import { inter, spectral } from './fonts';
 import { siteConfig, absoluteUrl } from '@/config/site';
 
 export const viewport: Viewport = {
@@ -44,7 +44,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${spectral.variable} font-serif`}>
+      <body className={`${inter.variable} ${spectral.variable} font-sans`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
