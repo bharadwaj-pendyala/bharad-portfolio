@@ -6,13 +6,9 @@ export default function Home(): JSX.Element {
     <div className="flex min-h-[80vh] flex-col items-center justify-center px-6">
       {/* Hero Section - Clean & Centered */}
       <main className="text-center">
-        <h1 className="mb-4 text-4xl font-bold text-foreground md:text-6xl">
+        <h1 className="mb-12 text-4xl font-bold text-foreground md:text-6xl">
           ✨ Bharadwaj Pendyala ✨
         </h1>
-
-        <p className="mb-12 text-lg text-muted md:text-xl">
-          I love building things and sometimes they love me back ❤️
-        </p>
 
         {/* Social Links - Simple Text */}
         <div className="mb-16 flex items-center justify-center space-x-8">
