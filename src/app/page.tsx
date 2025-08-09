@@ -1,6 +1,7 @@
 import TerminalHero from '@/components/TerminalHero';
 import NavigationCards from '@/components/NavigationCards';
 import TerminalSession from '@/components/TerminalSession';
+import InteractiveTerminal from '@/components/InteractiveTerminal';
 
 export default function Home(): JSX.Element {
   return (
@@ -38,15 +39,29 @@ export default function Home(): JSX.Element {
         <NavigationCards />
       </section>
 
+      {/* Interactive Terminal */}
+      <section className="mb-16">
+        <div className="mb-6">
+          <h2 className="mb-2 text-lg font-medium text-foreground">
+            Interactive Terminal
+          </h2>
+          <p className="text-sm text-secondary">
+            Try executing commands! Type &quot;help&quot; to see available
+            commands.
+          </p>
+        </div>
+        <InteractiveTerminal className="w-full" />
+      </section>
+
       {/* Terminal Session Preview */}
       <section className="mb-16">
         <div className="card border-card-border bg-card-bg">
           <div className="mb-4">
             <h3 className="mb-1 text-base font-medium text-foreground">
-              Interactive Session
+              Demo Session
             </h3>
             <p className="text-sm text-secondary">
-              Explore the portfolio through terminal commands
+              A preview of typical terminal usage
             </p>
           </div>
           <TerminalSession />
