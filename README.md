@@ -23,12 +23,14 @@ A modern, responsive portfolio website built with Next.js 14, TypeScript, and Ta
 ## Getting Started
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/bharad/bharad-portfolio.git
 cd bharad-portfolio
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 # or
@@ -38,12 +40,15 @@ pnpm install
 ```
 
 3. Set up environment variables:
+
 ```bash
 cp .env.example .env
 ```
+
 Edit the `.env` file with your configuration.
 
 4. Run the development server:
+
 ```bash
 npm run dev
 # or

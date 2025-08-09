@@ -3,6 +3,7 @@
 Standards for commits, branches, and PRs to keep history clean and reviews fast. Applies even when working solo.
 
 ## Commits
+
 - Use Conventional Commits: `feat:`, `fix:`, `docs:`, `refactor:`, `chore:`, `style:`, `test:`. Optional scope: `feat(nav): ...`.
 - **Keep subjects concise and under 50 chars.** Examples:
   - ✅ `fix(theme): prevent flash on load`
@@ -15,6 +16,7 @@ Standards for commits, branches, and PRs to keep history clean and reviews fast.
 - Avoid `WIP` commits on main. Use branches and squash fixups before merge.
 
 ## Branching
+
 - Create short-lived branches:
   - `feature/<slug>` for features
   - `fix/<slug>` for bug fixes
@@ -23,6 +25,7 @@ Standards for commits, branches, and PRs to keep history clean and reviews fast.
 - Rebase onto `main` to keep history linear. Resolve conflicts locally.
 
 ## Pull Requests
+
 - Open PRs for all code/config changes. Direct-commit to `main` only for trivial docs.
 - Keep PRs small and focused (preferably < 300 LOC net). Split if needed.
 - **Keep titles concise and under 60 chars.** Examples:
@@ -39,9 +42,11 @@ Standards for commits, branches, and PRs to keep history clean and reviews fast.
 - Required checks before merge: build, lint, type-check (and tests when present).
 
 ## Review and merge
+
 - Self-review the diff before requesting review/merging. Ensure no debug logs or commented code.
 - Prefer "Squash and merge" with a clean, Conventional Commit-style message summarizing the PR.
 - Delete the branch after merge.
 
 ## Solo workflow note
+
 - Even as a solo dev, use PRs for any change that can break build/runtime/deploy. This provides a gating checklist and an audit trail. Direct commits are fine for typos or pure docs.

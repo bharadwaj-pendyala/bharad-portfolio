@@ -3,12 +3,14 @@
 Shared standards for reviewing changes in this repository. Apply them to both human and AI-assisted PRs.
 
 ## Review principles
+
 - Prioritize correctness, safety, and clarity over cleverness.
 - Keep scope tight: prefer small, focused PRs.
 - Enforce server-first patterns and strict TypeScript.
 - Ensure changes align with `.cursor/rules/*` and `docs/cleanup-spec.md`.
 
 ## What to check
+
 - Architecture
   - Server Components by default. `'use client'` only where necessary.
   - Next.js App Router conventions followed (metadata, loading, error, not-found).
@@ -38,6 +40,7 @@ Shared standards for reviewing changes in this repository. Apply them to both hu
   - Tailwind `content` globs accurate; TS config strict.
 
 ## Review checklist
+
 - [ ] Build, lint, and type-check pass locally.
 - [ ] No console errors/warnings at runtime.
 - [ ] Server/client boundaries respected; `'use client'` only where required.
@@ -48,6 +51,7 @@ Shared standards for reviewing changes in this repository. Apply them to both hu
 - [ ] Docs/README updated if behavior changes.
 
 ## PR expectations
+
 - Clear summary of what/why, scope, and screenshots if UI changes.
 - Note config implications (hosting, basePath, environment variables) if any.
 - Link to or update `docs/cleanup-spec.md` when adjusting agreed standards.

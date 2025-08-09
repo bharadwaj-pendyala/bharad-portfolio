@@ -3,6 +3,7 @@
 Describe the change, motivation, and context. Link issues if applicable.
 
 ## Type of change
+
 - [ ] feat
 - [ ] fix
 - [ ] docs
@@ -12,6 +13,7 @@ Describe the change, motivation, and context. Link issues if applicable.
 - [ ] test
 
 ## Checklist
+
 - [ ] I followed repository rules in `.cursor/rules/` and `docs/cleanup-spec.md`.
 - [ ] Type-check (`tsc --noEmit`) passes locally.
 - [ ] Lint (`npm run lint`) passes.
@@ -24,9 +26,9 @@ Describe the change, motivation, and context. Link issues if applicable.
 - [ ] Docs updated (README/spec) if behavior or standards changed.
 
 ## Screenshots / recordings
+
 If UI changed, include before/after.
 
 ## Notes for reviewers
+
 Call out any trade-offs, follow-ups, or config implications (e.g., hosting/basePath, environment variables).
-
-
