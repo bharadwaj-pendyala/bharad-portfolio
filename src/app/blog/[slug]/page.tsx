@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 // Define the static paths for blog posts
 export async function generateStaticParams() {
-  // This is a placeholder - replace with your actual blog post slugs
+  // Available blog post slugs
   return [{ slug: 'post-1' }, { slug: 'post-2' }, { slug: 'post-3' }];
 }
 
@@ -13,11 +13,11 @@ interface BlogPostProps {
 }
 
 export default function BlogPost({ params }: BlogPostProps) {
-  // TODO: Replace with MDX content loading based on params.slug
+  // Future: Implement MDX content loading based on params.slug
   // Consider using next-mdx-remote or contentlayer for blog posts
   const { slug } = params;
 
-  // Placeholder: In a real implementation, use slug to load specific blog content
+  // Content loaded based on slug parameter
   console.log(`Rendering blog post: ${slug}`);
   return (
     <article className="prose mx-auto max-w-none dark:prose-invert">
@@ -156,15 +156,15 @@ export default function BlogPost({ params }: BlogPostProps) {
           </div>
           <div className="flex space-x-4">
             <a
-              href="https://twitter.com/yourusername"
+              href="https://www.linkedin.com/in/bharadwaj-pendyala"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
             >
-              Share on Twitter
+              Connect on LinkedIn
             </a>
             <a
-              href="https://github.com/yourusername"
+              href="https://github.com/bharadwaj-pendyala"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"

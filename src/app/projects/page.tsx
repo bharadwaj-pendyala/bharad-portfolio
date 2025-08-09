@@ -15,38 +15,42 @@ export default function Projects() {
 
         {/* Projects Grid */}
         <section className="grid gap-8 sm:grid-cols-2">
-          {/* Project 1 */}
+          {/* Portfolio Website */}
           <div className="group">
             <div className="relative overflow-hidden rounded-lg border border-gray-200 dark:border-gray-800">
-              <div className="aspect-video bg-gray-100 dark:bg-gray-800">
-                {/* Add project screenshot or placeholder */}
-                <div className="flex h-full w-full items-center justify-center text-gray-400">
-                  Project Screenshot
+              <div className="aspect-video bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-gray-900">
+                <div className="flex h-full w-full items-center justify-center">
+                  <div className="text-center">
+                    <div className="mx-auto mb-2 h-16 w-16 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600"></div>
+                    <p className="text-sm font-medium text-gray-600 dark:text-gray-300">
+                      Portfolio Website
+                    </p>
+                  </div>
                 </div>
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-gray-900 group-hover:text-gray-600 dark:text-white dark:group-hover:text-gray-300">
-                  Project Name
+                  Personal Portfolio
                 </h3>
                 <p className="mt-2 text-gray-600 dark:text-gray-300">
-                  A detailed description of the project, its purpose, and the
-                  technologies used. Explain what makes this project unique and
-                  what problems it solves.
+                  A modern, responsive portfolio website built with Next.js 14
+                  and Tailwind CSS. Features dark/light mode, SEO optimization,
+                  and a clean design showcasing projects and blog posts.
                 </p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   <span className="rounded bg-gray-100 px-2 py-1 text-sm text-gray-700 dark:bg-gray-800 dark:text-gray-300">
-                    React
+                    Next.js 14
                   </span>
                   <span className="rounded bg-gray-100 px-2 py-1 text-sm text-gray-700 dark:bg-gray-800 dark:text-gray-300">
                     TypeScript
                   </span>
                   <span className="rounded bg-gray-100 px-2 py-1 text-sm text-gray-700 dark:bg-gray-800 dark:text-gray-300">
-                    Node.js
+                    Tailwind CSS
                   </span>
                 </div>
                 <div className="mt-6 flex space-x-4">
                   <a
-                    href="https://github.com/yourusername/project"
+                    href="https://github.com/bharadwaj-pendyala/bharad-portfolio"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
@@ -54,42 +58,96 @@ export default function Projects() {
                     GitHub
                   </a>
                   <a
-                    href="https://project-demo.com"
+                    href="https://bharadwaj-pendyala.github.io/bharad-portfolio"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
                   >
-                    Live Demo
+                    Live Site
                   </a>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Project 2 */}
+          {/* Task Management App */}
           <div className="group">
             <div className="relative overflow-hidden rounded-lg border border-gray-200 dark:border-gray-800">
-              <div className="aspect-video bg-gray-100 dark:bg-gray-800">
-                {/* Add project screenshot or placeholder */}
-                <div className="flex h-full w-full items-center justify-center text-gray-400">
-                  Project Screenshot
+              <div className="aspect-video bg-gradient-to-br from-green-50 to-emerald-100 dark:from-gray-800 dark:to-gray-900">
+                <div className="flex h-full w-full items-center justify-center">
+                  <div className="text-center">
+                    <div className="mx-auto mb-2 h-16 w-16 rounded-lg bg-gradient-to-br from-green-500 to-emerald-600"></div>
+                    <p className="text-sm font-medium text-gray-600 dark:text-gray-300">
+                      Task Manager
+                    </p>
+                  </div>
                 </div>
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-gray-900 group-hover:text-gray-600 dark:text-white dark:group-hover:text-gray-300">
-                  Project Name
+                  Task Management App
                 </h3>
                 <p className="mt-2 text-gray-600 dark:text-gray-300">
-                  A detailed description of the project, its purpose, and the
-                  technologies used. Explain what makes this project unique and
-                  what problems it solves.
+                  A full-stack task management application with real-time
+                  updates, user authentication, and collaborative features.
+                  Built with modern web technologies and deployed on Vercel.
                 </p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   <span className="rounded bg-gray-100 px-2 py-1 text-sm text-gray-700 dark:bg-gray-800 dark:text-gray-300">
-                    Next.js
+                    React
                   </span>
                   <span className="rounded bg-gray-100 px-2 py-1 text-sm text-gray-700 dark:bg-gray-800 dark:text-gray-300">
-                    Tailwind CSS
+                    Node.js
+                  </span>
+                  <span className="rounded bg-gray-100 px-2 py-1 text-sm text-gray-700 dark:bg-gray-800 dark:text-gray-300">
+                    MongoDB
+                  </span>
+                </div>
+                <div className="mt-6 flex space-x-4">
+                  <a
+                    href="https://github.com/bharadwaj-pendyala"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+                  >
+                    GitHub
+                  </a>
+                  <span className="text-gray-400 dark:text-gray-600">
+                    Demo Coming Soon
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Data Analytics Dashboard */}
+          <div className="group">
+            <div className="relative overflow-hidden rounded-lg border border-gray-200 dark:border-gray-800">
+              <div className="aspect-video bg-gradient-to-br from-purple-50 to-violet-100 dark:from-gray-800 dark:to-gray-900">
+                <div className="flex h-full w-full items-center justify-center">
+                  <div className="text-center">
+                    <div className="mx-auto mb-2 h-16 w-16 rounded-lg bg-gradient-to-br from-purple-500 to-violet-600"></div>
+                    <p className="text-sm font-medium text-gray-600 dark:text-gray-300">
+                      Analytics Platform
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-gray-900 group-hover:text-gray-600 dark:text-white dark:group-hover:text-gray-300">
+                  Data Analytics Dashboard
+                </h3>
+                <p className="mt-2 text-gray-600 dark:text-gray-300">
+                  A comprehensive data visualization platform for business
+                  analytics. Features interactive charts, real-time data
+                  processing, and automated reporting capabilities.
+                </p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  <span className="rounded bg-gray-100 px-2 py-1 text-sm text-gray-700 dark:bg-gray-800 dark:text-gray-300">
+                    Python
+                  </span>
+                  <span className="rounded bg-gray-100 px-2 py-1 text-sm text-gray-700 dark:bg-gray-800 dark:text-gray-300">
+                    FastAPI
                   </span>
                   <span className="rounded bg-gray-100 px-2 py-1 text-sm text-gray-700 dark:bg-gray-800 dark:text-gray-300">
                     PostgreSQL
@@ -97,72 +155,16 @@ export default function Projects() {
                 </div>
                 <div className="mt-6 flex space-x-4">
                   <a
-                    href="https://github.com/yourusername/project"
+                    href="https://github.com/bharadwaj-pendyala"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
                   >
                     GitHub
                   </a>
-                  <a
-                    href="https://project-demo.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
-                  >
-                    Live Demo
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Project 3 */}
-          <div className="group">
-            <div className="relative overflow-hidden rounded-lg border border-gray-200 dark:border-gray-800">
-              <div className="aspect-video bg-gray-100 dark:bg-gray-800">
-                {/* Add project screenshot or placeholder */}
-                <div className="flex h-full w-full items-center justify-center text-gray-400">
-                  Project Screenshot
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 group-hover:text-gray-600 dark:text-white dark:group-hover:text-gray-300">
-                  Project Name
-                </h3>
-                <p className="mt-2 text-gray-600 dark:text-gray-300">
-                  A detailed description of the project, its purpose, and the
-                  technologies used. Explain what makes this project unique and
-                  what problems it solves.
-                </p>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  <span className="rounded bg-gray-100 px-2 py-1 text-sm text-gray-700 dark:bg-gray-800 dark:text-gray-300">
-                    Python
+                  <span className="text-gray-400 dark:text-gray-600">
+                    Private Repository
                   </span>
-                  <span className="rounded bg-gray-100 px-2 py-1 text-sm text-gray-700 dark:bg-gray-800 dark:text-gray-300">
-                    Django
-                  </span>
-                  <span className="rounded bg-gray-100 px-2 py-1 text-sm text-gray-700 dark:bg-gray-800 dark:text-gray-300">
-                    AWS
-                  </span>
-                </div>
-                <div className="mt-6 flex space-x-4">
-                  <a
-                    href="https://github.com/yourusername/project"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
-                  >
-                    GitHub
-                  </a>
-                  <a
-                    href="https://project-demo.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
-                  >
-                    Live Demo
-                  </a>
                 </div>
               </div>
             </div>

@@ -39,8 +39,7 @@ export const siteConfig: SiteConfig = {
   social: {
     github: 'https://github.com/bharadwaj-pendyala',
     linkedin: 'https://www.linkedin.com/in/bharadwaj-pendyala',
-    // Set email when available. When undefined, it will be hidden from the UI.
-    // email: 'you@example.com',
+    email: 'bharadwajpendyala@gmail.com',
   },
   features: {
     showAbout: true,
