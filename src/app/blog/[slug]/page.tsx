@@ -26,14 +26,14 @@ export default function BlogPost({
       <div className="mb-8">
         <Link
           href="/blog"
-          className="text-secondary transition-colors hover:text-foreground"
+          className="font-mono text-secondary transition-colors hover:text-foreground"
         >
           ← Back to Blog
         </Link>
       </div>
 
       <header className="mb-8">
-        <div className="mb-4 flex items-center space-x-4 text-sm text-muted">
+        <div className="mb-4 flex items-center space-x-4 font-mono text-sm text-muted">
           <time dateTime="2024-03-19">March 19, 2024</time>
           <span>•</span>
           <span>5 min read</span>
@@ -42,13 +42,13 @@ export default function BlogPost({
           Building a Modern Portfolio with Next.js and Tailwind CSS
         </h1>
         <div className="flex flex-wrap gap-2">
-          <span className="bg-muted/20 rounded px-2 py-1 text-sm text-secondary">
+          <span className="rounded bg-muted px-2 py-1 font-mono text-sm text-foreground">
             Next.js
           </span>
-          <span className="bg-muted/20 rounded px-2 py-1 text-sm text-secondary">
+          <span className="rounded bg-muted px-2 py-1 font-mono text-sm text-foreground">
             Tailwind CSS
           </span>
-          <span className="bg-muted/20 rounded px-2 py-1 text-sm text-secondary">
+          <span className="rounded bg-muted px-2 py-1 font-mono text-sm text-foreground">
             Web Development
           </span>
         </div>
@@ -71,8 +71,8 @@ export default function BlogPost({
           command:
         </p>
 
-        <pre className="overflow-x-auto rounded-lg bg-gray-100 p-4 dark:bg-gray-800">
-          <code>
+        <pre className="overflow-x-auto rounded-lg bg-muted p-4">
+          <code className="font-mono text-foreground">
             npx create-next-app@latest portfolio --typescript --tailwind
             --eslint
           </code>
@@ -85,18 +85,30 @@ export default function BlogPost({
           how we&apos;ll organize our project:
         </p>
 
-        <ul>
-          <li>
-            <code>src/app</code> - Contains all our pages and layouts
+        <ul className="space-y-2">
+          <li className="font-mono">
+            <code className="rounded bg-muted px-2 py-1 text-accent">
+              src/app
+            </code>{' '}
+            - Contains all our pages and layouts
           </li>
-          <li>
-            <code>src/components</code> - Reusable React components
+          <li className="font-mono">
+            <code className="rounded bg-muted px-2 py-1 text-accent">
+              src/components
+            </code>{' '}
+            - Reusable React components
           </li>
-          <li>
-            <code>src/styles</code> - Global styles and Tailwind configuration
+          <li className="font-mono">
+            <code className="rounded bg-muted px-2 py-1 text-accent">
+              src/styles
+            </code>{' '}
+            - Global styles and Tailwind configuration
           </li>
-          <li>
-            <code>public</code> - Static assets like images and fonts
+          <li className="font-mono">
+            <code className="rounded bg-muted px-2 py-1 text-accent">
+              public
+            </code>{' '}
+            - Static assets like images and fonts
           </li>
         </ul>
 
@@ -129,11 +141,11 @@ export default function BlogPost({
           including:
         </p>
 
-        <ul>
-          <li>Automatic image optimization</li>
-          <li>Font optimization</li>
-          <li>Route prefetching</li>
-          <li>Static and server-side rendering</li>
+        <ul className="space-y-2 font-mono">
+          <li>• Automatic image optimization</li>
+          <li>• Font optimization</li>
+          <li>• Route prefetching</li>
+          <li>• Static and server-side rendering</li>
         </ul>
 
         <p>
@@ -151,17 +163,15 @@ export default function BlogPost({
         </p>
       </div>
 
-      <footer className="mt-12 border-t border-gray-200 pt-8 dark:border-gray-800">
+      <footer className="mt-12 border-t border-border pt-8">
         <div className="flex items-center justify-between">
-          <div className="text-gray-600 dark:text-gray-400">
-            Written by Bharad
-          </div>
+          <div className="font-mono text-muted">Written by Bharad</div>
           <div className="flex space-x-4">
             <a
               href="https://www.linkedin.com/in/bharadwaj-pendyala"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+              className="font-mono text-muted transition-colors hover:text-accent"
             >
               Connect on LinkedIn
             </a>
@@ -169,7 +179,7 @@ export default function BlogPost({
               href="https://github.com/bharadwaj-pendyala"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+              className="font-mono text-muted transition-colors hover:text-accent"
             >
               View on GitHub
             </a>

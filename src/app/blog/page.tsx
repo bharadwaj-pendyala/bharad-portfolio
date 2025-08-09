@@ -22,7 +22,7 @@ export default function Blog() {
           <TerminalCommand command="ls -la ~/posts/" />
           <TerminalOutput>
             <div className="space-y-2">
-              <div className="mb-4 text-sm text-secondary">
+              <div className="mb-4 font-mono text-sm text-secondary">
                 Thoughts, tutorials, and insights about software development,
                 modern technologies, and problem-solving.
               </div>
@@ -37,27 +37,27 @@ export default function Blog() {
         <article className="group">
           <Link href="/blog/post-1" className="block">
             <div className="space-y-4">
-              <div className="flex items-center space-x-4 text-sm text-gray-500 dark:text-gray-400">
+              <div className="flex items-center space-x-4 font-mono text-sm text-muted">
                 <time dateTime="2024-03-19">March 19, 2024</time>
                 <span>•</span>
                 <span>5 min read</span>
               </div>
-              <h2 className="text-2xl font-bold text-gray-900 group-hover:text-gray-600 dark:text-white dark:group-hover:text-gray-300">
+              <h2 className="text-2xl font-bold text-foreground group-hover:text-accent">
                 Building a Modern Portfolio with Next.js and Tailwind CSS
               </h2>
-              <p className="text-gray-600 dark:text-gray-300">
+              <p className="text-muted">
                 Learn how to create a beautiful and performant portfolio website
                 using Next.js and Tailwind CSS. This guide covers everything
                 from setup to deployment.
               </p>
               <div className="flex flex-wrap gap-2">
-                <span className="rounded bg-gray-100 px-2 py-1 text-sm text-gray-700 dark:bg-gray-800 dark:text-gray-300">
+                <span className="rounded bg-muted px-2 py-1 font-mono text-sm text-foreground">
                   Next.js
                 </span>
-                <span className="rounded bg-gray-100 px-2 py-1 text-sm text-gray-700 dark:bg-gray-800 dark:text-gray-300">
+                <span className="rounded bg-muted px-2 py-1 font-mono text-sm text-foreground">
                   Tailwind CSS
                 </span>
-                <span className="rounded bg-gray-100 px-2 py-1 text-sm text-gray-700 dark:bg-gray-800 dark:text-gray-300">
+                <span className="rounded bg-muted px-2 py-1 font-mono text-sm text-foreground">
                   Web Development
                 </span>
               </div>
@@ -69,27 +69,27 @@ export default function Blog() {
         <article className="group">
           <Link href="/blog/post-2" className="block">
             <div className="space-y-4">
-              <div className="flex items-center space-x-4 text-sm text-gray-500 dark:text-gray-400">
+              <div className="flex items-center space-x-4 font-mono text-sm text-muted">
                 <time dateTime="2024-03-18">March 18, 2024</time>
                 <span>•</span>
                 <span>8 min read</span>
               </div>
-              <h2 className="text-2xl font-bold text-gray-900 group-hover:text-gray-600 dark:text-white dark:group-hover:text-gray-300">
+              <h2 className="text-2xl font-bold text-foreground group-hover:text-accent">
                 The Future of Web Development: Trends to Watch in 2024
               </h2>
-              <p className="text-gray-600 dark:text-gray-300">
+              <p className="text-muted">
                 Explore the latest trends in web development, from AI
                 integration to new frameworks and tools. Stay ahead of the curve
                 with these insights.
               </p>
               <div className="flex flex-wrap gap-2">
-                <span className="rounded bg-gray-100 px-2 py-1 text-sm text-gray-700 dark:bg-gray-800 dark:text-gray-300">
+                <span className="rounded bg-muted px-2 py-1 font-mono text-sm text-foreground">
                   Web Development
                 </span>
-                <span className="rounded bg-gray-100 px-2 py-1 text-sm text-gray-700 dark:bg-gray-800 dark:text-gray-300">
+                <span className="rounded bg-muted px-2 py-1 font-mono text-sm text-foreground">
                   Technology
                 </span>
-                <span className="rounded bg-gray-100 px-2 py-1 text-sm text-gray-700 dark:bg-gray-800 dark:text-gray-300">
+                <span className="rounded bg-muted px-2 py-1 font-mono text-sm text-foreground">
                   Future Trends
                 </span>
               </div>
@@ -101,27 +101,27 @@ export default function Blog() {
         <article className="group">
           <Link href="/blog/post-3" className="block">
             <div className="space-y-4">
-              <div className="flex items-center space-x-4 text-sm text-gray-500 dark:text-gray-400">
+              <div className="flex items-center space-x-4 font-mono text-sm text-muted">
                 <time dateTime="2024-03-17">March 17, 2024</time>
                 <span>•</span>
                 <span>6 min read</span>
               </div>
-              <h2 className="text-2xl font-bold text-gray-900 group-hover:text-gray-600 dark:text-white dark:group-hover:text-gray-300">
+              <h2 className="text-2xl font-bold text-foreground group-hover:text-accent">
                 Best Practices for Building Scalable Applications
               </h2>
-              <p className="text-gray-600 dark:text-gray-300">
+              <p className="text-muted">
                 Discover the key principles and practices for building
                 applications that can grow with your user base. Learn about
                 architecture, performance, and maintainability.
               </p>
               <div className="flex flex-wrap gap-2">
-                <span className="rounded bg-gray-100 px-2 py-1 text-sm text-gray-700 dark:bg-gray-800 dark:text-gray-300">
+                <span className="rounded bg-muted px-2 py-1 font-mono text-sm text-foreground">
                   Architecture
                 </span>
-                <span className="rounded bg-gray-100 px-2 py-1 text-sm text-gray-700 dark:bg-gray-800 dark:text-gray-300">
+                <span className="rounded bg-muted px-2 py-1 font-mono text-sm text-foreground">
                   Performance
                 </span>
-                <span className="rounded bg-gray-100 px-2 py-1 text-sm text-gray-700 dark:bg-gray-800 dark:text-gray-300">
+                <span className="rounded bg-muted px-2 py-1 font-mono text-sm text-foreground">
                   Best Practices
                 </span>
               </div>
