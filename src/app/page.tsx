@@ -1,72 +1,153 @@
-import TerminalHero from '@/components/TerminalHero';
+import EnhancedTerminalHero from '@/components/EnhancedTerminalHero';
+import EnhancedStatsSection from '@/components/EnhancedStatsSection';
 import NavigationCards from '@/components/NavigationCards';
-import TerminalSession from '@/components/TerminalSession';
 
 export default function Home(): JSX.Element {
   return (
-    <div className="container mx-auto max-w-4xl px-6 py-8">
-      {/* Terminal Hero Section */}
+    <div className="container mx-auto max-w-5xl px-6 py-8">
+      {/* Enhanced Terminal Hero Section */}
+      <section className="mb-16">
+        <EnhancedTerminalHero />
+      </section>
+
+      {/* Navigation Cards with Professional Enhancement */}
       <section className="mb-16">
         <div className="card border-card-border bg-card-bg">
-          <div className="relative">
-            {/* Terminal window decorations */}
-            <div className="mb-4 flex items-center space-x-2 border-b border-card-border pb-3">
-              <div className="h-3 w-3 rounded-full bg-red-500"></div>
-              <div className="h-3 w-3 rounded-full bg-yellow-500"></div>
-              <div className="h-3 w-3 rounded-full bg-green-500"></div>
-              <span className="ml-4 font-mono text-xs text-muted">
-                bharad@portfolio:~
-              </span>
+          <div className="mb-6 flex items-center space-x-2 border-b border-card-border pb-3">
+            <div className="h-3 w-3 rounded-full bg-red-500"></div>
+            <div className="h-3 w-3 rounded-full bg-yellow-500"></div>
+            <div className="h-3 w-3 rounded-full bg-green-500"></div>
+            <span className="ml-4 font-mono text-xs text-muted">
+              bharad@portfolio:~/navigate
+            </span>
+          </div>
+
+          <div className="space-y-4">
+            <div className="font-mono text-sm">
+              <span className="text-accent">$</span>
+              <span className="ml-2 text-foreground">ls -la ~/portfolio</span>
             </div>
 
-            {/* Animated terminal content */}
-            <TerminalHero className="min-h-[200px]" />
+            <div className="pl-4">
+              <p className="mb-6 text-sm text-muted">
+                Explore different sections of my professional portfolio. Each
+                directory contains detailed information about my work and
+                expertise.
+              </p>
+              <NavigationCards />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Navigation Cards */}
+      {/* Enhanced Stats Section */}
       <section className="mb-16">
-        <div className="mb-6">
-          <h2 className="mb-2 text-lg font-medium text-foreground">
-            Available Files & Directories
-          </h2>
-          <p className="text-sm text-secondary">
-            Click on any item to explore different sections of the portfolio
-          </p>
-        </div>
-        <NavigationCards />
+        <EnhancedStatsSection />
       </section>
 
-      {/* Terminal Session Preview */}
+      {/* Professional Summary */}
       <section className="mb-16">
         <div className="card border-card-border bg-card-bg">
-          <div className="mb-4">
-            <h3 className="mb-1 text-base font-medium text-foreground">
-              Demo Session
-            </h3>
-            <p className="text-sm text-secondary">
-              Example commands and typical terminal usage
-            </p>
+          <div className="mb-6 flex items-center space-x-2 border-b border-card-border pb-3">
+            <div className="h-3 w-3 rounded-full bg-red-500"></div>
+            <div className="h-3 w-3 rounded-full bg-yellow-500"></div>
+            <div className="h-3 w-3 rounded-full bg-green-500"></div>
+            <span className="ml-4 font-mono text-xs text-muted">
+              bharad@portfolio:~/summary
+            </span>
           </div>
-          <TerminalSession />
-        </div>
-      </section>
 
-      {/* Quick Stats */}
-      <section>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-          <div className="card text-center">
-            <div className="mb-1 text-2xl font-bold text-accent">5+</div>
-            <div className="text-sm text-secondary">Years Experience</div>
-          </div>
-          <div className="card text-center">
-            <div className="mb-1 text-2xl font-bold text-accent">20+</div>
-            <div className="text-sm text-secondary">Projects Completed</div>
-          </div>
-          <div className="card text-center">
-            <div className="mb-1 text-2xl font-bold text-accent">10+</div>
-            <div className="text-sm text-secondary">Technologies</div>
+          <div className="grid gap-8 md:grid-cols-2">
+            {/* Technical Focus */}
+            <div className="space-y-4">
+              <div className="font-mono text-sm">
+                <span className="text-accent">$</span>
+                <span className="ml-2 text-foreground">
+                  cat technical_focus.md
+                </span>
+              </div>
+
+              <div className="space-y-3 pl-4">
+                <h3 className="text-lg font-semibold text-foreground">
+                  🎯 Technical Excellence
+                </h3>
+                <ul className="space-y-2 text-sm text-muted">
+                  <li className="flex items-start space-x-2">
+                    <span className="mt-1 text-accent">•</span>
+                    <span>
+                      Full-stack development with modern JavaScript/TypeScript
+                      ecosystem
+                    </span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <span className="mt-1 text-accent">•</span>
+                    <span>
+                      Scalable architecture design and microservices
+                      implementation
+                    </span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <span className="mt-1 text-accent">•</span>
+                    <span>
+                      DevOps practices including CI/CD, containerization, and
+                      cloud deployment
+                    </span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <span className="mt-1 text-accent">•</span>
+                    <span>
+                      Performance optimization and user experience enhancement
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Professional Impact */}
+            <div className="space-y-4">
+              <div className="font-mono text-sm">
+                <span className="text-accent">$</span>
+                <span className="ml-2 text-foreground">
+                  grep -i &quot;impact&quot; career.log
+                </span>
+              </div>
+
+              <div className="space-y-3 pl-4">
+                <h3 className="text-lg font-semibold text-foreground">
+                  💼 Professional Impact
+                </h3>
+                <ul className="space-y-2 text-sm text-muted">
+                  <li className="flex items-start space-x-2">
+                    <span className="mt-1 text-accent">•</span>
+                    <span>
+                      Led development teams in delivering complex projects on
+                      time and within budget
+                    </span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <span className="mt-1 text-accent">•</span>
+                    <span>
+                      Improved application performance by 40% through
+                      optimization strategies
+                    </span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <span className="mt-1 text-accent">•</span>
+                    <span>
+                      Mentored junior developers and established coding best
+                      practices
+                    </span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <span className="mt-1 text-accent">•</span>
+                    <span>
+                      Contributed to open-source projects with 1000+ GitHub
+                      stars
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </section>
