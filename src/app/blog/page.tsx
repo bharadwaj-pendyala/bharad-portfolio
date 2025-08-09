@@ -1,18 +1,35 @@
 import Link from 'next/link';
+import TerminalCommand from '@/components/TerminalCommand';
+import TerminalOutput from '@/components/TerminalOutput';
 
 export default function Blog() {
   return (
-    <div className="space-y-16">
-      {/* Header */}
-      <section className="space-y-4">
-        <h1 className="text-4xl font-bold text-gray-900 dark:text-white">
-          Blog
-        </h1>
-        <p className="max-w-2xl text-xl text-gray-600 dark:text-gray-300">
-          Thoughts, tutorials, and insights about software development,
-          technology, and more.
-        </p>
-      </section>
+    <div className="container mx-auto max-w-4xl px-6 py-8">
+      {/* Terminal Header */}
+      <div className="card bg-card-bg border-card-border mb-8">
+        <div className="border-card-border mb-4 border-b pb-3">
+          <div className="flex items-center space-x-2">
+            <div className="h-3 w-3 rounded-full bg-red-500"></div>
+            <div className="h-3 w-3 rounded-full bg-yellow-500"></div>
+            <div className="h-3 w-3 rounded-full bg-green-500"></div>
+            <span className="ml-4 font-mono text-xs text-muted">
+              bharad@portfolio:~/posts
+            </span>
+          </div>
+        </div>
+
+        <div className="space-y-4">
+          <TerminalCommand command="ls -la ~/posts/" />
+          <TerminalOutput>
+            <div className="space-y-2">
+              <div className="mb-4 text-sm text-secondary">
+                Thoughts, tutorials, and insights about software development,
+                modern technologies, and problem-solving.
+              </div>
+            </div>
+          </TerminalOutput>
+        </div>
+      </div>
 
       {/* Blog Posts */}
       <section className="space-y-12">
