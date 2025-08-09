@@ -1,4 +1,4 @@
-import { MetadataRoute } from 'next';
+import type { MetadataRoute } from 'next';
 import { absoluteUrl, siteConfig } from '@/config/site';
 
 export default function sitemap(): MetadataRoute.Sitemap {

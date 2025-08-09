@@ -1,4 +1,4 @@
-import { MetadataRoute } from 'next';
+import type { MetadataRoute } from 'next';
 import { absoluteUrl } from '@/config/site';
 
 export default function robots(): MetadataRoute.Robots {
