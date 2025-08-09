@@ -1,118 +1,106 @@
-# Cursor Rules for bharad-portfolio
+# Project-Specific Rules for portfolio
 
-These rules guide AI-assisted edits and reviews in this repository. Favor clarity, type safety, and minimal diffs aligned with the existing stack.
+Core guidelines for this portfolio project. These rules take precedence over all other cursor rules.
 
-## Project overview and priorities
+## Project Philosophy
 
-- Keep the portfolio lean, fast, and accessible.
-- Prefer stability and DX over adding new dependencies.
-- Maintain strict TypeScript and modern Next.js 14 App Router conventions.
+**Lean & Fast**: Prioritize performance and simplicity over features.
+**Type-Safe**: Strict TypeScript with zero tolerance for `any` or unsafe patterns.
+**Accessible**: WCAG 2.1 AA compliance by default.
+**Minimal Dependencies**: Only add dependencies that provide significant value.
 
-## Tech-stack standards
+## Tech Stack
 
-- Framework: Next.js 14 App Router (`src/app`), ESM, SWC.
-- Language: TypeScript (strict), path alias `@/*` → `./src/*`.
-- Styling: Tailwind CSS with plugins (typography, forms, aspect-ratio).
-- Theming: `next-themes` (class strategy, `ThemeProvider`).
-- Fonts: `next/font` (Google `Spectral`) with CSS variable `--font-spectral`.
-- Images: Prefer `next/image` for all non-icon images.
-- Config: Avoid custom webpack/terser; keep `next.config.js` minimal.
-- Export/hosting: Decide Vercel vs GitHub Pages; respect `basePath` only if doing static export.
+| Category | Technology | Requirements |
+|----------|------------|--------------|
+| **Framework** | Next.js 14 App Router | Server Components first, `src/app` structure |
+| **Language** | TypeScript (strict) | Path alias `@/*`, no `any` types |
+| **Styling** | Tailwind CSS | Theme tokens only, minimal custom CSS |
+| **Theming** | `next-themes` | Class strategy, proper SSR handling |
+| **Fonts** | `next/font` (Spectral) | CSS variables, display swap |
+| **Images** | `next/image` | Required for all non-icons |
+| **Config** | Minimal setup | No custom webpack, SWC only |
 
-## Coding standards (TypeScript/React/Next)
+## Non-Negotiable Patterns
 
-- TypeScript
-  - Use explicit function signatures for exported/public APIs.
-  - Avoid `any` and unsafe casts; model domains with precise types.
-  - Prefer `type` aliases and discriminated unions; avoid enums unless necessary.
-  - Use `const` by default; narrow types with guards; prefer early returns.
-  - Keep files focused; extract pure helpers into `src/lib`.
+### ✅ Required Patterns
+```typescript
+// ✅ Server Components (default)
+export default function Page() {
+  return <main>...</main>
+}
 
-- React/Next.js
-  - Server Components by default. Use `'use client'` only when strictly needed (event handlers, `next-themes`, browser APIs).
-  - No `React.FC`. Use named function components.
-  - Use `next/link` for internal navigation, `next/navigation` for router hooks in client components.
-  - Use Next metadata API (`export const metadata`, `viewport`) not `<Head/>`.
-  - Prefer static generation with `generateStaticParams` where applicable.
-  - Co-locate route UI under `src/app/**` with minimal cross-route coupling.
-  - Avoid reading process env in the client except `NEXT_PUBLIC_*`.
+// ✅ Type-safe props
+type Props = {
+  id: string
+  data: UserData | null
+}
 
-- Tailwind/CSS
-  - Prefer utilities over custom CSS. Keep `globals.css` minimal (variables, resets, a11y).
-  - Use theme tokens defined in `tailwind.config.ts`:
-    - Colors: `text-primary`, `text-secondary`, `text-muted`, `border-border`, `bg-background`, `text-foreground`.
-    - Do not use custom `*-color` utility names in class strings.
-  - Do not use universal `* { transition: ... }` rules; scope transitions to interactive elements.
-  - Define keyframes/animations in Tailwind config when reusable; keep `@keyframes` well-formed.
-  - Prefer `container mx-auto max-w-4xl px-6` pattern used in this repo or Tailwind container plugin consistently.
+// ✅ Theme tokens
+<div className="bg-background text-foreground border-border">
 
-## Project structure conventions
+// ✅ Path imports
+import { utils } from '@/lib/utils'
+```
 
-- `src/app`: routes, layouts, and error/not-found files.
-- `src/components`: reusable components (server-first; client only when necessary).
-- `src/config/site.ts`: single source for site metadata, navigation, social links, and feature toggles.
-- `src/lib`: framework-agnostic helpers.
-- `src/types`: shared types.
+### ❌ Forbidden Patterns
+```typescript
+// ❌ Client components without necessity
+'use client'
+export default function Page() { ... }
 
-## Accessibility
+// ❌ Any unsafe types
+const data: any = response
+const user = data as unknown as User
 
-- Use semantic HTML, correct heading hierarchy, and labels.
-- Ensure focus states (`:focus-visible`) are visible in both themes.
-- Provide alt text for images; avoid title-only links; use accessible names for interactive controls.
+// ❌ Custom colors when tokens exist
+<div className="bg-blue-500 text-gray-900">
 
-## Performance
+// ❌ Relative deep imports
+import { utils } from '../../../lib/utils'
+```
 
-- Use `next/image` and `next/font` optimizations.
-- Minimize client-side code; avoid unnecessary state and effects.
-- Avoid global CSS that triggers layout/reflow on theme toggles.
-- Keep bundle size small; prefer static rendering; no custom webpack chunking.
+## Project Structure
 
-## SEO
+```
+src/
+├── app/              # Next.js App Router (routes, layouts, error boundaries)
+├── components/       # Reusable components (Server Components first)
+├── config/
+│   └── site.ts      # Single source for metadata, nav, social links
+├── lib/             # Framework-agnostic utilities
+└── types/           # Shared TypeScript types
+```
 
-- Centralize metadata in layout using `site` config.
-- Provide `sitemap` and `robots` routes; include Open Graph/Twitter metadata and preview images.
+## Quick Reference
 
-## Security
+**When making any change:**
+1. **Check dependencies** - Use existing tech stack, avoid new deps
+2. **Maintain type safety** - No `any`, explicit types for exports
+3. **Server Components first** - Only use `'use client'` when required
+4. **Use theme tokens** - `text-primary`, `bg-background`, etc.
+5. **Test accessibility** - Semantic HTML, keyboard nav, screen readers
+6. **Verify performance** - Core Web Vitals, bundle size impact
 
-- Never commit secrets. Only expose `NEXT_PUBLIC_*` to the client.
-- Sanitize external links with `rel="noopener noreferrer"` and `target="_blank"` where appropriate.
+## AI Assistant Checklist
 
-## Git and PR conventions
+Before completing any edit:
+- [ ] **Build passes** - `npm run build` succeeds
+- [ ] **Types check** - `tsc --noEmit` passes
+- [ ] **Linting passes** - `npm run lint` succeeds
+- [ ] **No console errors** - Runtime is clean
+- [ ] **Server/client boundaries** - `'use client'` only when necessary
+- [ ] **Theme tokens used** - No hardcoded colors
+- [ ] **Accessibility maintained** - Semantic HTML, keyboard nav
+- [ ] **Imports use aliases** - `@/*` for local modules
+- [ ] **No new dependencies** - Unless absolutely required and justified
 
-- Commit messages: `feat:`, `fix:`, `docs:`, `refactor:`, `chore:`, `style:`, `test:`.
-- Keep diffs minimal and scoped. Update related docs when changing behavior (`README.md`, `docs/cleanup-spec.md`).
+## Override Rules
 
-## Cursor usage guidelines
+This project-specific rule file takes precedence over:
+- Generic coding standards
+- Language-specific rules
+- Technology-specific rules
+- Cross-cutting standards
 
-- When generating or editing code:
-  - Follow these rules and existing code style. Keep changes tightly scoped.
-  - Maintain type safety; add/import types as needed.
-  - Avoid introducing new dependencies unless justified and documented.
-  - Prefer server components; add `'use client'` only when required.
-  - Align Tailwind classnames with configured theme tokens; avoid ad-hoc color literals when a token exists.
-  - Ensure imports use `@/*` alias for local modules.
-  - If touching config (`next.config.js`, `tailwind.config.ts`, `tsconfig.json`), explain implications in the PR description.
-
-- When adding routes/pages:
-  - Place in `src/app/**`; export `metadata` when needed; ensure 404/edge cases are handled.
-  - Use `generateStaticParams` and static rendering when possible.
-
-- When editing global styles:
-  - Do not add universal selectors that animate colors or layout.
-  - Keep variables in `:root` and `.dark` only; prefer Tailwind utilities elsewhere.
-
-## Disallowed/avoid patterns
-
-- Custom webpack/terser in `next.config.js` unless absolutely required.
-- Deprecated Next.js experimental flags (e.g., `experimental.optimizeCss`).
-- Importing from `pages/` router or mixing routing paradigms.
-- Using `any`, broad `as unknown as`, or suppressing errors with `//@ts-ignore`.
-- Hardcoding social links or nav in multiple places; must come from `src/config/site.ts`.
-
-## Acceptance checklist for AI edits
-
-- Type-check, lint, and build pass.
-- No runtime console errors.
-- Tailwind classes align with theme tokens.
-- Server/client boundaries respected; `'use client'` only where needed.
-- Accessibility is preserved or improved.
+*See `.cursor/rules/meta-rule-index.md` for complete rule hierarchy.*

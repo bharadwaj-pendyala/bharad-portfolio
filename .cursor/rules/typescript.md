@@ -1,49 +1,128 @@
-# TypeScript Rules
+# TypeScript Standards
 
-These rules align with Awesome Cursor Rules principles and this repo's standards. Optimize for clarity, safety, and maintainability.
+Strict type safety and modern TypeScript patterns for maintainable code.
 
-## Language and compiler
+## Compiler Configuration
 
-- Enable and keep strictness: `strict`, `noImplicitAny`, `noImplicitThis`, `strictNullChecks`, `noUnusedLocals`, `noUnusedParameters`.
-- Keep `moduleResolution: bundler` and ESM imports; prefer named imports.
-- Use path alias `@/*` for local modules. Avoid relative deep paths (`../../../`).
+**Required settings** (already configured in `tsconfig.json`):
+- `strict: true` - All strictness flags enabled
+- `moduleResolution: "bundler"` - Modern import resolution
+- `noUnusedLocals: true` - No unused variables
+- `noUnusedParameters: true` - No unused function parameters
 
-## Types and interfaces
+**Import patterns**:
+- ✅ `import { utils } from '@/lib/utils'` (path alias)
+- ✅ `import type { User } from '@/types'` (type-only imports)
+- ❌ `import { utils } from '../../../lib/utils'` (deep relative paths)
 
-- Prefer `type` aliases and discriminated unions for domain modeling.
-- Avoid `enum` unless interoperating with external constraints; use union types or string literals.
-- Export precise types for public APIs; keep internal types module-local.
-- Use utility types (`Pick`, `Omit`, `Partial`, `Readonly`, `Record`) to avoid duplication.
-- For nullable data, encode explicitly (`T | null`) and narrow early with guards.
+## Type Definitions
 
-## Safety and casts
+```typescript
+// ✅ Preferred patterns
+type Status = 'loading' | 'success' | 'error'  // Union types over enums
+type User = {
+  id: string
+  name: string
+  email: string | null  // Explicit nullability
+}
 
-- Forbid `any`, `unknown as`, and `//@ts-ignore`. Use type guards, predicates, and exhaustive switches.
-- Avoid non-null assertions (`!`) except in tightly scoped, proven-safe spots.
-- Prefer narrow function parameters and explicit return types for exported functions/components.
+// ✅ Discriminated unions for complex states
+type AsyncState<T> =
+  | { status: 'loading' }
+  | { status: 'success'; data: T }
+  | { status: 'error'; error: string }
 
-## Naming and structure
+// ✅ Utility types for transformations
+type PartialUser = Partial<User>
+type UserEmail = Pick<User, 'email'>
 
-- Use descriptive names: functions as verbs, values as nouns (e.g., `loadUserProfile`, `userIdToUser`).
-- Organize files by concern; extract pure helpers into `src/lib` with explicit signatures.
-- Keep files focused (< ~200 lines when practical). Split types to `src/types` only when shared broadly.
+// ❌ Avoid these patterns
+enum Status { Loading, Success, Error }  // Use union types instead
+type User = any  // Never use any
+```
 
-## Control flow
+## Type Safety
 
-- Use guard clauses and early returns over deep nesting.
-- Prefer pure functions; avoid hidden side effects. Make async boundaries explicit.
+**Forbidden patterns**:
+- `any` - Use proper types or `unknown`
+- `as unknown as T` - Use type guards instead
+- `//@ts-ignore` - Fix the underlying issue
+- `user!.email` - Use optional chaining `user?.email`
 
-## Errors and results
+**Type guards and narrowing**:
+```typescript
+// ✅ Type guard functions
+function isUser(value: unknown): value is User {
+  return typeof value === 'object' && value !== null && 'id' in value
+}
 
-- Model recoverable failures with discriminated unions (e.g., `{ ok: false; error: 'NotFound' }`).
-- Throw for truly exceptional cases only. Catch at route/handler boundaries and map to user-facing errors.
+// ✅ Early returns for narrowing
+function processUser(user: User | null) {
+  if (!user) return
 
-## React/JSX specifics
+  // user is now narrowed to User type
+  console.log(user.name)
+}
+```
 
-- No `React.FC`. Use named function components with typed props and explicit return types when exported.
-- Derive props types (`type Props = { ... }`) close to the component. Avoid sprawling prop bags; prefer composition.
+## Function Signatures
 
-## Testing and DX
+**Export functions need explicit types**:
+```typescript
+// ✅ Exported functions with explicit return types
+export function getUserById(id: string): Promise<User | null> {
+  // Implementation
+}
 
-- Add `type-check` (`tsc --noEmit`) to CI and local scripts.
-- Keep dead code out. Remove unused exports promptly.
+export function formatDate(date: Date): string {
+  // Implementation
+}
+
+// ✅ Internal functions can use inference
+function processData(data: RawData) {
+  // Return type inferred
+  return data.map(item => item.value)
+}
+```
+
+## React Components
+
+```typescript
+// ✅ Preferred component pattern
+type Props = {
+  user: User
+  onSelect?: (id: string) => void
+}
+
+export default function UserCard({ user, onSelect }: Props) {
+  // Component implementation
+}
+
+// ❌ Avoid React.FC
+const UserCard: React.FC<Props> = ({ user, onSelect }) => {
+  // Don't use this pattern
+}
+```
+
+## Error Handling
+
+```typescript
+// ✅ Result pattern for recoverable errors
+type Result<T, E = string> =
+  | { success: true; data: T }
+  | { success: false; error: E }
+
+async function fetchUser(id: string): Promise<Result<User>> {
+  try {
+    const user = await api.getUser(id)
+    return { success: true, data: user }
+  } catch (error) {
+    return { success: false, error: 'Failed to fetch user' }
+  }
+}
+
+// ✅ Throw only for truly exceptional cases
+if (process.env.NODE_ENV === 'production' && !apiKey) {
+  throw new Error('API key is required in production')
+}
+```

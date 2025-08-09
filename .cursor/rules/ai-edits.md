@@ -1,36 +1,65 @@
-# AI Edit and Process Rules
+# AI-Assisted Editing Workflow
 
-Standards for AI-assisted edits to keep diffs minimal, safe, and aligned with the stack.
+Streamlined process for AI code changes to ensure quality and consistency.
 
-## General principles
+## Pre-Edit Analysis
 
-- Favor minimal diffs; change only what the task requires.
-- Preserve type safety; never introduce `any`, non-null assertions, or `//@ts-ignore`.
-- Do not add new dependencies unless necessary; justify in the PR description.
-- Prefer Server Components; add `'use client'` only when strictly needed.
+**Before making any changes:**
+1. **Understand the request** - What specifically needs to be changed?
+2. **Scan related files** - Check imports, dependencies, and usage patterns
+3. **Identify boundaries** - Server vs client components, API boundaries
+4. **Plan minimal changes** - Change only what's necessary
 
-## Process
+## Edit Execution
 
-- Before editing, scan related files for context; avoid breaking server/client boundaries.
-- After edits:
-  - Run `npm run lint` and `npm run build` (or `tsc --noEmit`) locally.
-  - Fix linter/type errors you introduced.
-  - Ensure no runtime console errors.
+**While editing:**
+- ✅ Use existing patterns and conventions
+- ✅ Maintain type safety (no `any`, proper imports)
+- ✅ Use theme tokens (`text-primary`, `bg-background`)
+- ✅ Keep Server Components as default
+- ❌ Don't add unnecessary dependencies
+- ❌ Don't break existing functionality
 
-## Commit and PR hygiene
+## Post-Edit Validation
 
-- Commits: use `feat:`, `fix:`, `docs:`, `refactor:`, `chore:`, `style:`, `test:`.
-- Keep PRs scoped; include a brief description, rationale, and any config implications.
-- Reference updates to docs like `docs/cleanup-spec.md` when behavior changes.
+**Required checks after editing:**
+```bash
+npm run lint        # ESLint passes
+npm run build       # TypeScript compilation succeeds
+npm run type-check  # Type checking passes (if separate script)
+```
 
-## Tailwind and CSS
+**Runtime verification:**
+- No console errors in browser
+- Functionality works as expected
+- Accessibility maintained (keyboard nav, screen readers)
+- Both light and dark themes work
 
-- Use theme tokens: `text-primary`, `text-secondary`, `text-muted`, `text-foreground`, `bg-background`, `border-border`.
-- Avoid universal CSS transitions and global overrides; scope to interactive elements.
+## Commit Standards
 
-## Acceptance checklist
+**Use Conventional Commits:**
+- `feat:` - New features
+- `fix:` - Bug fixes
+- `refactor:` - Code restructuring
+- `style:` - Formatting changes
+- `docs:` - Documentation updates
+- `chore:` - Tooling and maintenance
 
-- Type-check, lint, and build pass.
-- No new warnings/errors in the console.
-- Accessibility preserved or improved.
-- Server/client boundaries respected.
+**Commit message format:**
+```
+type(scope): brief description under 50 chars
+
+Longer explanation if needed, including:
+- What changed and why
+- Any trade-offs made
+- Breaking changes or config implications
+```
+
+## When to Stop and Ask
+
+**Stop and request clarification if:**
+- Requirements are ambiguous or conflicting
+- Changes would require significant architectural shifts
+- New dependencies seem necessary
+- Breaking changes would be required
+- Multiple valid approaches exist
