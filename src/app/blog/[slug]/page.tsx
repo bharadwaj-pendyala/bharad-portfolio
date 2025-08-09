@@ -3,11 +3,7 @@ import Link from 'next/link';
 // Define the static paths for blog posts
 export async function generateStaticParams() {
   // This is a placeholder - replace with your actual blog post slugs
-  return [
-    { slug: 'post-1' },
-    { slug: 'post-2' },
-    { slug: 'post-3' },
-  ];
+  return [{ slug: 'post-1' }, { slug: 'post-2' }, { slug: 'post-3' }];
 }
 
 interface BlogPostProps {
@@ -16,7 +12,13 @@ interface BlogPostProps {
   };
 }
 
-export default function BlogPost({ }: BlogPostProps) {
+export default function BlogPost({ params }: BlogPostProps) {
+  // TODO: Replace with MDX content loading based on params.slug
+  // Consider using next-mdx-remote or contentlayer for blog posts
+  const { slug } = params;
+
+  // Placeholder: In a real implementation, use slug to load specific blog content
+  console.log(`Rendering blog post: ${slug}`);
   return (
     <article className="prose mx-auto max-w-none dark:prose-invert">
       <div className="mb-8">
@@ -52,17 +54,18 @@ export default function BlogPost({ }: BlogPostProps) {
 
       <div className="space-y-6">
         <p>
-          In this comprehensive guide, we&apos;ll explore how to create a modern,
-          performant portfolio website using Next.js and Tailwind CSS. We&apos;ll
-          cover everything from initial setup to deployment, including best
-          practices and tips for creating a great user experience.
+          In this comprehensive guide, we&apos;ll explore how to create a
+          modern, performant portfolio website using Next.js and Tailwind CSS.
+          We&apos;ll cover everything from initial setup to deployment,
+          including best practices and tips for creating a great user
+          experience.
         </p>
 
         <h2>Getting Started</h2>
         <p>
-          First, let&apos;s set up our development environment. We&apos;ll need Node.js
-          installed on our machine and a code editor of our choice. Once we
-          have those, we can create a new Next.js project using the following
+          First, let&apos;s set up our development environment. We&apos;ll need
+          Node.js installed on our machine and a code editor of our choice. Once
+          we have those, we can create a new Next.js project using the following
           command:
         </p>
 
@@ -76,8 +79,8 @@ export default function BlogPost({ }: BlogPostProps) {
         <h2>Project Structure</h2>
         <p>
           Next.js 13+ uses the App Router by default, which provides a more
-          intuitive and powerful way to structure our application. Here&apos;s how
-          we&apos;ll organize our project:
+          intuitive and powerful way to structure our application. Here&apos;s
+          how we&apos;ll organize our project:
         </p>
 
         <ul>
@@ -99,8 +102,8 @@ export default function BlogPost({ }: BlogPostProps) {
         <p>
           The layout component will be the foundation of our portfolio. It
           includes the navigation bar, footer, and any other elements that
-          should appear on every page. We&apos;ll use Tailwind CSS for styling and
-          make sure it&apos;s responsive and accessible.
+          should appear on every page. We&apos;ll use Tailwind CSS for styling
+          and make sure it&apos;s responsive and accessible.
         </p>
 
         <h2>Building the Home Page</h2>
@@ -113,9 +116,9 @@ export default function BlogPost({ }: BlogPostProps) {
         <h2>Adding Projects and Blog Sections</h2>
         <p>
           We&apos;ll create dedicated pages for projects and blog posts, using
-          dynamic routing to handle individual items. Each project will have
-          its own page with detailed information, and blog posts will be
-          written in Markdown for easy content management.
+          dynamic routing to handle individual items. Each project will have its
+          own page with detailed information, and blog posts will be written in
+          Markdown for easy content management.
         </p>
 
         <h2>Optimization and Deployment</h2>
@@ -132,17 +135,17 @@ export default function BlogPost({ }: BlogPostProps) {
         </ul>
 
         <p>
-          For deployment, we can use Vercel, which provides the best
-          experience for Next.js applications with automatic deployments and
-          excellent performance.
+          For deployment, we can use Vercel, which provides the best experience
+          for Next.js applications with automatic deployments and excellent
+          performance.
         </p>
 
         <h2>Conclusion</h2>
         <p>
-          Building a portfolio website with Next.js and Tailwind CSS is a
-          great way to showcase your work and skills. The combination of these
-          technologies provides a powerful and flexible foundation for
-          creating beautiful, performant websites.
+          Building a portfolio website with Next.js and Tailwind CSS is a great
+          way to showcase your work and skills. The combination of these
+          technologies provides a powerful and flexible foundation for creating
+          beautiful, performant websites.
         </p>
       </div>
 

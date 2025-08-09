@@ -29,9 +29,9 @@ export default function Blog() {
                 Building a Modern Portfolio with Next.js and Tailwind CSS
               </h2>
               <p className="text-gray-600 dark:text-gray-300">
-                Learn how to create a beautiful and performant portfolio
-                website using Next.js and Tailwind CSS. This guide covers
-                everything from setup to deployment.
+                Learn how to create a beautiful and performant portfolio website
+                using Next.js and Tailwind CSS. This guide covers everything
+                from setup to deployment.
               </p>
               <div className="flex flex-wrap gap-2">
                 <span className="rounded bg-gray-100 px-2 py-1 text-sm text-gray-700 dark:bg-gray-800 dark:text-gray-300">
@@ -62,8 +62,8 @@ export default function Blog() {
               </h2>
               <p className="text-gray-600 dark:text-gray-300">
                 Explore the latest trends in web development, from AI
-                integration to new frameworks and tools. Stay ahead of the
-                curve with these insights.
+                integration to new frameworks and tools. Stay ahead of the curve
+                with these insights.
               </p>
               <div className="flex flex-wrap gap-2">
                 <span className="rounded bg-gray-100 px-2 py-1 text-sm text-gray-700 dark:bg-gray-800 dark:text-gray-300">

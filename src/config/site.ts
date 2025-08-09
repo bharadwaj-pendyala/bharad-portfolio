@@ -51,10 +51,6 @@ export const siteConfig: SiteConfig = {
 
 export function absoluteUrl(pathname: string): string {
   const path = pathname.startsWith('/') ? pathname : `/${pathname}`;
-  const withBase = siteConfig.basePath
-    ? `${siteConfig.basePath}${path}`
-    : path;
+  const withBase = siteConfig.basePath ? `${siteConfig.basePath}${path}` : path;
   return `${siteConfig.url}${withBase}`;
 }
-
-

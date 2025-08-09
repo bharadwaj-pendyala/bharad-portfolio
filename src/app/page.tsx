@@ -39,7 +39,7 @@ export default function Home() {
                   Project 1
                 </Link>
               </h3>
-              <p className="text-secondary mb-4">
+              <p className="mb-4 text-secondary">
                 A brief description of your first project and its key features.
               </p>
               <div className="flex justify-center space-x-4">
@@ -61,7 +61,7 @@ export default function Home() {
                   Project 2
                 </Link>
               </h3>
-              <p className="text-secondary mb-4">
+              <p className="mb-4 text-secondary">
                 A brief description of your second project and its key features.
               </p>
               <div className="flex justify-center space-x-4">
@@ -93,11 +93,11 @@ export default function Home() {
                   Blog Post 1
                 </Link>
               </h3>
-              <p className="text-secondary mb-3">
+              <p className="mb-3 text-secondary">
                 A brief excerpt from your first blog post that captures the
                 reader&apos;s attention.
               </p>
-              <time className="text-muted text-sm">March 19, 2024</time>
+              <time className="text-sm text-muted">March 19, 2024</time>
             </div>
 
             <div className="text-center">
@@ -106,11 +106,11 @@ export default function Home() {
                   Blog Post 2
                 </Link>
               </h3>
-              <p className="text-secondary mb-3">
+              <p className="mb-3 text-secondary">
                 A brief excerpt from your second blog post that captures the
                 reader&apos;s attention.
               </p>
-              <time className="text-muted text-sm">March 18, 2024</time>
+              <time className="text-sm text-muted">March 18, 2024</time>
             </div>
           </div>
         </section>
