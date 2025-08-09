@@ -1,7 +1,6 @@
 import EnhancedTerminalHero from '@/components/EnhancedTerminalHero';
 import EnhancedStatsSection from '@/components/EnhancedStatsSection';
 import NavigationCards from '@/components/NavigationCards';
-import InteractiveTerminal from '@/components/InteractiveTerminal';
 
 export default function Home(): JSX.Element {
   return (
@@ -44,44 +43,6 @@ export default function Home(): JSX.Element {
       {/* Enhanced Stats Section */}
       <section className="mb-16">
         <EnhancedStatsSection />
-      </section>
-
-      {/* Interactive Terminal Demo */}
-      <section className="mb-16">
-        <div className="mb-8 text-center">
-          <h2 className="mb-4 text-2xl font-bold text-foreground">
-            🖥️ Interactive Terminal Experience
-          </h2>
-          <p className="mx-auto max-w-2xl text-muted">
-            Try out the interactive terminal below! Type{' '}
-            <code className="rounded bg-muted px-2 py-1 font-mono text-sm">
-              help
-            </code>{' '}
-            to see available commands, or explore with commands like{' '}
-            <code className="rounded bg-muted px-2 py-1 font-mono text-sm">
-              whoami
-            </code>
-            ,{' '}
-            <code className="rounded bg-muted px-2 py-1 font-mono text-sm">
-              cat about
-            </code>
-            , or{' '}
-            <code className="rounded bg-muted px-2 py-1 font-mono text-sm">
-              ls
-            </code>
-            .
-          </p>
-        </div>
-
-        <InteractiveTerminal
-          className="mx-auto max-w-4xl"
-          welcomeMessage="Welcome to Bharadwaj's Interactive Terminal!
-Type 'help' to see available commands or try:
-• whoami          - Learn about me
-• cat about       - Read my story
-• cat skills      - View technical skills
-• fortune         - Get inspired"
-        />
       </section>
 
       {/* Professional Summary */}

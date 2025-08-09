@@ -83,10 +83,6 @@ export default function EnhancedTerminalHero(): JSX.Element {
 
           <div className="space-y-1 pl-4 text-sm text-muted">
             <div>
-              📍 <span className="text-accent">Status:</span> Available for
-              opportunities
-            </div>
-            <div>
               ⚡ <span className="text-accent">Experience:</span> 5+ years in
               software development
             </div>
