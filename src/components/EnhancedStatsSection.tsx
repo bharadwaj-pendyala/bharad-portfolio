@@ -79,10 +79,10 @@ export default function EnhancedStatsSection(): JSX.Element {
   }, []);
 
   return (
-    <section id="enhanced-stats-section" className="py-16">
+    <section id="enhanced-stats-section" className="py-12 sm:py-16 lg:py-20">
       <div className="container mx-auto px-6">
         {/* Section Header */}
-        <div className="mb-12 text-center">
+        <div className="mb-8 text-center sm:mb-12 lg:mb-16">
           <div className="card mx-auto max-w-2xl border-card-border bg-card-bg">
             <div className="mb-4 flex items-center space-x-2 border-b border-card-border pb-3">
               <div className="h-3 w-3 rounded-full bg-red-500"></div>

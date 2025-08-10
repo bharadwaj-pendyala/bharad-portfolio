@@ -6,12 +6,12 @@ export default function Home(): JSX.Element {
   return (
     <div className="container mx-auto max-w-5xl px-6">
       {/* Enhanced Terminal Hero Section */}
-      <section className="mb-16">
+      <section className="mb-12 sm:mb-16 lg:mb-20">
         <EnhancedTerminalHero />
       </section>
 
       {/* Navigation Cards with Professional Enhancement */}
-      <section className="mb-16">
+      <section className="mb-12 sm:mb-16 lg:mb-20">
         <div className="card border-card-border bg-card-bg">
           <div className="mb-6 flex items-center space-x-2 border-b border-card-border pb-3">
             <div className="h-3 w-3 rounded-full bg-red-500"></div>
@@ -41,12 +41,12 @@ export default function Home(): JSX.Element {
       </section>
 
       {/* Enhanced Stats Section */}
-      <section className="mb-16">
+      <section className="mb-12 sm:mb-16 lg:mb-20">
         <EnhancedStatsSection />
       </section>
 
       {/* Professional Summary */}
-      <section className="mb-16">
+      <section className="mb-12 sm:mb-16 lg:mb-20">
         <div className="card border-card-border bg-card-bg">
           <div className="mb-6 flex items-center space-x-2 border-b border-card-border pb-3">
             <div className="h-3 w-3 rounded-full bg-red-500"></div>

@@ -11,7 +11,7 @@ export default function CV(): JSX.Element {
   return (
     <div className="container mx-auto max-w-4xl px-6">
       {/* Terminal Header */}
-      <div className="card mb-8 border-card-border bg-card-bg">
+      <div className="card mb-6 border-card-border bg-card-bg sm:mb-8 lg:mb-12">
         <div className="mb-4 border-b border-card-border pb-3">
           <div className="flex items-center space-x-2">
             <div className="h-3 w-3 rounded-full bg-red-500"></div>
@@ -43,7 +43,7 @@ export default function CV(): JSX.Element {
       </div>
 
       {/* Professional Summary */}
-      <div className="card mb-6 border-card-border bg-card-bg">
+      <div className="card mb-4 border-card-border bg-card-bg sm:mb-6 lg:mb-8">
         <div className="space-y-4">
           <TerminalCommand command="grep -A 5 'Professional Summary' CV.pdf" />
           <TerminalOutput>
@@ -58,7 +58,7 @@ export default function CV(): JSX.Element {
       </div>
 
       {/* Experience */}
-      <div className="card mb-6 border-card-border bg-card-bg">
+      <div className="card mb-4 border-card-border bg-card-bg sm:mb-6 lg:mb-8">
         <div className="space-y-4">
           <TerminalCommand command="awk '/Experience/,/Education/ {print}' CV.pdf" />
           <TerminalOutput>

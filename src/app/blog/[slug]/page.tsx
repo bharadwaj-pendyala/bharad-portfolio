@@ -55,7 +55,7 @@ export default function BlogPost({
           </div>
         </header>
 
-        <div className="space-y-6">
+        <div className="space-y-4 sm:space-y-6 lg:space-y-8">
           <p className="font-mono text-muted">
             In this comprehensive guide, we&apos;ll explore how to create a
             modern, performant portfolio website using Next.js and Tailwind CSS.

@@ -32,7 +32,7 @@ export default function Blog() {
       </div>
 
       {/* Blog Posts */}
-      <section className="space-y-12">
+      <section className="space-y-8 sm:space-y-12 lg:space-y-16">
         {/* Blog Post 1 */}
         <article className="group">
           <Link href="/blog/post-1" className="block">
