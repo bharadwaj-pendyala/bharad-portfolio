@@ -10,7 +10,7 @@ export default function Layout({ children }: LayoutProps): JSX.Element {
   return (
     <div className="flex min-h-screen flex-col bg-background">
       <TerminalHeader />
-      <main className="flex-grow">{children}</main>
+      <main className="flex-grow py-20">{children}</main>
       <MinimalFooter />
       <TerminalEasterEgg />
     </div>

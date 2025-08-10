@@ -4,7 +4,7 @@ import NavigationCards from '@/components/NavigationCards';
 
 export default function Home(): JSX.Element {
   return (
-    <div className="container mx-auto max-w-5xl px-6 py-8">
+    <div className="container mx-auto max-w-5xl px-6">
       {/* Enhanced Terminal Hero Section */}
       <section className="mb-20">
         <EnhancedTerminalHero />

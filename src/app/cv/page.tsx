@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function CV(): JSX.Element {
   return (
-    <div className="container mx-auto max-w-4xl px-6 py-8">
+    <div className="container mx-auto max-w-4xl px-6">
       {/* Terminal Header */}
       <div className="card mb-8 border-card-border bg-card-bg">
         <div className="mb-4 border-b border-card-border pb-3">

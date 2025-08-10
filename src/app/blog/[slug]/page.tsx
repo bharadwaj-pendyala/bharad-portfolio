@@ -22,7 +22,7 @@ export default function BlogPost({
   // Content loaded based on slug parameter
   // Future: Remove this once actual content loading is implemented
   return (
-    <div className="container mx-auto max-w-4xl px-6 py-8">
+    <div className="container mx-auto max-w-4xl px-6">
       <article className="prose mx-auto max-w-none dark:prose-invert">
         <div className="mb-8">
           <Link
