@@ -121,18 +121,8 @@ export default function EnhancedStatsSection(): JSX.Element {
               }`}
               style={{ animationDelay: `${index * 150}ms` }}
             >
-              {/* Terminal Header */}
-              <div className="mb-4 flex items-center space-x-2 border-b border-card-border pb-3">
-                <div className="h-2 w-2 rounded-full bg-red-400"></div>
-                <div className="h-2 w-2 rounded-full bg-yellow-400"></div>
-                <div className="h-2 w-2 rounded-full bg-green-400"></div>
-                <span className="ml-2 font-mono text-xs text-muted">
-                  stats.sh
-                </span>
-              </div>
-
               {/* Terminal Content */}
-              <div className="space-y-3 font-mono text-sm">
+              <div className="space-y-3 p-4 font-mono text-sm">
                 {/* Command */}
                 <div className="text-muted">
                   <span className="text-accent">$</span>
