@@ -55,7 +55,7 @@ export default function BlogPost({
       </header>
 
       <div className="space-y-6">
-        <p>
+        <p className="font-mono text-muted">
           In this comprehensive guide, we&apos;ll explore how to create a
           modern, performant portfolio website using Next.js and Tailwind CSS.
           We&apos;ll cover everything from initial setup to deployment,
@@ -63,8 +63,10 @@ export default function BlogPost({
           experience.
         </p>
 
-        <h2>Getting Started</h2>
-        <p>
+        <h2 className="font-mono text-2xl font-bold text-foreground">
+          Getting Started
+        </h2>
+        <p className="font-mono text-muted">
           First, let&apos;s set up our development environment. We&apos;ll need
           Node.js installed on our machine and a code editor of our choice. Once
           we have those, we can create a new Next.js project using the following
@@ -78,8 +80,10 @@ export default function BlogPost({
           </code>
         </pre>
 
-        <h2>Project Structure</h2>
-        <p>
+        <h2 className="font-mono text-2xl font-bold text-foreground">
+          Project Structure
+        </h2>
+        <p className="font-mono text-muted">
           Next.js 13+ uses the App Router by default, which provides a more
           intuitive and powerful way to structure our application. Here&apos;s
           how we&apos;ll organize our project:
@@ -112,31 +116,39 @@ export default function BlogPost({
           </li>
         </ul>
 
-        <h2>Creating the Layout</h2>
-        <p>
+        <h2 className="font-mono text-2xl font-bold text-foreground">
+          Creating the Layout
+        </h2>
+        <p className="font-mono text-muted">
           The layout component will be the foundation of our portfolio. It
           includes the navigation bar, footer, and any other elements that
           should appear on every page. We&apos;ll use Tailwind CSS for styling
           and make sure it&apos;s responsive and accessible.
         </p>
 
-        <h2>Building the Home Page</h2>
-        <p>
+        <h2 className="font-mono text-2xl font-bold text-foreground">
+          Building the Home Page
+        </h2>
+        <p className="font-mono text-muted">
           The home page is the first impression visitors will have of our
           portfolio. We&apos;ll create a hero section with a brief introduction,
           followed by sections for featured projects and recent blog posts.
         </p>
 
-        <h2>Adding Projects and Blog Sections</h2>
-        <p>
+        <h2 className="font-mono text-2xl font-bold text-foreground">
+          Adding Projects and Blog Sections
+        </h2>
+        <p className="font-mono text-muted">
           We&apos;ll create dedicated pages for projects and blog posts, using
           dynamic routing to handle individual items. Each project will have its
           own page with detailed information, and blog posts will be written in
           Markdown for easy content management.
         </p>
 
-        <h2>Optimization and Deployment</h2>
-        <p>
+        <h2 className="font-mono text-2xl font-bold text-foreground">
+          Optimization and Deployment
+        </h2>
+        <p className="font-mono text-muted">
           Next.js provides excellent performance optimizations out of the box,
           including:
         </p>
@@ -148,14 +160,16 @@ export default function BlogPost({
           <li>• Static and server-side rendering</li>
         </ul>
 
-        <p>
+        <p className="font-mono text-muted">
           For deployment, we can use Vercel, which provides the best experience
           for Next.js applications with automatic deployments and excellent
           performance.
         </p>
 
-        <h2>Conclusion</h2>
-        <p>
+        <h2 className="font-mono text-2xl font-bold text-foreground">
+          Conclusion
+        </h2>
+        <p className="font-mono text-muted">
           Building a portfolio website with Next.js and Tailwind CSS is a great
           way to showcase your work and skills. The combination of these
           technologies provides a powerful and flexible foundation for creating

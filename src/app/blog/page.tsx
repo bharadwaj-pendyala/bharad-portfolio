@@ -42,10 +42,10 @@ export default function Blog() {
                 <span>•</span>
                 <span>5 min read</span>
               </div>
-              <h2 className="text-2xl font-bold text-foreground group-hover:text-accent">
+              <h2 className="font-mono text-2xl font-bold text-foreground group-hover:text-accent">
                 Building a Modern Portfolio with Next.js and Tailwind CSS
               </h2>
-              <p className="text-muted">
+              <p className="font-mono text-muted">
                 Learn how to create a beautiful and performant portfolio website
                 using Next.js and Tailwind CSS. This guide covers everything
                 from setup to deployment.
@@ -74,10 +74,10 @@ export default function Blog() {
                 <span>•</span>
                 <span>8 min read</span>
               </div>
-              <h2 className="text-2xl font-bold text-foreground group-hover:text-accent">
+              <h2 className="font-mono text-2xl font-bold text-foreground group-hover:text-accent">
                 The Future of Web Development: Trends to Watch in 2024
               </h2>
-              <p className="text-muted">
+              <p className="font-mono text-muted">
                 Explore the latest trends in web development, from AI
                 integration to new frameworks and tools. Stay ahead of the curve
                 with these insights.
@@ -106,10 +106,10 @@ export default function Blog() {
                 <span>•</span>
                 <span>6 min read</span>
               </div>
-              <h2 className="text-2xl font-bold text-foreground group-hover:text-accent">
+              <h2 className="font-mono text-2xl font-bold text-foreground group-hover:text-accent">
                 Best Practices for Building Scalable Applications
               </h2>
-              <p className="text-muted">
+              <p className="font-mono text-muted">
                 Discover the key principles and practices for building
                 applications that can grow with your user base. Learn about
                 architecture, performance, and maintainability.
