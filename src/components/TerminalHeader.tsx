@@ -25,21 +25,21 @@ export default function TerminalHeader(): JSX.Element {
             {siteConfig.features.showAbout && (
               <Link
                 href="/about"
-                className="hidden text-sm transition-colors hover:text-primary sm:block"
+                className="hidden font-mono text-sm font-medium text-muted transition-colors hover:text-accent sm:block"
               >
                 About
               </Link>
             )}
             <Link
               href="/cv"
-              className="text-sm transition-colors hover:text-primary"
+              className="font-mono text-sm font-medium text-muted transition-colors hover:text-accent"
             >
               CV
             </Link>
             {siteConfig.features.showBlog && (
               <Link
                 href="/blog"
-                className="text-sm transition-colors hover:text-primary"
+                className="font-mono text-sm font-medium text-muted transition-colors hover:text-accent"
               >
                 Posts
               </Link>
@@ -47,7 +47,7 @@ export default function TerminalHeader(): JSX.Element {
             {siteConfig.features.showProjects && (
               <Link
                 href="/projects"
-                className="hidden text-sm transition-colors hover:text-primary sm:block"
+                className="hidden font-mono text-sm font-medium text-muted transition-colors hover:text-accent sm:block"
               >
                 Projects
               </Link>

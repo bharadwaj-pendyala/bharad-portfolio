@@ -6,12 +6,12 @@ export default function MinimalFooter(): JSX.Element {
       <div className="container mx-auto max-w-4xl px-6 py-6">
         <div className="flex flex-col items-center justify-between space-y-2 sm:flex-row sm:space-y-0">
           {/* Copyright */}
-          <p className="text-sm text-muted">
+          <p className="font-mono text-sm text-muted">
             © {new Date().getFullYear()} {siteConfig.name}
           </p>
 
           {/* Tech stack / Attribution */}
-          <div className="flex items-center space-x-4 text-sm text-muted">
+          <div className="flex items-center space-x-4 font-mono text-sm text-muted">
             <span>Powered by Next.js</span>
             <span>•</span>
             <span>Made with ❤️</span>
@@ -24,7 +24,7 @@ export default function MinimalFooter(): JSX.Element {
                 href={siteConfig.social.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-muted transition-colors hover:text-foreground"
+                className="font-mono text-sm text-muted transition-colors hover:text-accent"
               >
                 GitHub
               </a>
@@ -34,7 +34,7 @@ export default function MinimalFooter(): JSX.Element {
                 href={siteConfig.social.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-muted transition-colors hover:text-foreground"
+                className="font-mono text-sm text-muted transition-colors hover:text-accent"
               >
                 LinkedIn
               </a>
@@ -42,7 +42,7 @@ export default function MinimalFooter(): JSX.Element {
             {siteConfig.social.email && (
               <a
                 href={`mailto:${siteConfig.social.email}`}
-                className="text-sm text-muted transition-colors hover:text-foreground"
+                className="font-mono text-sm text-muted transition-colors hover:text-accent"
               >
                 Email
               </a>
