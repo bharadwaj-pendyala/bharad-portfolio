@@ -48,7 +48,7 @@ These checks are intended to prevent low-quality or unsafe code from entering th
 - **No `any`** - Use `unknown` or proper types instead
 - **No type assertions** - Avoid `as unknown as T`, use type guards
 - **No `@ts-ignore`** - Fix the underlying issue
-- **Export functions need explicit return types**
+- **Prefer explicit return types for exported functions** (especially in shared utilities and APIs)
 - **Use union types over enums**
 
 ```typescript
@@ -156,7 +156,7 @@ try {
 ### ESLint Configuration
 
 Extends `next/core-web-vitals` and `@typescript-eslint/recommended`.
-Rules: `@typescript-eslint/no-unused-vars: warn`, `@typescript-eslint/no-explicit-any: warn`
+Rules: `@typescript-eslint/no-unused-vars: warn`, `@typescript-eslint/no-explicit-any: warn`, `@typescript-eslint/explicit-function-return-type: off`, `@typescript-eslint/explicit-module-boundary-types: off`
 
 ## Project Structure
 
@@ -189,3 +189,8 @@ This project has detailed Cursor rules in `.cursor/rules/`. Key files:
 - `nextjs.md` - Next.js App Router
 - `tailwind.md` - Tailwind CSS
 - `coding-standards.md` - Universal coding standards
+- `accessibility.md` - A11y requirements
+- `css.md` - Styling standards
+- `performance.md` - Performance guidance
+- `code-review.md` - Review checklist
+- `commits-pr.md` - Commit and PR conventions
