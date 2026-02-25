@@ -57,7 +57,7 @@ yarn dev
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000/bharad-portfolio](http://localhost:3000/bharad-portfolio) with your browser to see the result.
 
 ## Project Structure
 
@@ -76,8 +76,13 @@ src/
 - `npm run build` - Build for production
 - `npm run start` - Start production server
 - `npm run lint` - Run ESLint
+- `npm run type-check` - Run TypeScript checks
 - `npm run format` - Format code with Prettier
 - `npm run format:check` - Check code formatting
+- `npm run test:e2e` - Run Playwright E2E tests
+- `npm run test:e2e:smoke` - Run Playwright smoke E2E tests
+- `npm run test:e2e:headed` - Run E2E tests in headed mode
+- `npm run test:e2e:ui` - Run E2E tests in Playwright UI mode
 
 ## Deployment
 

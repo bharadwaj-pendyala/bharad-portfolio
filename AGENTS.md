@@ -23,11 +23,17 @@ npm run format:check     # Check formatting without modifying
 
 ## Testing
 
-This project does not currently have a test framework configured. If adding tests:
+This project includes an end-to-end test suite with Playwright.
+
+- Run all E2E tests: `npm run test:e2e`
+- Run smoke E2E tests: `npm run test:e2e:smoke`
+- Run E2E tests in headed mode: `npm run test:e2e:headed`
+- Run E2E tests in Playwright UI mode: `npm run test:e2e:ui`
+
+If adding unit tests in the future:
 
 - Use Vitest for unit tests
-- Use Playwright for E2E tests
-- Add scripts in `package.json` (for example: `test`, `test:unit`, `test:e2e`)
+- Add scripts in `package.json` (for example: `test`, `test:unit`)
 - Run a single Vitest test with: `npx vitest run <file>`
 
 ## Git Hooks and Commit Policy
