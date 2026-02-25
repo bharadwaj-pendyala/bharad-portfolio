@@ -30,6 +30,16 @@ This project does not currently have a test framework configured. If adding test
 - Add scripts in `package.json` (for example: `test`, `test:unit`, `test:e2e`)
 - Run a single Vitest test with: `npx vitest run <file>`
 
+## Git Hooks and Commit Policy
+
+Husky hooks are used to enforce quality gates before code is committed or pushed:
+
+- `pre-commit`: runs staged secret scanning and `lint-staged` (`eslint --fix` + `prettier --write` on staged files)
+- `commit-msg`: validates commit messages with `commitlint` (Conventional Commits)
+- `pre-push`: runs `npm run type-check`, `npm run lint:strict`, and `npm run format:check`
+
+These checks are intended to prevent low-quality or unsafe code from entering the repository.
+
 ## Code Style Guidelines
 
 ### TypeScript (Strict)

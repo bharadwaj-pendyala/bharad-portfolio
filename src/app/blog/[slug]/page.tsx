@@ -6,21 +6,7 @@ export async function generateStaticParams() {
   return [{ slug: 'post-1' }, { slug: 'post-2' }, { slug: 'post-3' }];
 }
 
-interface BlogPostProps {
-  params: {
-    slug: string;
-  };
-}
-
-export default function BlogPost({
-  params: _params,
-}: BlogPostProps): JSX.Element {
-  // Future: Implement MDX content loading based on params.slug
-  // Consider using next-mdx-remote or contentlayer for blog posts
-  // Currently params is not used but will be needed for dynamic content loading
-
-  // Content loaded based on slug parameter
-  // Future: Remove this once actual content loading is implemented
+export default function BlogPost(): JSX.Element {
   return (
     <article className="prose mx-auto max-w-none dark:prose-invert">
       <div className="mb-8">
