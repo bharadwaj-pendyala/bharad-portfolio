@@ -27,7 +27,8 @@ This project does not currently have a test framework configured. If adding test
 
 - Use Vitest for unit tests
 - Use Playwright for E2E tests
-- Run a single test: `npm test -- --run <test-name>` or `npx vitest run <file>`
+- Add scripts in `package.json` (for example: `test`, `test:unit`, `test:e2e`)
+- Run a single Vitest test with: `npx vitest run <file>`
 
 ## Code Style Guidelines
 
@@ -37,7 +38,7 @@ This project does not currently have a test framework configured. If adding test
 - **No `any`** - Use `unknown` or proper types instead
 - **No type assertions** - Avoid `as unknown as T`, use type guards
 - **No `@ts-ignore`** - Fix the underlying issue
-- **Export functions need explicit return types**
+- **Prefer explicit return types for exported functions** (especially in shared utilities and APIs)
 - **Use union types over enums**
 
 ```typescript
@@ -145,7 +146,7 @@ try {
 ### ESLint Configuration
 
 Extends `next/core-web-vitals` and `@typescript-eslint/recommended`.
-Rules: `@typescript-eslint/no-unused-vars: warn`, `@typescript-eslint/no-explicit-any: warn`
+Rules: `@typescript-eslint/no-unused-vars: warn`, `@typescript-eslint/no-explicit-any: warn`, `@typescript-eslint/explicit-function-return-type: off`, `@typescript-eslint/explicit-module-boundary-types: off`
 
 ## Project Structure
 
@@ -178,3 +179,8 @@ This project has detailed Cursor rules in `.cursor/rules/`. Key files:
 - `nextjs.md` - Next.js App Router
 - `tailwind.md` - Tailwind CSS
 - `coding-standards.md` - Universal coding standards
+- `accessibility.md` - A11y requirements
+- `css.md` - Styling standards
+- `performance.md` - Performance guidance
+- `code-review.md` - Review checklist
+- `commits-pr.md` - Commit and PR conventions
