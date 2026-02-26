@@ -2,9 +2,52 @@ import Link from 'next/link';
 import TerminalCommand from '@/components/TerminalCommand';
 import TerminalOutput from '@/components/TerminalOutput';
 
+type BlogPost = {
+  slug: string;
+  title: string;
+  publishedAt: string;
+  publishedLabel: string;
+  readTime: string;
+  summary: string;
+  tags: string[];
+};
+
+const posts: BlogPost[] = [
+  {
+    slug: 'post-1',
+    title: 'Building a Modern Portfolio with Next.js and Tailwind CSS',
+    publishedAt: '2024-03-19',
+    publishedLabel: 'March 19, 2024',
+    readTime: '5 min read',
+    summary:
+      'A walkthrough for building and deploying a performant portfolio with Next.js and Tailwind CSS.',
+    tags: ['Next.js', 'Tailwind CSS', 'Web Development'],
+  },
+  {
+    slug: 'post-2',
+    title: 'The Future of Web Development: Trends to Watch in 2024',
+    publishedAt: '2024-03-18',
+    publishedLabel: 'March 18, 2024',
+    readTime: '8 min read',
+    summary:
+      'A practical look at emerging frontend and platform trends shaping modern product development.',
+    tags: ['Web Development', 'Technology', 'Future Trends'],
+  },
+  {
+    slug: 'post-3',
+    title: 'Best Practices for Building Scalable Applications',
+    publishedAt: '2024-03-17',
+    publishedLabel: 'March 17, 2024',
+    readTime: '6 min read',
+    summary:
+      'Key architecture and delivery patterns that keep applications maintainable as teams and traffic grow.',
+    tags: ['Architecture', 'Performance', 'Best Practices'],
+  },
+];
+
 export default function Blog() {
   return (
-    <div className="container mx-auto max-w-4xl px-6 py-8">
+    <div className="py-8">
       {/* Terminal Header */}
       <div className="card mb-8 border-card-border bg-card-bg">
         <div className="mb-4 border-b border-card-border pb-3">
@@ -32,102 +75,37 @@ export default function Blog() {
       </div>
 
       {/* Blog Posts */}
-      <section className="space-y-12">
-        {/* Blog Post 1 */}
-        <article className="group">
-          <Link href="/blog/post-1" className="block">
-            <div className="space-y-4">
-              <div className="flex items-center space-x-4 font-mono text-sm text-muted">
-                <time dateTime="2024-03-19">March 19, 2024</time>
-                <span>•</span>
-                <span>5 min read</span>
+      <section className="space-y-5">
+        {posts.map((post) => (
+          <article key={post.slug} className="group">
+            <Link
+              href={`/blog/${post.slug}`}
+              className="bg-card-bg/50 hover:border-accent/40 block rounded-lg border border-card-border p-5 transition-colors"
+            >
+              <div className="space-y-3">
+                <div className="flex items-center space-x-4 font-mono text-sm text-muted">
+                  <time dateTime={post.publishedAt}>{post.publishedLabel}</time>
+                  <span>•</span>
+                  <span>{post.readTime}</span>
+                </div>
+                <h2 className="m-0 text-2xl font-bold text-foreground transition-colors group-hover:text-accent">
+                  {post.title}
+                </h2>
+                <p className="m-0 text-muted">{post.summary}</p>
+                <div className="flex flex-wrap gap-2">
+                  {post.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="bg-muted/20 rounded px-2 py-1 font-mono text-xs text-foreground"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
-              <h2 className="text-2xl font-bold text-foreground group-hover:text-accent">
-                Building a Modern Portfolio with Next.js and Tailwind CSS
-              </h2>
-              <p className="text-muted">
-                Learn how to create a beautiful and performant portfolio website
-                using Next.js and Tailwind CSS. This guide covers everything
-                from setup to deployment.
-              </p>
-              <div className="flex flex-wrap gap-2">
-                <span className="rounded bg-muted px-2 py-1 font-mono text-sm text-foreground">
-                  Next.js
-                </span>
-                <span className="rounded bg-muted px-2 py-1 font-mono text-sm text-foreground">
-                  Tailwind CSS
-                </span>
-                <span className="rounded bg-muted px-2 py-1 font-mono text-sm text-foreground">
-                  Web Development
-                </span>
-              </div>
-            </div>
-          </Link>
-        </article>
-
-        {/* Blog Post 2 */}
-        <article className="group">
-          <Link href="/blog/post-2" className="block">
-            <div className="space-y-4">
-              <div className="flex items-center space-x-4 font-mono text-sm text-muted">
-                <time dateTime="2024-03-18">March 18, 2024</time>
-                <span>•</span>
-                <span>8 min read</span>
-              </div>
-              <h2 className="text-2xl font-bold text-foreground group-hover:text-accent">
-                The Future of Web Development: Trends to Watch in 2024
-              </h2>
-              <p className="text-muted">
-                Explore the latest trends in web development, from AI
-                integration to new frameworks and tools. Stay ahead of the curve
-                with these insights.
-              </p>
-              <div className="flex flex-wrap gap-2">
-                <span className="rounded bg-muted px-2 py-1 font-mono text-sm text-foreground">
-                  Web Development
-                </span>
-                <span className="rounded bg-muted px-2 py-1 font-mono text-sm text-foreground">
-                  Technology
-                </span>
-                <span className="rounded bg-muted px-2 py-1 font-mono text-sm text-foreground">
-                  Future Trends
-                </span>
-              </div>
-            </div>
-          </Link>
-        </article>
-
-        {/* Blog Post 3 */}
-        <article className="group">
-          <Link href="/blog/post-3" className="block">
-            <div className="space-y-4">
-              <div className="flex items-center space-x-4 font-mono text-sm text-muted">
-                <time dateTime="2024-03-17">March 17, 2024</time>
-                <span>•</span>
-                <span>6 min read</span>
-              </div>
-              <h2 className="text-2xl font-bold text-foreground group-hover:text-accent">
-                Best Practices for Building Scalable Applications
-              </h2>
-              <p className="text-muted">
-                Discover the key principles and practices for building
-                applications that can grow with your user base. Learn about
-                architecture, performance, and maintainability.
-              </p>
-              <div className="flex flex-wrap gap-2">
-                <span className="rounded bg-muted px-2 py-1 font-mono text-sm text-foreground">
-                  Architecture
-                </span>
-                <span className="rounded bg-muted px-2 py-1 font-mono text-sm text-foreground">
-                  Performance
-                </span>
-                <span className="rounded bg-muted px-2 py-1 font-mono text-sm text-foreground">
-                  Best Practices
-                </span>
-              </div>
-            </div>
-          </Link>
-        </article>
+            </Link>
+          </article>
+        ))}
       </section>
     </div>
   );

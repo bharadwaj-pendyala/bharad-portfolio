@@ -2,23 +2,22 @@ import { siteConfig } from '@/config/site';
 
 export default function MinimalFooter(): JSX.Element {
   return (
-    <footer className="mt-16 border-t border-border">
-      <div className="container mx-auto max-w-4xl px-6 py-6">
-        <div className="flex flex-col items-center justify-between space-y-2 sm:flex-row sm:space-y-0">
-          {/* Copyright */}
-          <p className="text-sm text-muted">
+    <footer className="border-border/80 bg-card-bg/30 mt-20 border-t">
+      <div className="container mx-auto max-w-5xl px-6 py-8">
+        <div className="grid gap-6 md:grid-cols-3 md:items-center">
+          <div className="space-y-1 text-center md:text-left">
+            <p className="font-mono text-xs text-muted">status: open to work</p>
+            <p className="text-sm text-muted">
+              Built with Next.js, TypeScript, and a terminal-first design
+              system.
+            </p>
+          </div>
+
+          <p className="text-center text-sm text-muted">
             © {new Date().getFullYear()} {siteConfig.name}
           </p>
 
-          {/* Tech stack / Attribution */}
-          <div className="flex items-center space-x-4 text-sm text-muted">
-            <span>Powered by Next.js</span>
-            <span>•</span>
-            <span>Made with ❤️</span>
-          </div>
-
-          {/* Social links */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center justify-center gap-4 md:justify-end">
             {siteConfig.social.github && (
               <a
                 href={siteConfig.social.github}
