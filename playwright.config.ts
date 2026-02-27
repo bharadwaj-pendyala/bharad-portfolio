@@ -1,7 +1,7 @@
 import { defineConfig } from '@playwright/test';
 
 const PORT = Number(process.env['PORT'] ?? 3000);
-const BASE_PATH = '/bharad-portfolio';
+const BASE_PATH = process.env['PLAYWRIGHT_BASE_PATH'] ?? '';
 
 export default defineConfig({
   testDir: './e2e',
@@ -16,7 +16,7 @@ export default defineConfig({
   },
   webServer: {
     command: `npm run dev -- --hostname 127.0.0.1 --port ${PORT}`,
-    url: `http://127.0.0.1:${PORT}${BASE_PATH}`,
+    url: `http://127.0.0.1:${PORT}${BASE_PATH || '/'}`,
     reuseExistingServer: !process.env['CI'],
     timeout: 120_000,
   },

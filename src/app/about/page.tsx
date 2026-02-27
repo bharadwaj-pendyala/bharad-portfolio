@@ -1,10 +1,23 @@
 import TerminalCommand from '@/components/TerminalCommand';
 import TerminalOutput from '@/components/TerminalOutput';
+import { siteConfig } from '@/config/site';
 
-export default function About() {
+const strengths = [
+  'Build production-grade full-stack apps with TypeScript and modern web tooling',
+  'Design APIs and data flows that scale without sacrificing developer velocity',
+  'Improve UX quality through performance, accessibility, and interaction polish',
+  'Collaborate across product and engineering to ship reliable features quickly',
+];
+
+const stack = {
+  frontend: ['TypeScript', 'React', 'Next.js', 'Tailwind CSS'],
+  backend: ['Node.js', 'Python', 'PostgreSQL', 'REST APIs'],
+  delivery: ['GitHub Actions', 'Docker', 'AWS', 'Vercel'],
+};
+
+export default function About(): JSX.Element {
   return (
-    <div className="container mx-auto max-w-4xl px-6 py-8">
-      {/* Terminal-style page header */}
+    <div className="container mx-auto max-w-5xl px-6 py-8">
       <div className="card mb-8 border-card-border bg-card-bg">
         <div className="mb-4 border-b border-card-border pb-3">
           <div className="flex items-center space-x-2">
@@ -20,173 +33,101 @@ export default function About() {
         <div className="space-y-4">
           <TerminalCommand command="cat About.md" />
           <TerminalOutput>
-            <div className="space-y-6">
-              <div>
-                <h1 className="mb-4 text-2xl font-bold text-foreground">
-                  About Bharadwaj
-                </h1>
-                <p className="leading-relaxed text-secondary">
-                  Passionate software engineer with 5+ years of experience
-                  building scalable web applications and solving complex
-                  technical challenges. I specialize in full-stack development
-                  with modern technologies and have a keen interest in creating
-                  elegant, efficient solutions.
-                </p>
-              </div>
+            <div className="space-y-4">
+              <h1 className="m-0 text-3xl font-bold text-foreground">
+                About Bharadwaj
+              </h1>
+              <p className="m-0 max-w-3xl text-base leading-relaxed text-secondary">
+                I am a software engineer with 5+ years of experience building
+                full-stack products. My focus is on maintainable architecture,
+                fast user experiences, and practical engineering that ships.
+              </p>
+            </div>
+          </TerminalOutput>
+        </div>
+      </div>
 
-              <div>
-                <p className="leading-relaxed text-secondary">
-                  Currently focused on React/Next.js ecosystems, cloud
-                  technologies, and building developer-friendly tools. I enjoy
-                  contributing to open source projects and staying up-to-date
-                  with the latest industry trends and best practices.
-                </p>
+      <div className="card mb-8 border-card-border bg-card-bg">
+        <div className="space-y-4">
+          <TerminalCommand command="cat strengths.txt" />
+          <TerminalOutput>
+            <ul className="space-y-3 pl-4 font-mono text-sm">
+              {strengths.map((strength) => (
+                <li key={strength} className="text-secondary">
+                  <span className="mr-2 text-accent">•</span>
+                  {strength}
+                </li>
+              ))}
+            </ul>
+          </TerminalOutput>
+        </div>
+      </div>
+
+      <div className="card mb-8 border-card-border bg-card-bg">
+        <div className="space-y-4">
+          <TerminalCommand command="jq '.stack' profile.json" />
+          <TerminalOutput>
+            <div className="grid gap-4 md:grid-cols-3">
+              <div className="rounded-lg border border-card-border bg-background/40 p-4">
+                <h2 className="m-0 mb-3 font-mono text-sm font-semibold text-accent">
+                  Frontend
+                </h2>
+                <ul className="space-y-1 text-sm text-secondary">
+                  {stack.frontend.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className="rounded-lg border border-card-border bg-background/40 p-4">
+                <h2 className="m-0 mb-3 font-mono text-sm font-semibold text-accent">
+                  Backend
+                </h2>
+                <ul className="space-y-1 text-sm text-secondary">
+                  {stack.backend.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className="rounded-lg border border-card-border bg-background/40 p-4">
+                <h2 className="m-0 mb-3 font-mono text-sm font-semibold text-accent">
+                  Delivery
+                </h2>
+                <ul className="space-y-1 text-sm text-secondary">
+                  {stack.delivery.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
               </div>
             </div>
           </TerminalOutput>
         </div>
       </div>
 
-      {/* Skills Terminal */}
       <div className="card mb-8 border-card-border bg-card-bg">
         <div className="space-y-4">
-          <TerminalCommand command="ls -la ~/skills/" />
+          <TerminalCommand command="tail -n 2 experience.log" />
           <TerminalOutput>
-            <div className="space-y-2 font-mono text-sm">
-              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                <div>
-                  <h3 className="mb-3 font-semibold text-accent">
-                    Frontend Technologies
-                  </h3>
-                  <div className="space-y-1">
-                    <div className="flex items-center space-x-3">
-                      <span className="text-green-500">✓</span>
-                      <span>JavaScript / TypeScript</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <span className="text-green-500">✓</span>
-                      <span>React / Next.js</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <span className="text-green-500">✓</span>
-                      <span>Tailwind CSS / CSS3</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <span className="text-green-500">✓</span>
-                      <span>HTML5 / Responsive Design</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div>
-                  <h3 className="mb-3 font-semibold text-accent">
-                    Backend & Database
-                  </h3>
-                  <div className="space-y-1">
-                    <div className="flex items-center space-x-3">
-                      <span className="text-green-500">✓</span>
-                      <span>Node.js / Express</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <span className="text-green-500">✓</span>
-                      <span>Python / Django</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <span className="text-green-500">✓</span>
-                      <span>PostgreSQL / MongoDB</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <span className="text-green-500">✓</span>
-                      <span>REST APIs / GraphQL</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </TerminalOutput>
-        </div>
-      </div>
-
-      {/* Tools & DevOps */}
-      <div className="card mb-8 border-card-border bg-card-bg">
-        <div className="space-y-4">
-          <TerminalCommand command="which git docker aws" />
-          <TerminalOutput>
-            <div className="font-mono text-sm">
-              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                <div>
-                  <h3 className="mb-3 font-semibold text-accent">
-                    Development Tools
-                  </h3>
-                  <div className="space-y-1">
-                    <div>/usr/bin/git</div>
-                    <div>/usr/local/bin/docker</div>
-                    <div>/usr/local/bin/code</div>
-                    <div>/usr/local/bin/npm</div>
-                  </div>
-                </div>
-
-                <div>
-                  <h3 className="mb-3 font-semibold text-accent">
-                    Cloud & DevOps
-                  </h3>
-                  <div className="space-y-1">
-                    <div>/usr/local/bin/aws</div>
-                    <div>/usr/local/bin/vercel</div>
-                    <div>/usr/local/bin/terraform</div>
-                    <div>/usr/bin/CI/CD pipelines</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </TerminalOutput>
-        </div>
-      </div>
-
-      {/* Experience */}
-      <div className="card mb-8 border-card-border bg-card-bg">
-        <div className="space-y-4">
-          <TerminalCommand command="cat ~/experience.log | tail -10" />
-          <TerminalOutput>
-            <div className="space-y-6">
-              <div className="border-l-2 border-accent pl-4">
-                <h3 className="font-semibold text-foreground">
+            <div className="grid gap-4 md:grid-cols-2">
+              <div className="rounded-lg border border-card-border bg-background/40 p-4">
+                <h2 className="m-0 mb-2 text-base font-semibold text-foreground">
                   Senior Software Engineer
-                </h3>
-                <p className="text-sm text-muted">
-                  TechCorp Inc. • 2021 - Present
-                </p>
-                <ul className="mt-2 space-y-1 text-sm text-secondary">
-                  <li>
-                    • Led development of microservices architecture serving 1M+
-                    users
-                  </li>
-                  <li>
-                    • Implemented CI/CD pipelines reducing deployment time by
-                    60%
-                  </li>
-                  <li>
-                    • Mentored 3 junior developers and conducted technical
-                    interviews
-                  </li>
+                </h2>
+                <p className="m-0 text-sm text-muted">2021 - Present</p>
+                <ul className="mt-3 space-y-1 text-sm text-secondary">
+                  <li>Led development for scalable web applications.</li>
+                  <li>Improved deployment speed through CI/CD workflows.</li>
+                  <li>Mentored engineers and supported delivery quality.</li>
                 </ul>
               </div>
-
-              <div className="border-l-2 border-muted pl-4">
-                <h3 className="font-semibold text-foreground">
+              <div className="rounded-lg border border-card-border bg-background/40 p-4">
+                <h2 className="m-0 mb-2 text-base font-semibold text-foreground">
                   Software Engineer
-                </h3>
-                <p className="text-sm text-muted">StartupXYZ • 2019 - 2021</p>
-                <ul className="mt-2 space-y-1 text-sm text-secondary">
-                  <li>
-                    • Built full-stack applications using React and Node.js
-                  </li>
-                  <li>
-                    • Optimized database queries improving performance by 40%
-                  </li>
-                  <li>
-                    • Collaborated with product team on feature specifications
-                  </li>
+                </h2>
+                <p className="m-0 text-sm text-muted">2019 - 2021</p>
+                <ul className="mt-3 space-y-1 text-sm text-secondary">
+                  <li>Built full-stack features with React and Node.js.</li>
+                  <li>Optimized APIs and database access patterns.</li>
+                  <li>Partnered with product teams on roadmap execution.</li>
                 </ul>
               </div>
             </div>
@@ -194,43 +135,39 @@ export default function About() {
         </div>
       </div>
 
-      {/* Contact */}
       <div className="card border-card-border bg-card-bg">
         <div className="space-y-4">
-          <TerminalCommand command="grep -r 'contact' ~/social/" />
+          <TerminalCommand command="ls ~/contact" />
           <TerminalOutput>
-            <div className="space-y-2 font-mono text-sm">
-              <div>
-                ~/social/github:{' '}
+            <div className="flex flex-wrap gap-4 font-mono text-sm text-secondary">
+              {siteConfig.social.github && (
                 <a
-                  href="https://github.com/bharadwaj-pendyala"
+                  href={siteConfig.social.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-accent hover:underline"
+                  className="transition-colors hover:text-accent"
                 >
-                  bharadwaj-pendyala
+                  GitHub
                 </a>
-              </div>
-              <div>
-                ~/social/linkedin:{' '}
+              )}
+              {siteConfig.social.linkedin && (
                 <a
-                  href="https://www.linkedin.com/in/bharadwaj-pendyala"
+                  href={siteConfig.social.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-accent hover:underline"
+                  className="transition-colors hover:text-accent"
                 >
-                  bharadwaj-pendyala
+                  LinkedIn
                 </a>
-              </div>
-              <div>
-                ~/social/email:{' '}
+              )}
+              {siteConfig.social.email && (
                 <a
-                  href="mailto:bharadwajpendyala@gmail.com"
-                  className="text-accent hover:underline"
+                  href={`mailto:${siteConfig.social.email}`}
+                  className="transition-colors hover:text-accent"
                 >
-                  bharadwajpendyala@gmail.com
+                  Email
                 </a>
-              </div>
+              )}
             </div>
           </TerminalOutput>
         </div>

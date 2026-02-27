@@ -4,61 +4,51 @@ import NavigationCards from '@/components/NavigationCards';
 
 export default function Home(): JSX.Element {
   return (
-    <div className="container mx-auto max-w-5xl px-6 py-8">
-      {/* Enhanced Terminal Hero Section */}
-      <section className="mb-16">
+    <div className="container mx-auto max-w-5xl px-6 py-10">
+      <section className="mb-14">
         <EnhancedTerminalHero />
       </section>
 
-      {/* Navigation Cards with Professional Enhancement */}
-      <section className="mb-16">
+      <section className="mb-14">
         <div className="card border-card-border bg-card-bg">
-          <div className="mb-6 flex items-center space-x-2 border-b border-card-border pb-3">
-            <div className="h-3 w-3 rounded-full bg-red-500"></div>
-            <div className="h-3 w-3 rounded-full bg-yellow-500"></div>
-            <div className="h-3 w-3 rounded-full bg-green-500"></div>
-            <span className="ml-4 font-mono text-xs text-muted">
-              bharad@portfolio:~/navigate
-            </span>
-          </div>
-
-          <div className="space-y-4">
-            <div className="font-mono text-sm">
+          <div className="mb-5 border-b border-card-border pb-4 font-mono text-sm">
+            <div>
               <span className="text-accent">$</span>
               <span className="ml-2 text-foreground">ls -la ~/portfolio</span>
             </div>
-
-            <div className="pl-4">
-              <p className="mb-6 text-sm text-muted">
-                Explore different sections of my professional portfolio. Each
-                directory contains detailed information about my work and
-                expertise.
-              </p>
-              <NavigationCards />
-            </div>
           </div>
+
+          <div className="mb-6 max-w-2xl space-y-2">
+            <h2 className="m-0 font-mono text-xl text-foreground">
+              Explore by section
+            </h2>
+            <p className="m-0 text-sm text-muted">
+              Jump directly to projects, writing, resume, and background with
+              faster navigation cards.
+            </p>
+          </div>
+          <NavigationCards />
         </div>
       </section>
 
-      {/* Enhanced Stats Section */}
-      <section className="mb-16">
+      <section className="mb-14">
         <EnhancedStatsSection />
       </section>
 
-      {/* Professional Summary */}
       <section className="mb-16">
         <div className="card border-card-border bg-card-bg">
-          <div className="mb-6 flex items-center space-x-2 border-b border-card-border pb-3">
-            <div className="h-3 w-3 rounded-full bg-red-500"></div>
-            <div className="h-3 w-3 rounded-full bg-yellow-500"></div>
-            <div className="h-3 w-3 rounded-full bg-green-500"></div>
-            <span className="ml-4 font-mono text-xs text-muted">
-              bharad@portfolio:~/summary
-            </span>
+          <div className="mb-5 border-b border-card-border pb-4 font-mono text-sm">
+            <span className="text-accent">$</span>
+            <span className="ml-2 text-foreground">cat summary.md</span>
+          </div>
+
+          <div className="mb-6 max-w-2xl">
+            <h2 className="m-0 font-mono text-xl text-foreground">
+              Technical and product impact
+            </h2>
           </div>
 
           <div className="grid gap-8 md:grid-cols-2">
-            {/* Technical Focus */}
             <div className="space-y-4">
               <div className="font-mono text-sm">
                 <span className="text-accent">$</span>
@@ -69,7 +59,7 @@ export default function Home(): JSX.Element {
 
               <div className="space-y-3 pl-4">
                 <h3 className="font-mono text-lg font-semibold text-foreground">
-                  🎯 Technical Excellence
+                  Technical Excellence
                 </h3>
                 <ul className="space-y-2 font-mono text-sm text-muted">
                   <li className="flex items-start space-x-2">
@@ -103,7 +93,6 @@ export default function Home(): JSX.Element {
               </div>
             </div>
 
-            {/* Professional Impact */}
             <div className="space-y-4">
               <div className="font-mono text-sm">
                 <span className="text-accent">$</span>
@@ -114,7 +103,7 @@ export default function Home(): JSX.Element {
 
               <div className="space-y-3 pl-4">
                 <h3 className="font-mono text-lg font-semibold text-foreground">
-                  💼 Professional Impact
+                  Professional Impact
                 </h3>
                 <ul className="space-y-2 font-mono text-sm text-muted">
                   <li className="flex items-start space-x-2">

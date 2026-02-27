@@ -26,12 +26,15 @@ export type SiteConfig = {
   };
 };
 
+const isProduction = process.env.NODE_ENV === 'production';
+const productionBasePath = '/bharad-portfolio';
+
 export const siteConfig: SiteConfig = {
   name: 'Bharadwaj P',
   description:
     'Terminal-inspired developer portfolio showcasing full-stack engineering projects, technical expertise, and software development insights. Built with Next.js, TypeScript, and modern web technologies.',
   url: 'https://bharadwaj-pendyala.github.io',
-  basePath: '/bharad-portfolio',
+  ...(isProduction ? { basePath: productionBasePath } : {}),
   nav: [
     { label: 'About', href: '/about', enabled: true },
     { label: 'Projects', href: '/projects', enabled: true },

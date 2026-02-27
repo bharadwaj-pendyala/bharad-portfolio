@@ -1,16 +1,49 @@
 import type { Metadata } from 'next';
 import TerminalCommand from '@/components/TerminalCommand';
 import TerminalOutput from '@/components/TerminalOutput';
+import { siteConfig } from '@/config/site';
 
 export const metadata: Metadata = {
   title: 'CV',
   description: 'Professional experience and qualifications',
 };
 
+const experience = [
+  {
+    role: 'Senior Software Engineer',
+    company: 'TechCorp Inc.',
+    period: 'Jan 2021 - Present',
+    highlights: [
+      'Led architecture and delivery for scalable web applications.',
+      'Reduced release friction through CI/CD process improvements.',
+      'Mentored engineers and supported hiring and technical interviews.',
+    ],
+    stack: 'React, Node.js, PostgreSQL, AWS, Docker',
+  },
+  {
+    role: 'Software Engineer',
+    company: 'StartupXYZ',
+    period: 'Mar 2019 - Dec 2020',
+    highlights: [
+      'Delivered full-stack product features from design to production.',
+      'Improved API and database performance through query optimization.',
+      'Worked closely with product teams to ship roadmap priorities.',
+    ],
+    stack: 'React, Express.js, MongoDB, Redis',
+  },
+];
+
+const skills = {
+  frontend: ['TypeScript', 'React', 'Next.js', 'Tailwind CSS'],
+  backend: ['Node.js', 'Python', 'PostgreSQL', 'REST APIs'],
+  tools: ['Git', 'Docker', 'AWS', 'Vercel', 'CI/CD'],
+};
+
 export default function CV(): JSX.Element {
+  const email = siteConfig.social.email ?? 'bharadwajpendyala@gmail.com';
+
   return (
-    <div className="container mx-auto max-w-4xl px-6 py-8">
-      {/* Terminal Header */}
+    <div className="container mx-auto max-w-5xl px-6 py-8">
       <div className="card mb-8 border-card-border bg-card-bg">
         <div className="mb-4 border-b border-card-border pb-3">
           <div className="flex items-center space-x-2">
@@ -26,23 +59,48 @@ export default function CV(): JSX.Element {
         <div className="space-y-4">
           <TerminalCommand command="head -20 CV.pdf" />
           <TerminalOutput>
-            <div className="space-y-4">
-              <h1 className="text-2xl font-bold text-foreground">
+            <div className="space-y-3">
+              <h1 className="m-0 text-3xl font-bold text-foreground">
                 Bharadwaj Pendyala
               </h1>
-              <div className="font-mono text-accent">
-                Software Engineer // Full Stack Developer
-              </div>
-              <div className="text-sm text-secondary">
-                📧 bharadwajpendyala@gmail.com | 🌐 LinkedIn: bharadwaj-pendyala
-                | 💻 GitHub: bharadwaj-pendyala
+              <p className="m-0 font-mono text-accent">
+                Software Engineer | Full-Stack Developer
+              </p>
+              <div className="flex flex-wrap gap-4 text-sm text-secondary">
+                {siteConfig.social.email && (
+                  <a
+                    href={`mailto:${siteConfig.social.email}`}
+                    className="transition-colors hover:text-accent"
+                  >
+                    {siteConfig.social.email}
+                  </a>
+                )}
+                {siteConfig.social.linkedin && (
+                  <a
+                    href={siteConfig.social.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="transition-colors hover:text-accent"
+                  >
+                    LinkedIn
+                  </a>
+                )}
+                {siteConfig.social.github && (
+                  <a
+                    href={siteConfig.social.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="transition-colors hover:text-accent"
+                  >
+                    GitHub
+                  </a>
+                )}
               </div>
             </div>
           </TerminalOutput>
         </div>
       </div>
 
-      {/* Professional Summary */}
       <div className="card mb-6 border-card-border bg-card-bg">
         <div className="space-y-4">
           <TerminalCommand command="grep -A 5 'Professional Summary' CV.pdf" />
@@ -57,129 +115,87 @@ export default function CV(): JSX.Element {
         </div>
       </div>
 
-      {/* Experience */}
       <div className="card mb-6 border-card-border bg-card-bg">
         <div className="space-y-4">
           <TerminalCommand command="awk '/Experience/,/Education/ {print}' CV.pdf" />
           <TerminalOutput>
-            <div className="space-y-6">
-              <div className="border-l-2 border-accent pl-4">
-                <h3 className="font-semibold text-foreground">
-                  Senior Software Engineer
-                </h3>
-                <p className="text-sm text-muted">
-                  TechCorp Inc. • Jan 2021 - Present
-                </p>
-                <ul className="mt-2 space-y-1 font-mono text-sm text-secondary">
-                  <li>
-                    • Led development of microservices architecture handling 1M+
-                    daily requests
-                  </li>
-                  <li>
-                    • Reduced deployment time by 60% through CI/CD pipeline
-                    optimization
-                  </li>
-                  <li>
-                    • Mentored 3 junior developers and conducted 20+ technical
-                    interviews
-                  </li>
-                  <li>
-                    • Tech: React, Node.js, PostgreSQL, AWS, Docker, Kubernetes
-                  </li>
-                </ul>
-              </div>
-
-              <div className="border-l-2 border-muted pl-4">
-                <h3 className="font-semibold text-foreground">
-                  Software Engineer
-                </h3>
-                <p className="text-sm text-muted">
-                  StartupXYZ • Mar 2019 - Dec 2020
-                </p>
-                <ul className="mt-2 space-y-1 font-mono text-sm text-secondary">
-                  <li>
-                    • Built full-stack applications using React and Node.js
-                    ecosystem
-                  </li>
-                  <li>
-                    • Improved database performance by 40% through query
-                    optimization
-                  </li>
-                  <li>
-                    • Collaborated with product team on feature specifications
-                    and user stories
-                  </li>
-                  <li>• Tech: React, Express.js, MongoDB, Redis, Jest</li>
-                </ul>
-              </div>
+            <div className="space-y-5">
+              {experience.map((item) => (
+                <article
+                  key={`${item.company}-${item.role}`}
+                  className="rounded-lg border border-card-border bg-background/40 p-4"
+                >
+                  <h2 className="m-0 text-lg font-semibold text-foreground">
+                    {item.role}
+                  </h2>
+                  <p className="m-0 mt-1 text-sm text-muted">
+                    {item.company} • {item.period}
+                  </p>
+                  <ul className="mt-3 space-y-1 text-sm text-secondary">
+                    {item.highlights.map((highlight) => (
+                      <li key={highlight}>{highlight}</li>
+                    ))}
+                  </ul>
+                  <p className="mt-3 text-xs text-muted">Tech: {item.stack}</p>
+                </article>
+              ))}
             </div>
           </TerminalOutput>
         </div>
       </div>
 
-      {/* Technical Skills */}
       <div className="card mb-6 border-card-border bg-card-bg">
         <div className="space-y-4">
           <TerminalCommand command="cat ~/.config/skills.json | jq '.'" />
           <TerminalOutput>
-            <div className="font-mono text-sm">
-              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                <div>
-                  <div className="mb-2 font-semibold text-accent">
-                    &quot;frontend&quot;: [
-                  </div>
-                  <div className="ml-4 space-y-1">
-                    <div>&quot;JavaScript/TypeScript&quot;,</div>
-                    <div>&quot;React/Next.js&quot;,</div>
-                    <div>&quot;Tailwind CSS&quot;,</div>
-                    <div>&quot;HTML5/CSS3&quot;</div>
-                  </div>
-                  <div>],</div>
-                </div>
-
-                <div>
-                  <div className="mb-2 font-semibold text-accent">
-                    &quot;backend&quot;: [
-                  </div>
-                  <div className="ml-4 space-y-1">
-                    <div>&quot;Node.js/Express&quot;,</div>
-                    <div>&quot;Python/Django&quot;,</div>
-                    <div>&quot;PostgreSQL/MongoDB&quot;,</div>
-                    <div>&quot;REST APIs/GraphQL&quot;</div>
-                  </div>
-                  <div>],</div>
-                </div>
+            <div className="grid gap-4 md:grid-cols-3">
+              <div className="rounded-lg border border-card-border bg-background/40 p-4">
+                <h2 className="m-0 mb-3 font-mono text-sm font-semibold text-accent">
+                  Frontend
+                </h2>
+                <ul className="space-y-1 text-sm text-secondary">
+                  {skills.frontend.map((skill) => (
+                    <li key={skill}>{skill}</li>
+                  ))}
+                </ul>
               </div>
-
-              <div className="mt-4">
-                <div className="mb-2 font-semibold text-accent">
-                  &quot;tools&quot;: [
-                </div>
-                <div className="ml-4">
-                  &quot;Git&quot;, &quot;Docker&quot;, &quot;AWS&quot;,
-                  &quot;Vercel&quot;, &quot;CI/CD&quot;, &quot;Jest&quot;,
-                  &quot;Cypress&quot;
-                </div>
-                <div>]</div>
+              <div className="rounded-lg border border-card-border bg-background/40 p-4">
+                <h2 className="m-0 mb-3 font-mono text-sm font-semibold text-accent">
+                  Backend
+                </h2>
+                <ul className="space-y-1 text-sm text-secondary">
+                  {skills.backend.map((skill) => (
+                    <li key={skill}>{skill}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className="rounded-lg border border-card-border bg-background/40 p-4">
+                <h2 className="m-0 mb-3 font-mono text-sm font-semibold text-accent">
+                  Tools
+                </h2>
+                <ul className="space-y-1 text-sm text-secondary">
+                  {skills.tools.map((skill) => (
+                    <li key={skill}>{skill}</li>
+                  ))}
+                </ul>
               </div>
             </div>
           </TerminalOutput>
         </div>
       </div>
 
-      {/* Education */}
       <div className="card mb-6 border-card-border bg-card-bg">
         <div className="space-y-4">
           <TerminalCommand command="sed -n '/Education/,/Skills/p' CV.pdf" />
           <TerminalOutput>
-            <div className="border-l-2 border-accent pl-4">
-              <h3 className="font-semibold text-foreground">
+            <div className="rounded-lg border border-card-border bg-background/40 p-4">
+              <h2 className="m-0 font-semibold text-foreground">
                 Bachelor of Science in Computer Science
-              </h3>
-              <p className="text-sm text-muted">
+              </h2>
+              <p className="m-0 mt-1 text-sm text-muted">
                 University of Technology • 2015 - 2019
               </p>
-              <p className="mt-2 text-sm text-secondary">
+              <p className="m-0 mt-2 text-sm text-secondary">
                 Relevant Coursework: Data Structures, Algorithms, Database
                 Systems, Software Engineering, Web Development, Computer
                 Networks
@@ -189,42 +205,34 @@ export default function CV(): JSX.Element {
         </div>
       </div>
 
-      {/* Certifications */}
       <div className="card mb-6 border-card-border bg-card-bg">
         <div className="space-y-4">
           <TerminalCommand command="ls -la ~/certifications/" />
           <TerminalOutput>
-            <div className="space-y-1 font-mono text-sm">
-              <div>
-                drwxr-xr-x 2 bharad staff 64B Dec 15 2023
-                aws-solutions-architect/
-              </div>
-              <div>
-                drwxr-xr-x 2 bharad staff 64B Nov 22 2023
-                react-advanced-patterns/
-              </div>
-              <div>
-                drwxr-xr-x 2 bharad staff 64B Oct 18 2023
-                typescript-professional/
-              </div>
+            <div className="space-y-1 text-sm text-secondary">
+              <div>AWS Solutions Architect</div>
+              <div>Advanced React Patterns</div>
+              <div>TypeScript Professional</div>
             </div>
           </TerminalOutput>
         </div>
       </div>
 
-      {/* Download Action */}
       <div className="card border-card-border bg-card-bg">
         <div className="space-y-4">
-          <TerminalCommand command="curl -O https://bharad.dev/cv/download" />
+          <TerminalCommand command="open contact_for_full_cv.txt" />
           <TerminalOutput>
             <div className="space-y-4 text-center">
               <div className="text-sm text-secondary">
                 For a complete version with references and detailed project
                 descriptions
               </div>
-              <button className="rounded bg-accent px-6 py-2 font-mono text-sm text-background transition-opacity hover:opacity-90">
-                Download Full CV (PDF)
-              </button>
+              <a
+                href={`mailto:${email}?subject=CV%20Request`}
+                className="inline-flex rounded bg-accent px-6 py-2 font-mono text-sm text-background transition-opacity hover:opacity-90"
+              >
+                Request Full CV (PDF)
+              </a>
             </div>
           </TerminalOutput>
         </div>

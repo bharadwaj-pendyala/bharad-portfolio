@@ -5,42 +5,55 @@ type Project = {
   name: string;
   description: string;
   tech: string[];
+  size: string;
+  updated: string;
   github?: string;
   demo?: string;
   status: 'active' | 'archived' | 'private';
 };
 
-export default function Projects() {
-  const projects: Project[] = [
-    {
-      name: 'terminal-portfolio',
-      description:
-        'Terminal-inspired developer portfolio with animated typing effects and modern tech stack',
-      tech: ['Next.js 14', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
-      github: 'https://github.com/bharadwaj-pendyala/bharad-portfolio',
-      demo: 'https://bharadwaj-pendyala.github.io/bharad-portfolio',
-      status: 'active',
-    },
-    {
-      name: 'task-manager-pro',
-      description:
-        'Full-stack task management application with real-time collaboration and advanced filtering',
-      tech: ['React', 'Node.js', 'MongoDB', 'Socket.io'],
-      github: 'https://github.com/bharadwaj-pendyala',
-      status: 'active',
-    },
-    {
-      name: 'analytics-dashboard',
-      description:
-        'Comprehensive data visualization platform with interactive charts and automated reporting',
-      tech: ['Python', 'FastAPI', 'PostgreSQL', 'Redis'],
-      status: 'private',
-    },
-  ];
+const projects: Project[] = [
+  {
+    name: 'terminal-portfolio',
+    description:
+      'Terminal-inspired portfolio with strong performance, accessibility, and responsive behavior.',
+    tech: ['Next.js 14', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+    size: '324KB',
+    updated: '2025-08-10',
+    github: 'https://github.com/bharadwaj-pendyala/bharad-portfolio',
+    demo: 'https://bharadwaj-pendyala.github.io/bharad-portfolio',
+    status: 'active',
+  },
+  {
+    name: 'task-manager-pro',
+    description:
+      'Task management platform with real-time collaboration, filtering, and team workflows.',
+    tech: ['React', 'Node.js', 'MongoDB', 'Socket.io'],
+    size: '512KB',
+    updated: '2025-02-12',
+    github: 'https://github.com/bharadwaj-pendyala',
+    status: 'active',
+  },
+  {
+    name: 'analytics-dashboard',
+    description:
+      'Data visualization and reporting tool built for operational monitoring and insights.',
+    tech: ['Python', 'FastAPI', 'PostgreSQL', 'Redis'],
+    size: '748KB',
+    updated: '2024-11-03',
+    status: 'private',
+  },
+];
 
+function getStatusStyles(status: Project['status']): string {
+  if (status === 'active') return 'text-green-600 dark:text-green-400';
+  if (status === 'archived') return 'text-amber-600 dark:text-amber-400';
+  return 'text-muted';
+}
+
+export default function Projects(): JSX.Element {
   return (
-    <div className="container mx-auto max-w-4xl px-6 py-8">
-      {/* Header Terminal */}
+    <div className="container mx-auto max-w-5xl px-6 py-8">
       <div className="card mb-8 border-card-border bg-card-bg">
         <div className="mb-4 border-b border-card-border pb-3">
           <div className="flex items-center space-x-2">
@@ -56,35 +69,27 @@ export default function Projects() {
         <div className="space-y-4">
           <TerminalCommand command="ls -la ~/projects/" />
           <TerminalOutput>
-            <div className="space-y-2">
-              <div className="mb-4 text-sm text-secondary">
-                A collection of projects showcasing full-stack development,
-                modern architectures, and problem-solving approaches.
-              </div>
-              <div className="font-mono text-sm">
-                <div className="mb-2 grid grid-cols-4 gap-4 border-b border-muted pb-2 text-muted">
-                  <div>permissions</div>
-                  <div>size</div>
-                  <div>modified</div>
-                  <div>name</div>
+            <div className="space-y-4">
+              <p className="m-0 max-w-3xl text-sm text-secondary">
+                Selected projects focused on product quality, engineering rigor,
+                and measurable user impact.
+              </p>
+              <div className="rounded-lg border border-card-border bg-background/40 p-4 font-mono text-sm">
+                <div className="mb-2 grid grid-cols-3 gap-4 border-b border-card-border pb-2 text-xs uppercase tracking-wide text-muted">
+                  <div>project</div>
+                  <div>status</div>
+                  <div>updated</div>
                 </div>
-                {projects.map((project, index) => (
+                {projects.map((project) => (
                   <div
-                    key={index}
-                    className="hover:bg-muted/10 grid grid-cols-4 gap-4 py-1 text-secondary transition-colors"
+                    key={project.name}
+                    className="grid grid-cols-3 gap-4 py-1 text-secondary"
                   >
-                    <div className="text-green-500">
-                      {project.status === 'active'
-                        ? 'drwxr-xr-x'
-                        : project.status === 'private'
-                          ? 'drw-------'
-                          : 'drwxr--r--'}
+                    <div className="text-accent">{project.name}</div>
+                    <div className={getStatusStyles(project.status)}>
+                      {project.status}
                     </div>
-                    <div>{Math.floor(Math.random() * 900 + 100)}KB</div>
-                    <div>Dec {Math.floor(Math.random() * 30 + 1)}</div>
-                    <div className="text-accent transition-colors hover:text-foreground">
-                      {project.name}/
-                    </div>
+                    <div>{project.updated}</div>
                   </div>
                 ))}
               </div>
@@ -93,9 +98,11 @@ export default function Projects() {
         </div>
       </div>
 
-      {/* Project Details */}
-      {projects.map((project, index) => (
-        <div key={index} className="card mb-6 border-card-border bg-card-bg">
+      {projects.map((project) => (
+        <div
+          key={project.name}
+          className="card hover:border-accent/40 mb-6 border-card-border bg-card-bg transition-colors"
+        >
           <div className="space-y-4">
             <TerminalCommand
               command={`cat ~/projects/${project.name}/README.md`}
@@ -106,6 +113,13 @@ export default function Projects() {
                   <h3 className="mb-2 text-xl font-bold text-foreground">
                     {project.name}
                   </h3>
+                  <div className="mb-3 flex flex-wrap gap-3 text-xs text-muted">
+                    <span>Size: {project.size}</span>
+                    <span>Updated: {project.updated}</span>
+                    <span className={getStatusStyles(project.status)}>
+                      Status: {project.status}
+                    </span>
+                  </div>
                   <p className="leading-relaxed text-secondary">
                     {project.description}
                   </p>
@@ -128,7 +142,7 @@ export default function Projects() {
                 </div>
 
                 <div className="pt-2">
-                  <div className="flex items-center space-x-4 text-sm">
+                  <div className="flex flex-wrap items-center gap-4 text-sm">
                     {project.github && (
                       <a
                         href={project.github}
@@ -151,7 +165,7 @@ export default function Projects() {
                     )}
                     {project.status === 'private' && (
                       <span className="font-mono text-muted">
-                        → Private Repository
+                        → Repository access available on request
                       </span>
                     )}
                   </div>
@@ -162,7 +176,6 @@ export default function Projects() {
         </div>
       ))}
 
-      {/* Additional Commands */}
       <div className="card border-card-border bg-card-bg">
         <div className="space-y-4">
           <TerminalCommand command="find ~/projects -name '*.md' -type f | wc -l" />
@@ -170,8 +183,7 @@ export default function Projects() {
             <div className="space-y-2 font-mono text-sm">
               <div>3 project documentation files found</div>
               <div className="text-secondary">
-                Each project includes comprehensive documentation, setup
-                instructions, and usage examples.
+                Each project includes setup details, context, and usage notes.
               </div>
             </div>
           </TerminalOutput>
